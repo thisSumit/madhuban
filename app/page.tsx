@@ -7,6 +7,7 @@ import Gallary from "@/components/Gallary";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import Contact from "@/components/Contact";
+import { Lenis } from "lenis/react";
 
 export default function Home() {
   return (

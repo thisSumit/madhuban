@@ -60,6 +60,54 @@ const galleryData: GalleryItem[] = [
     description: 'Host your wedding in a completely private space surrounded by greenery and serenity.',
     image: '/pool.png' // Add image path
   },
+  {
+    id: 9,
+    title: 'Multiple Venues Within the Resort',
+    description: 'Conduct mehendi, haldi, cocktail, sangeet, pheras, and reception at different royal spots.',
+    image: '/reception1.png'
+  },
+  {
+    id: 10,
+    title: 'Fairy-Tale Wedding Themes',
+    description: 'Our décor team specializes in royal, pastel, floral, Bollywood, and fairy-tale themes.',
+    image: '/indraprasta1.png' // Add image path
+  },
+  {
+    id: 11,
+    title: 'Resort-Style Ambience',
+    description: 'Natural pathways, landscaped gardens, luxury rooms, and signature sunset views make your wedding magical.',
+    image: '/ex2.png'
+  },
+  {
+    id: 12,
+    title: 'Best Dinning Experience',
+    description: 'Our in-house caterers prepare exquisite meals using traditional recipes and locally sourced ingredients.',
+    image: '/d-2.png' // Add image path
+  },
+  {
+    id: 13,
+    title: '2–3 Day Wedding Packages',
+    description: 'Perfect for families who want to celebrate every function without travel hassles.',
+    image: '/ex.png' // Add image path
+  },
+  {
+    id: 14,
+    title: 'Hut cottages for family and friends',
+    description: 'Our hut cottages are perfect for family and friends to stay during the wedding.',
+    image: 'hut2.png' // Add image path
+  },
+  {
+    id: 15,
+    title: 'Luxurious Rooms',
+    description: 'Premium deluxe rooms offering refined comfort and elegance, thoughtfully designed to accommodate 200–400 wedding guests with resort-style luxury.',
+    image: 'in4.png' // Add image path
+  },
+  {
+    id: 16,
+    title: 'Private, Exclusive Environment',
+    description: 'Host your wedding in a completely private space surrounded by greenery and serenity.',
+    image: '/pool.png' // Add image path
+  },
 ]
 
 const Gallary = () => {
@@ -83,7 +131,7 @@ const Gallary = () => {
           carouselRef.current.scrollTo({ left: 0, behavior: 'smooth' })
         } else {
           // Auto-scroll to the right
-          carouselRef.current.scrollBy({ left: 2, behavior: 'auto' })
+          carouselRef.current.scrollBy({ left: 2, behavior: 'smooth' })
         }
       }
     }, 50) // Smooth auto-scroll

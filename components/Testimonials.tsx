@@ -33,6 +33,13 @@ const testimonialsData: Testimonial[] = [
     text: "The attention to detail and the stunning landscape exceeded all our expectations. Our guests couldn't stop talking about how beautiful everything was.",
     author: "JOHN K.",
     source: "FACEBOOK",
+    image: "/couple-5.jpg" // Optional
+  },
+  {
+    id: 4,
+    text: "The best place to have party, hangout with friends, to have great food, and much more. Highly satisfied with all the services.",
+    author: "NEHA V.",
+    source: "GOOGLE REVIEWS",
     image: "/couple-2.jpg" // Optional
   },
 ]

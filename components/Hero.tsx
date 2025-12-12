@@ -17,6 +17,7 @@ const Hero = () => {
           playsInline
           className='h-full w-full object-cover'
           src="/hero.mp4"
+          poster='/indraprastha3.png'
         />
         {/* Overlay for better text readability */}
         <div className='absolute inset-0 bg-black/20' />
