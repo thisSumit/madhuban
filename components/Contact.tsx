@@ -92,7 +92,7 @@ const Contact: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <div className="space-y-5">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-[playfair-display] text-foreground leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-playfair-display text-foreground leading-tight">
               Plan a Luxury Wedding at Madhuban
             </h2>
             <p className="text-base sm:text-lg text-foreground/70 leading-relaxed">

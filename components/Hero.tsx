@@ -25,7 +25,7 @@ const Hero = () => {
 
       <div className='relative z-10 h-full w-full flex flex-col items-center justify-center'>
         <div className='flex flex-col items-center justify-center h-full'>
-          <h1 className='text-white font-[playfair-display] text-5xl lg:text-8xl text-center leading-tighter tracking-tight px-4'>
+          <h1 className='text-white font-playfair-display text-4xl lg:text-8xl text-center leading-tighter tracking-tight px-4'>
             Your Dream <span className='italic block mt-2'> <TextAnimate animation="slideLeft" by="character" duration={0.5} delay={0.2} once> Wedding Destination </TextAnimate> </span> Awaits
           </h1>
         </div>

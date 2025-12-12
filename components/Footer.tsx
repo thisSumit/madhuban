@@ -85,14 +85,14 @@ const Footer = () => {
             <div className='flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 mb-8'>
               <a
                 href='tel:+917020704420'
-                className='text-4xl lg:text-5xl font-[playfair-display] text-background hover:text-background/80 transition-colors duration-300'
+                className='text-4xl lg:text-5xl font-playfair-display text-background hover:text-background/80 transition-colors duration-300'
               >
                 +91 7020704420
               </a>
               <span className='text-background/40 hidden lg:block'>|</span>
               <a
                 href='tel:+917020704421'
-                className='text-4xl lg:text-5xl font-[playfair-display] text-background hover:text-background/80 transition-colors duration-300'
+                className='text-4xl lg:text-5xl font-playfair-display text-background hover:text-background/80 transition-colors duration-300'
               >
                 +91 7020704421
               </a>
@@ -138,7 +138,7 @@ const Footer = () => {
                   <ArrowRight className='w-6 h-6 text-background/60 group-hover:text-background group-hover:translate-x-1 transition-all duration-300' />
                 </div>
               </div>
-              <h4 className='text-2xl lg:text-3xl font-[playfair-display] mb-4 group-hover:translate-y-[-4px] transition-transform duration-300'>
+              <h4 className='text-2xl lg:text-3xl font-playfair-display mb-4 group-hover:translate-y-[-4px] transition-transform duration-300'>
                 {section.title}
               </h4>
               <p className='text-background/70 text-sm lg:text-base leading-relaxed group-hover:text-background/90 transition-colors duration-300'>

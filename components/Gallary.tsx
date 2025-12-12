@@ -173,7 +173,7 @@ const Gallary = () => {
   // Manual navigation
   const scroll = (direction: 'left' | 'right') => {
     if (!carouselRef.current) return
-    const scrollAmount = carouselRef.current.clientWidth * 50
+    const scrollAmount = carouselRef.current.clientWidth * 0.8
     carouselRef.current.scrollBy({
       left: direction === 'left' ? -scrollAmount : scrollAmount,
       behavior: 'smooth',
@@ -185,7 +185,7 @@ const Gallary = () => {
       <div className='max-w-7xl mx-auto px-4 lg:px-16'>
         <div className='flex flex-col lg:flex-row items-start lg:items-center justify-between mb-12'>
           <div className='mb-6 lg:mb-0 lg:flex-1'>
-            <h2 className='text-4xl lg:text-5xl font-[playfair-display] text-foreground mb-4'>
+            <h2 className='text-4xl lg:text-5xl font-playfair-display text-foreground mb-4'>
             <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
               Explore Our World
               </TextAnimate>
@@ -262,7 +262,7 @@ const Gallary = () => {
 
               {/* Content Overlay */}
               <div className='absolute inset-0 flex flex-col justify-end p-8 lg:p-12 text-background'>
-                <h3 className='text-2xl lg:text-3xl font-[playfair-display] mb-3 group-hover:translate-y-[-4px] transition-transform duration-300'>
+                <h3 className='text-2xl lg:text-3xl font-playfair-display mb-3 group-hover:translate-y-[-4px] transition-transform duration-300'>
                   {item.title}
                 </h3>
                 <p className='text-base lg:text-lg text-background/90 leading-relaxed group-hover:translate-y-[-4px] transition-transform duration-300 delay-75'>
@@ -297,7 +297,7 @@ const Gallary = () => {
                 <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent' />
               </div>
               <div className='absolute inset-0 flex flex-col justify-end p-8 lg:p-12 text-background'>
-                <h3 className='text-2xl lg:text-3xl font-[playfair-display] mb-3 group-hover:translate-y-[-4px] transition-transform duration-300'>
+                <h3 className='text-2xl lg:text-3xl font-playfair-display mb-3 group-hover:translate-y-[-4px] transition-transform duration-300'>
                   {item.title}
                 </h3>
                 <p className='text-base lg:text-lg text-background/90 leading-relaxed group-hover:translate-y-[-4px] transition-transform duration-300 delay-75'>

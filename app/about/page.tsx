@@ -25,7 +25,7 @@ const AboutPage = () => {
         
         <div className='relative z-10 h-full flex items-center justify-center px-4 lg:px-16'>
           <div className='text-center max-w-6xl'>
-            <h1 className='text-5xl lg:text-7xl font-[playfair-display] text-background mb-6 leading-tight'>
+            <h1 className='text-4xl lg:text-7xl font-[playfair-display] text-background mb-6 leading-tight'>
             Welcome to <br />
             <TextAnimate animation="slideLeft" by="character" duration={0.5} delay={0.2} once>
             Madhuban Village
@@ -286,7 +286,7 @@ const AboutPage = () => {
         
         <div className='relative z-10 h-full flex items-center justify-center'>
           <div className='text-center'>
-            <h2 className='text-5xl lg:text-7xl font-[playfair-display] text-background mb-4'>
+            <h2 className='text-4xl lg:text-7xl font-[playfair-display] text-background mb-4'>
             <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
               Our World
               </TextAnimate>

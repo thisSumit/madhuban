@@ -208,14 +208,14 @@ const PlotPage = () => {
         
         <div className='relative z-10 h-full flex items-center justify-center px-4 lg:px-16'>
           <div className='text-center max-w-5xl'>
-            <h1 className='text-4xl lg:text-7xl font-[playfair-display] text-nowrap text-background mb-6 leading-tight'>
+            <h1 className='text-4xl lg:text-7xl font-playfair-display text-nowrap text-background mb-6 leading-tight'>
               Own More Than a Plot.<br />
               <TextAnimate animation="slideLeft" by="character" duration={0.5} delay={0.2} once>
               Own a Private Resort Lifestyle.
               </TextAnimate>
             </h1>
             <div className='mb-10'>
-              <p className='text-2xl lg:text-4xl font-[playfair-display] text-background mb-2'>
+              <p className='text-2xl lg:text-4xl font-playfair-display text-background mb-2'>
                 Plots starting at just <span className='text-[#D4AF37]'>₹700 per sq. ft.</span>
               </p>
             </div>
@@ -239,7 +239,7 @@ const PlotPage = () => {
       {/* 2. TRUST & ASPIRATION STRIP */}
       <section className='py-12 bg-foreground text-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
-          <h3 className='text-center text-xl lg:text-2xl font-[playfair-display] mb-8'>
+          <h3 className='text-center text-xl lg:text-2xl font-playfair-display mb-8'>
             Why Smart Buyers Are Choosing MV Plots
           </h3>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
@@ -267,7 +267,7 @@ const PlotPage = () => {
       <section className='py-20 lg:py-32 bg-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <div className='max-w-4xl mx-auto text-center'>
-            <h2 className='text-4xl lg:text-5xl font-[playfair-display] text-foreground mb-8'>
+            <h2 className='text-4xl lg:text-5xl font-playfair-display text-foreground mb-8'>
             <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
               Welcome to MV Plots – Your Private Farmhouse Address
               </TextAnimate>
@@ -291,7 +291,7 @@ const PlotPage = () => {
       {/* 3A. PLOTS IMAGE CAROUSEL */}
       <section className="pb-16 bg-background">
         <div className="max-w-5xl mx-auto px-4">
-          <h3 className="text-center text-2xl lg:text-3xl font-[playfair-display] text-foreground mb-8">
+          <h3 className="text-center text-2xl lg:text-3xl font-playfair-display text-foreground mb-8">
             Explore Our Plots
           </h3>
           <PlotsCarousel />
@@ -305,7 +305,7 @@ const PlotPage = () => {
       {/* 4. AMENITIES SECTION */}
       <section className='py-20 lg:py-32 bg-foreground text-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
-          <h2 className='text-4xl lg:text-5xl font-[playfair-display] text-center mb-16'>
+          <h2 className='text-4xl lg:text-5xl font-playfair-display text-center mb-16'>
           <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
             Luxury That Comes With Your Land
             </TextAnimate>
@@ -339,7 +339,7 @@ const PlotPage = () => {
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
             <div>
-              <h2 className='text-4xl lg:text-5xl font-[playfair-display] text-foreground mb-8'>
+              <h2 className='text-4xl lg:text-5xl font-playfair-display text-foreground mb-8'>
               <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
                 Perfect Balance of Connectivity & Peace
                 </TextAnimate>
@@ -366,7 +366,7 @@ const PlotPage = () => {
                   <p className='text-lg text-foreground/70'>Away from city chaos, inside natural serenity</p>
                 </div>
               </div>
-              <p className='mt-8 text-2xl font-[playfair-display] text-foreground italic'>
+              <p className='mt-8 text-2xl font-playfair-display text-foreground italic'>
                 Live close to the city. Yet far from stress.
               </p>
             </div>
@@ -384,7 +384,7 @@ const PlotPage = () => {
       {/* 6. INVESTMENT & USE CASE */}
       <section className='py-20 lg:py-32 bg-foreground text-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
-          <h2 className='text-4xl lg:text-5xl font-[playfair-display] text-center mb-16'>
+          <h2 className='text-4xl lg:text-5xl font-playfair-display text-center mb-16'>
           <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
             Why MV Plots Is a Smart Investment
             </TextAnimate>
@@ -407,7 +407,7 @@ const PlotPage = () => {
               </div>
             </div>
             <div>
-              <h3 className='text-2xl font-[playfair-display] mb-6'>Ideal for:</h3>
+              <h3 className='text-2xl font-playfair-display mb-6'>Ideal for:</h3>
               <div className='space-y-4'>
                 {[
                   'Private farmhouse',
@@ -431,14 +431,14 @@ const PlotPage = () => {
       <section className='py-20 lg:py-32 bg-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <div className='max-w-4xl mx-auto'>
-            <h2 className='text-4xl lg:text-5xl font-[playfair-display] text-foreground text-center mb-16'>
+            <h2 className='text-4xl lg:text-5xl font-playfair-display text-foreground text-center mb-16'>
             <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
               Size & Price Transparency
               </TextAnimate>
             </h2>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
               <div className='bg-foreground/5 p-8 rounded-lg'>
-                <h3 className='text-2xl font-[playfair-display] text-foreground mb-6'>Plot Sizes</h3>
+                <h3 className='text-2xl font-playfair-display text-foreground mb-6'>Plot Sizes</h3>
                 <ul className='space-y-4'>
                   <li className='flex items-center gap-3'>
                     <Check className='w-5 h-5 text-foreground' />
@@ -451,7 +451,7 @@ const PlotPage = () => {
                 </ul>
               </div>
               <div className='bg-foreground/5 p-8 rounded-lg'>
-                <h3 className='text-2xl font-[playfair-display] text-foreground mb-6'>Pricing</h3>
+                <h3 className='text-2xl font-playfair-display text-foreground mb-6'>Pricing</h3>
                 <ul className='space-y-4'>
                   <li className='flex items-center gap-3'>
                     <Check className='w-5 h-5 text-foreground' />
@@ -476,7 +476,7 @@ const PlotPage = () => {
       {/* <section className='py-20 lg:py-32 bg-foreground text-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <div className='max-w-4xl mx-auto text-center'>
-            <h2 className='text-4xl lg:text-5xl font-[playfair-display] mb-8'>
+            <h2 className='text-4xl lg:text-5xl font-playfair-display mb-8'>
               Only Limited Plots Available
             </h2>
             <p className='text-xl lg:text-2xl text-background/90 mb-12 leading-relaxed'>
@@ -484,7 +484,7 @@ const PlotPage = () => {
               Madhuban Village. Once sold out, the opportunity is gone forever.
             </p>
             <div className='bg-background/10 p-8 rounded-lg mb-8'>
-              <h3 className='text-2xl font-[playfair-display] mb-6'>Early buyers enjoy:</h3>
+              <h3 className='text-2xl font-playfair-display mb-6'>Early buyers enjoy:</h3>
               <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
                 <div className='flex items-center gap-3 justify-center'>
                   <Check className='w-6 h-6 text-[#D4AF37]' />
@@ -508,14 +508,14 @@ const PlotPage = () => {
       {/* <section className='py-20 lg:py-32 bg-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <div className='max-w-4xl mx-auto text-center'>
-            <h2 className='text-4xl lg:text-6xl font-[playfair-display] text-foreground mb-8 leading-tight'>
+            <h2 className='text-4xl lg:text-6xl font-playfair-display text-foreground mb-8 leading-tight'>
               Your Family Deserves This Escape
             </h2>
             <p className='text-xl lg:text-2xl text-foreground/70 mb-8 leading-relaxed'>
               While others invest in crowded towers, you invest in open skies, private celebrations, 
               green mornings, and peaceful weekends.
             </p>
-            <p className='text-3xl lg:text-4xl font-[playfair-display] text-foreground italic'>
+            <p className='text-3xl lg:text-4xl font-playfair-display text-foreground italic'>
               MV Plots isn't just land.<br />
               It's your future lifestyle.
             </p>
@@ -527,7 +527,7 @@ const PlotPage = () => {
       <section className='py-20 lg:py-32 bg-foreground text-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <div className='max-w-4xl mx-auto text-center'>
-            <h2 className='text-4xl lg:text-5xl font-[playfair-display] mb-8'>
+            <h2 className='text-4xl lg:text-5xl font-playfair-display mb-8'>
             <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
               Book Your Private Site Visit Now
               </TextAnimate>
@@ -561,7 +561,7 @@ const PlotPage = () => {
         <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-12'>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start'>
             <div className='space-y-5'>
-              <h2 className='text-3xl sm:text-4xl lg:text-5xl font-[playfair-display] text-foreground leading-tight'>
+              <h2 className='text-3xl sm:text-4xl lg:text-5xl font-playfair-display text-foreground leading-tight'>
                 Book a Private Plot Tour
               </h2>
               <p className='text-base sm:text-lg text-foreground/70 leading-relaxed'>
@@ -756,7 +756,7 @@ const PlotPage = () => {
         <div className="max-w-7xl mx-auto px-4 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="space-y-4">
-              <h2 className="text-3xl lg:text-4xl font-[playfair-display] text-foreground">
+              <h2 className="text-3xl lg:text-4xl font-playfair-display text-foreground">
               <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
                 Visit Us At MV Plots
                 </TextAnimate>

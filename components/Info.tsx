@@ -19,7 +19,7 @@ const Info = () => {
       <div className='relative max-w-4xl gap-4 mx-auto text-center'>
         {/* Headline */}
         
-        <h2 className='text-4xl lg:text-6xl font-[playfair-display] text-foreground leading-tight'>
+        <h2 className='text-4xl lg:text-6xl font-playfair-display text-foreground leading-tight'>
         <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
           Madhuban Village
           </TextAnimate>

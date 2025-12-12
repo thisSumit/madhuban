@@ -135,7 +135,7 @@ const Testimonials = () => {
                         }`}
                       >
                         <div className='h-full flex flex-col justify-center'>
-                          <p className='text-xl lg:text-2xl font-[playfair-display] leading-relaxed text-background mb-8'>
+                          <p className='text-xl lg:text-2xl font-playfair-display leading-relaxed text-background mb-8'>
                             {testimonial.text}
                           </p>
                           <div className='text-right'>

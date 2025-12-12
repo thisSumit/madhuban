@@ -146,12 +146,12 @@ const ClubPage = () => {
         
         <div className='relative z-10 h-full flex items-center justify-center px-4 lg:px-16'>
           <div className={`text-center max-w-5xl transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className='mb-6'>
+            <div className='my-6'>
               <span className='inline-block px-6 py-2 bg-[#D4AF37]/20 border border-[#D4AF37] rounded-full text-[#D4AF37] text-sm uppercase tracking-widest mb-8 animate-pulse'>
                 Membership Open
               </span>
             </div>
-            <h1 className='text-5xl lg:text-7xl font-[playfair-display] text-background mb-6 leading-tight'>
+            <h1 className='text-4xl lg:text-7xl font-[playfair-display] text-background mb-6 leading-tight'>
               <span className='block'><TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>Affordable Luxury,</TextAnimate></span>
               <span className='block italic'><TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>Unforgettable Moments!</TextAnimate></span>
             </h1>
@@ -227,6 +227,76 @@ const ClubPage = () => {
         </div>
       </section>
 
+      {/* Why Join Section */}
+      <section className='py-20 lg:py-32 bg-background'>
+        <div className='max-w-7xl mx-auto px-4 lg:px-16'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
+            <div>
+              <h2 className='text-4xl lg:text-5xl font-[playfair-display] text-foreground mb-8'>
+              <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
+                Why Join Anand Club?
+                </TextAnimate>
+              </h2>
+              <div className='space-y-6'>
+                <div className='flex items-start gap-4'>
+                  <Crown className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
+                  <div>
+                    <h3 className='text-xl font-[playfair-display] text-foreground mb-2'>
+                      Affordable Luxury
+                    </h3>
+                    <p className='text-foreground/70 leading-relaxed'>
+                      Experience premium amenities and services at an affordable membership fee. 
+                      Get more value than you pay for.
+                    </p>
+                  </div>
+                </div>
+                <div className='flex items-start gap-4'>
+                  <Users className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
+                  <div>
+                    <h3 className='text-xl font-[playfair-display] text-foreground mb-2'>
+                      Family-Friendly
+                    </h3>
+                    <p className='text-foreground/70 leading-relaxed'>
+                      Your membership extends to your entire family. Create lasting memories 
+                      together in a safe, luxurious environment.
+                    </p>
+                  </div>
+                </div>
+                <div className='flex items-start gap-4'>
+                  <Sparkles className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
+                  <div>
+                    <h3 className='text-xl font-[playfair-display] text-foreground mb-2'>
+                      Exclusive Privileges
+                    </h3>
+                    <p className='text-foreground/70 leading-relaxed'>
+                      Enjoy exclusive access to events, special offers, and premium facilities 
+                      reserved only for members.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='relative h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-2xl'>
+              <img
+                src="/relax.jpg" // Add club image
+                alt="Anand Club"
+                className='w-full h-full object-cover'
+              />
+              <div className='absolute inset-0 bg-gradient-to-t from-foreground/80 to-transparent flex items-end p-8'>
+                <div>
+                  <p className='text-2xl font-[playfair-display] text-background mb-2'>
+                    Your Gateway to Joy
+                  </p>
+                  <p className='text-background/90'>
+                    Thousands of Happy Members
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Membership Benefits Section */}
       <section className='py-20 lg:py-32 bg-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
@@ -281,7 +351,7 @@ const ClubPage = () => {
       </section>
 
       {/* Amenities Section */}
-      <section className='py-20 lg:py-32 bg-foreground text-background'>
+      <section className='py-20 lg:py-32 border-b bg-foreground text-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <div className='text-center mb-16'>
             <h2 className='text-4xl lg:text-6xl font-[playfair-display] mb-4'>
@@ -326,75 +396,6 @@ const ClubPage = () => {
         </div>
       </section>
 
-      {/* Why Join Section */}
-      <section className='py-20 lg:py-32 bg-background'>
-        <div className='max-w-7xl mx-auto px-4 lg:px-16'>
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
-            <div>
-              <h2 className='text-4xl lg:text-5xl font-[playfair-display] text-foreground mb-8'>
-              <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-                Why Join Anand Club?
-                </TextAnimate>
-              </h2>
-              <div className='space-y-6'>
-                <div className='flex items-start gap-4'>
-                  <Crown className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
-                  <div>
-                    <h3 className='text-xl font-[playfair-display] text-foreground mb-2'>
-                      Affordable Luxury
-                    </h3>
-                    <p className='text-foreground/70 leading-relaxed'>
-                      Experience premium amenities and services at an affordable membership fee. 
-                      Get more value than you pay for.
-                    </p>
-                  </div>
-                </div>
-                <div className='flex items-start gap-4'>
-                  <Users className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
-                  <div>
-                    <h3 className='text-xl font-[playfair-display] text-foreground mb-2'>
-                      Family-Friendly
-                    </h3>
-                    <p className='text-foreground/70 leading-relaxed'>
-                      Your membership extends to your entire family. Create lasting memories 
-                      together in a safe, luxurious environment.
-                    </p>
-                  </div>
-                </div>
-                <div className='flex items-start gap-4'>
-                  <Sparkles className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
-                  <div>
-                    <h3 className='text-xl font-[playfair-display] text-foreground mb-2'>
-                      Exclusive Privileges
-                    </h3>
-                    <p className='text-foreground/70 leading-relaxed'>
-                      Enjoy exclusive access to events, special offers, and premium facilities 
-                      reserved only for members.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='relative h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-2xl'>
-              <img
-                src="/centre.png" // Add club image
-                alt="Anand Club"
-                className='w-full h-full object-cover'
-              />
-              <div className='absolute inset-0 bg-gradient-to-t from-foreground/80 to-transparent flex items-end p-8'>
-                <div>
-                  <p className='text-2xl font-[playfair-display] text-background mb-2'>
-                    Your Gateway to Joy
-                  </p>
-                  <p className='text-background/90'>
-                    Join thousands of happy members
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className='py-20 lg:py-32 bg-foreground text-background'>

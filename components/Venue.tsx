@@ -83,7 +83,7 @@ const Venue = () => {
               ) : (
                 <div className='w-full h-full bg-gradient-to-br from-[#1b3d2c] to-[#2d5a47] flex items-center justify-center'>
                   <div className='w-full h-full object-cover '>
-                  <img src="/hut1.png" className='w-full h-full object-cover' alt="" />
+                  <img src="/indraprastha3.png" className='w-full h-full object-cover' alt="" />
                   </div>
                 </div>
               )}
@@ -95,7 +95,7 @@ const Venue = () => {
           {/* Right Section - Venue List */}
           <div className='lg:w-1/2 flex flex-col justify-center'>
             <div className='mb-12'>
-              <h2 className='text-4xl lg:text-5xl font-[playfair-display] text-foreground mb-4'>
+              <h2 className='text-4xl lg:text-5xl font-playfair-display text-foreground mb-4'>
               <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
                 Our Venues
                 </TextAnimate>
@@ -123,7 +123,7 @@ const Venue = () => {
                       <span className='text-foreground/40 text-sm font-light tracking-widest min-w-[40px]'>
                         {venue.number}
                       </span>
-                      <span className='text-xl lg:text-2xl font-[playfair-display] text-foreground group-hover:text-foreground/80 transition-colors duration-300'>
+                      <span className='text-xl lg:text-2xl font-playfair-display text-foreground group-hover:text-foreground/80 transition-colors duration-300'>
                         {venue.name}
                       </span>
                     </div>
@@ -197,15 +197,15 @@ const Venue = () => {
                     {selectedVenue.number}
                   </span>
                 </div>
-                <h3 className='text-3xl lg:text-4xl font-[playfair-display] text-foreground mb-6'>
+                <h3 className='text-3xl lg:text-4xl font-playfair-display text-foreground mb-6'>
                   {selectedVenue.name}
                 </h3>
                 <p className='text-lg text-foreground/70 leading-relaxed mb-8'>
                   {selectedVenue.description}
                 </p>
                 <div className='flex flex-col sm:flex-row gap-4'>
-                  <Button onClick={() => window.location.href = ""} variant="secondary" size="lg" className='flex-1'>
-                    View Gallery
+                  <Button onClick={() => window.location.href = "https://wa.me/+917020704420"} variant="secondary" size="lg" className='flex-1'>
+                    Learn More
                   </Button>
                   <Button onClick={() => window.location.href = "/contact"} variant="primary" size="lg" className='flex-1'>
                     Book Now
