@@ -234,7 +234,10 @@ const ClubPage = () => {
             <div>
               <h2 className='text-4xl lg:text-5xl font-[playfair-display] text-foreground mb-8'>
               <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-                Why Join Anand Club?
+                Why Join 
+                </TextAnimate>
+                <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
+                Anand Club?
                 </TextAnimate>
               </h2>
               <div className='space-y-6'>
@@ -303,7 +306,10 @@ const ClubPage = () => {
           <div className='text-center mb-16'>
             <h2 className='text-4xl lg:text-6xl font-[playfair-display] text-foreground mb-4'>
             <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-              Exclusive Membership Benefits
+              Exclusive 
+              </TextAnimate>
+                <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
+              Membership Benefits
               </TextAnimate>
             </h2>
             <p className='text-lg text-foreground/70 max-w-2xl mx-auto'>
@@ -356,7 +362,10 @@ const ClubPage = () => {
           <div className='text-center mb-16'>
             <h2 className='text-4xl lg:text-6xl font-[playfair-display] mb-4'>
             <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-              World-Class Amenities
+              World-Class 
+              </TextAnimate>
+                <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
+              Amenities
               </TextAnimate>
             </h2>
             <p className='text-lg text-background/80 max-w-2xl mx-auto'>
@@ -403,7 +412,10 @@ const ClubPage = () => {
           <div className='max-w-4xl mx-auto text-center'>
             <h2 className='text-4xl lg:text-6xl font-[playfair-display] mb-6'>
             <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-              Ready to Begin Your Journey?
+              Ready to Begin 
+              </TextAnimate>
+                <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
+              Your Journey?
               </TextAnimate>
             </h2>
             <p className='text-xl lg:text-2xl text-background/90 mb-10 leading-relaxed'>
