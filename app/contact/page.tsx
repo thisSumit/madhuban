@@ -6,32 +6,18 @@ import { Phone, Mail, MapPin, Calendar, Users, Home, Building2 } from 'lucide-re
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
-type BusinessType = 'wedding' | 'plots' | 'club' | ''
-
 interface FormData {
-  businessType: BusinessType
   name: string
   email: string
   phone: string
-  eventDate?: string
-  guestCount?: string
-  plotSize?: string
-  budget?: string
-  membershipType?: string
   message: string
 }
 
 const ContactPage = () => {
   const [formData, setFormData] = useState<FormData>({
-    businessType: '',
     name: '',
     email: '',
     phone: '',
-    eventDate: '',
-    guestCount: '',
-    plotSize: '',
-    budget: '',
-    membershipType: '',
     message: '',
   })
 
@@ -48,18 +34,12 @@ const ContactPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    const scriptURL = "https://script.google.com/macros/s/AKfycbxR6DH8evia0snPI1KuYvo_0IRSW2RbOhmz2_uWYBjE5MAd5qBgDqp6O-Q7Ft47TZJw_w/exec"; // Integrated Google Apps Script URL
+    const scriptURL = "https://script.google.com/macros/s/AKfycbyqQWJnxWtFG1L8r8G6B7mVyHUs0qHlsIrFIc12Zasw-uQns88gDxz-ISmk1e_w8mvk8Q/exec"; // Integrated Google Apps Script URL
     
     const payload = {
       name: formData.name.trim(),
       phone: formData.phone.trim(),
       email: formData.email.trim(),
-      businessType: formData.businessType,
-      eventDate: formData.eventDate,
-      guestCount: formData.guestCount,
-      plotSize: formData.plotSize,
-      budget: formData.budget,
-      membershipType: formData.membershipType,
       message: formData.message.trim(),
       source: "General Form", // Important: This identifies the form type
       formType: "general",
@@ -81,15 +61,9 @@ const ContactPage = () => {
       alert("Thank you! Our advisor will contact you shortly.");
 
       setFormData({
-        businessType: '',
         name: "",
         email: "",
         phone: "",
-        eventDate: '',
-        guestCount: '',
-        plotSize: '',
-        budget: '',
-        membershipType: '',
         message: '',
       });
     } catch (error) {
@@ -100,22 +74,9 @@ const ContactPage = () => {
     }
   }
 
-  const getBusinessIcon = () => {
-    switch (formData.businessType) {
-      case 'wedding':
-        return <Calendar className='w-5 h-5' />
-      case 'plots':
-        return <Home className='w-5 h-5' />
-      case 'club':
-        return <Building2 className='w-5 h-5' />
-      default:
-        return null
-    }
-  }
-
   return (
     <div className='min-h-screen bg-background'>
-        <div className='h-24 w-full bg-foreground'/>
+        <div className='h-30 w-full bg-foreground'/>
       <Header />
       
       <section className='pt-32 pb-20 px-4 lg:px-16'>
@@ -139,38 +100,49 @@ const ContactPage = () => {
                     Contact Information
                   </h3>
                   <div className='space-y-6'>
-                    <a
-                      href='tel:+917020704420'
-                      className='flex items-start gap-4 group'
-                    >
-                      <div className='p-3 rounded-full bg-foreground/5 group-hover:bg-foreground/10 transition-colors duration-300'>
+                    <div className='flex items-start gap-4'>
+                      <div className='p-3 rounded-full bg-foreground/5'>
                         <Phone className='w-5 h-5 text-foreground' />
                       </div>
                       <div>
-                        <p className='text-sm text-foreground/60 mb-1'>Phone</p>
-                        <p className='text-foreground font-medium group-hover:text-foreground/80 transition-colors'>
-                          +91 7020704420
-                        </p>
-                        <p className='text-foreground font-medium group-hover:text-foreground/80 transition-colors'>
-                          +91 7020704421
-                        </p>
+                        <p className='text-sm text-foreground/60 mb-2'>Phone</p>
+                        <div className='space-y-1'>
+                          <a
+                            href='tel:+917020704418'
+                            className='block text-foreground font-medium hover:text-foreground/70 transition-all duration-300'
+                          >
+                            +91 7020704418
+                          </a>
+                          <a
+                            href='tel:+917020704420'
+                            className='block text-foreground font-medium hover:text-foreground/70 transition-all duration-300'
+                          >
+                            +91 7020704420
+                          </a>
+                          <a
+                            href='tel:+917020704421'
+                            className='block text-foreground font-medium hover:text-foreground/70 transition-all duration-300'
+                          >
+                            +91 7020704421
+                          </a>
+                        </div>
                       </div>
-                    </a>
+                    </div>
 
-                    <a
-                      href='mailto:info@madhubanvillage.com'
-                      className='flex items-start gap-4 group'
-                    >
-                      <div className='p-3 rounded-full bg-foreground/5 group-hover:bg-foreground/10 transition-colors duration-300'>
+                    <div className='flex items-start gap-4'>
+                      <div className='p-3 rounded-full bg-foreground/5 transition-colors duration-300'>
                         <Mail className='w-5 h-5 text-foreground' />
                       </div>
                       <div>
                         <p className='text-sm text-foreground/60 mb-1'>Email</p>
-                        <p className='text-foreground font-medium group-hover:text-foreground/80 transition-colors'>
-                          info@madhubanvillage.com
-                        </p>
+                        <a href='mailto:info@madhubanvillage.in' className='block text-foreground font-medium hover:text-foreground/80 transition-colors'>
+                          info@madhubanvillage.in
+                        </a>
+                        <a href='mailto:madhubanvillage@gmail.com' className='block text-foreground font-medium hover:text-foreground/80 transition-colors'>
+                          madhubanvillage@gmail.com
+                        </a>
                       </div>
-                    </a>
+                    </div>
 
                     <div className='flex items-start gap-4'>
                       <div className='p-3 rounded-full bg-foreground/5'>
@@ -193,35 +165,6 @@ const ContactPage = () => {
             {/* Contact Form */}
             <div className='lg:col-span-2'>
               <form onSubmit={handleSubmit} className='space-y-8'>
-
-
-                {/* Business Type Dropdown */}
-                {/* <div>
-                  <label htmlFor='businessType' className='block text-sm font-medium text-foreground mb-3 uppercase tracking-wider'>
-                    Select Service *
-                  </label>
-                  <div className='relative'>
-                    <select
-                      id='businessType'
-                      name='businessType'
-                      value={formData.businessType}
-                      onChange={handleChange}
-                      required
-                      className='w-full px-0 py-4 pr-12 bg-transparent border-x-0 border-t-0 border-b-2 border-foreground/20 text-foreground text-lg font-light focus:border-foreground focus:outline-none transition-colors duration-300 appearance-none cursor-pointer'
-                    >
-                      <option value='' disabled>Choose your service</option>
-                      <option value='wedding'>Wedding</option>
-                      <option value='plots'>Plots</option>
-                      <option value='club'>Club</option>
-                    </select>
-                    <div className='absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-foreground/60'>
-                      {getBusinessIcon()}
-                    </div>
-                  </div>
-                </div> */}
-
-
-
                 {/* Personal Information */}
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
                   <div>
@@ -272,158 +215,6 @@ const ContactPage = () => {
                     placeholder='+91 9876543210'
                   />
                 </div>
-
-
-
-
-
-                {/* Dynamic Questions Based on Business Type */}
-{/*                 
-                <div>
-                {formData.businessType === 'wedding' && (
-                  <div className='space-y-8 pt-4 border-t border-foreground/10'>
-                    <h3 className='text-xl font-[playfair-display] text-foreground mb-6 flex items-center gap-3'>
-                      <Calendar className='w-6 h-6' />
-                      Wedding Details
-                    </h3>
-                    
-                    <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-                      <div>
-                        <label htmlFor='eventDate' className='block text-sm font-medium text-foreground mb-3 uppercase tracking-wider'>
-                          Preferred Event Date
-                        </label>
-                        <input
-                          type='date'
-                          id='eventDate'
-                          name='eventDate'
-                          value={formData.eventDate}
-                          onChange={handleChange}
-                          className='w-full px-0 py-4 bg-transparent border-x-0 border-t-0 border-b-2 border-foreground/20 text-foreground text-lg font-light focus:border-foreground focus:outline-none transition-colors duration-300'
-                        />
-                      </div>
-
-                      <div>
-                        <label htmlFor='guestCount' className='block text-sm font-medium text-foreground mb-3 uppercase tracking-wider'>
-                          Expected Guest Count
-                        </label>
-                        <input
-                          type='text'
-                          id='guestCount'
-                          name='guestCount'
-                          value={formData.guestCount}
-                          onChange={handleChange}
-                          className='w-full px-0 py-4 bg-transparent border-x-0 border-t-0 border-b-2 border-foreground/20 text-foreground text-lg font-light focus:border-foreground focus:outline-none transition-colors duration-300'
-                          placeholder='e.g., 200-300 guests'
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor='budget' className='block text-sm font-medium text-foreground mb-3 uppercase tracking-wider'>
-                        Budget Range
-                      </label>
-                      <input
-                        type='text'
-                        id='budget'
-                        name='budget'
-                        value={formData.budget}
-                        onChange={handleChange}
-                        className='w-full px-0 py-4 bg-transparent border-x-0 border-t-0 border-b-2 border-foreground/20 text-foreground text-lg font-light focus:border-foreground focus:outline-none transition-colors duration-300'
-                        placeholder='e.g., ₹5-10 Lakhs'
-                      />
-                    </div>
-                  </div>
-                )}
-
-                {formData.businessType === 'plots' && (
-                  <div className='space-y-8 pt-4 border-t border-foreground/10'>
-                    <h3 className='text-xl font-[playfair-display] text-foreground mb-6 flex items-center gap-3'>
-                      <Home className='w-6 h-6' />
-                      Plot Requirements
-                    </h3>
-                    
-                    <div>
-                      <label htmlFor='plotSize' className='block text-sm font-medium text-foreground mb-3 uppercase tracking-wider'>
-                        Preferred Plot Size
-                      </label>
-                      <input
-                        type='text'
-                        id='plotSize'
-                        name='plotSize'
-                        value={formData.plotSize}
-                        onChange={handleChange}
-                        className='w-full px-0 py-4 bg-transparent border-x-0 border-t-0 border-b-2 border-foreground/20 text-foreground text-lg font-light focus:border-foreground focus:outline-none transition-colors duration-300'
-                        placeholder='e.g., 1000 sq.ft, 2000 sq.ft'
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor='budget' className='block text-sm font-medium text-foreground mb-3 uppercase tracking-wider'>
-                        Budget Range
-                      </label>
-                      <input
-                        type='text'
-                        id='budget'
-                        name='budget'
-                        value={formData.budget}
-                        onChange={handleChange}
-                        className='w-full px-0 py-4 bg-transparent border-x-0 border-t-0 border-b-2 border-foreground/20 text-foreground text-lg font-light focus:border-foreground focus:outline-none transition-colors duration-300'
-                        placeholder='e.g., ₹20-50 Lakhs'
-                      />
-                    </div>
-                  </div>
-                )}
-
-                {formData.businessType === 'club' && (
-                  <div className='space-y-8 pt-4 border-t border-foreground/10'>
-                    <h3 className='text-xl font-[playfair-display] text-foreground mb-6 flex items-center gap-3'>
-                      <Building2 className='w-6 h-6' />
-                      Club Membership Inquiry
-                    </h3>
-                    
-                    <div>
-                      <label htmlFor='guestCount' className='block text-sm font-medium text-foreground mb-3 uppercase tracking-wider'>
-                        Number of Members
-                      </label>
-                      <input
-                        type='text'
-                        id='guestCount'
-                        name='guestCount'
-                        value={formData.guestCount}
-                        onChange={handleChange}
-                        className='w-full px-0 py-4 bg-transparent border-x-0 border-t-0 border-b-2 border-foreground/20 text-foreground text-lg font-light focus:border-foreground focus:outline-none transition-colors duration-300'
-                        placeholder='e.g., Individual, Family (4 members)'
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor='budget' className='block text-sm font-medium text-foreground mb-3 uppercase tracking-wider'>
-                        Membership Type Interest
-                      </label>
-                      <select
-                      id='membershipType'
-                      name='membershipType'
-                      value={formData.membershipType}
-                      onChange={handleChange}
-                      required
-                      className='w-full px-0 py-4 pr-12 bg-transparent border-x-0 border-t-0 border-b-2 border-foreground/20 text-foreground text-lg font-light focus:border-foreground focus:outline-none transition-colors duration-300 appearance-none cursor-pointer'
-                    >
-                      <option value='Lifetime'>Lifetime</option>
-                      <option value='40 Years'>40 Years</option>
-                      <option value='20 Years'>20 Years</option>
-                      <option value='10 Years'>10 Years</option>
-                      <option value='5 Years'>5 Years</option>
-                    </select>
-                    </div>
-                  </div>
-                )} 
-
-
-
-</div> */}
-
-
-                {/* Message */}
                 <div>
                   <label htmlFor='message' className='block text-sm font-medium text-foreground mb-3 uppercase tracking-wider'>
                     Additional Message

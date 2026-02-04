@@ -14,51 +14,45 @@ const galleryData: GalleryItem[] = [
   {
     id: 1,
     title: 'Multiple Venues Within the Resort',
-    description: 'Conduct mehendi, haldi, cocktail, sangeet, pheras, and reception at different royal spots.',
+    description: 'Choose from a range of stunning venues—grand palace settings, lush lawns, poolside spaces, amphitheatre, and indoor halls—each crafted for different wedding moments.',
     image: '/reception1.png'
   },
   {
     id: 2,
-    title: 'Fairy-Tale Wedding Themes',
-    description: 'Our décor team specializes in royal, pastel, floral, Bollywood, and fairy-tale themes.',
+    title: 'A Versatile Wedding Ambience',
+    description: 'From royal elegance to nature-inspired celebrations, choose from a variety of wedding themes designed to reflect your unique love story.',
     image: '/indraprasta1.png'
   },
   {
     id: 3,
-    title: 'Resort-Style Ambience',
-    description: 'Natural pathways, landscaped gardens, luxury rooms, and signature sunset views make your wedding magical.',
+    title: 'Resort-Style Luxury Experience',
+    description: 'A serene, expansive resort setting that blends natural beauty with refined comfort—perfect for a relaxed yet grand destination wedding.',
     image: '/ex2.png'
   },
   {
     id: 4,
-    title: 'Best Dinning Experience',
-    description: 'Our in-house caterers prepare exquisite meals using traditional recipes and locally sourced ingredients.',
+    title: 'Exceptional Dining Experience',
+    description: 'Curated pure-vegetarian menus crafted by expert chefs, offering regional, national, and international cuisines with impeccable presentation.',
     image: '/d-2.png'
   },
   {
     id: 5,
-    title: '2–3 Day Wedding Packages',
-    description: 'Perfect for families who want to celebrate every function without travel hassles.',
+    title: 'Customised Multi-Day Wedding Packages',
+    description: 'Flexible and thoughtfully designed wedding packages tailored to your guest count, event flow, and celebration duration—ideal for immersive wedding experiences.',
     image: '/ex.png'
   },
   {
     id: 6,
-    title: 'Hut cottages for family and friends',
-    description: 'Our hut cottages are perfect for family and friends to stay during the wedding.',
+    title: 'Spacious Cottages for Family & Friends',
+    description: 'Comfortable, well-appointed cottages that provide privacy, warmth, and a home-like stay for close family and guests.',
     image: 'hut2.png'
   },
   {
     id: 7,
-    title: 'Luxurious Rooms',
-    description: 'Premium deluxe rooms offering refined comfort and elegance, thoughtfully designed to accommodate 200–400 wedding guests with resort-style luxury.',
+    title: 'Luxurious Rooms & Premium Accommodations',
+    description: 'Elegantly designed rooms and villas offering modern amenities, comfort, and scenic views for a truly indulgent stay.',
     image: 'in4.png'
   },
-  {
-    id: 8,
-    title: 'Private, Exclusive Environment',
-    description: 'Host your wedding in a completely private space surrounded by greenery and serenity.',
-    image: '/pool.png'
-  }
 ]
 
 const Gallary = () => {

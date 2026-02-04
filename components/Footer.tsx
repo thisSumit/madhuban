@@ -59,9 +59,8 @@ const Footer = () => {
     ],
     services: [
       { label: 'Wedding Packages', href: 'tel:7020704420' },
-      { label: 'Event Planning', href: 'tel:7020704420' },
-      { label: 'Accommodation', href: 'tel:7020704420' },
-      { label: 'Catering', href: 'tel:7020704420' },
+      { label: 'Farmhouse & Farmland Sales', href: 'tel:7020704420' },
+      { label: 'Club Memberships', href: 'tel:7020704420' },
     ],
   }
 
@@ -84,28 +83,44 @@ const Footer = () => {
             {/* Large Phone Numbers */}
             <div className='flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 mb-8'>
               <a
+                href='tel:+917020704418'
+                className='text-4xl lg:text-5xl font-playfair-display text-background hover:text-background/80 transition-colors duration-300'
+              >
+                +917020704418
+              </a>
+              <span className='text-background/40 hidden lg:block'>|</span>
+              <a
                 href='tel:+917020704420'
                 className='text-4xl lg:text-5xl font-playfair-display text-background hover:text-background/80 transition-colors duration-300'
               >
-                +91 7020704420
+                +917020704420
               </a>
               <span className='text-background/40 hidden lg:block'>|</span>
               <a
                 href='tel:+917020704421'
                 className='text-4xl lg:text-5xl font-playfair-display text-background hover:text-background/80 transition-colors duration-300'
               >
-                +91 7020704421
+                +917020704421
               </a>
             </div>
 
-            {/* Email Button */}
-            <a
-              href='mailto:info@madhubanvillage.com'
-              className='inline-flex items-center gap-3 px-8 py-4 border-2 border-background/30 rounded-full hover:border-background hover:bg-background/10 transition-all duration-300 group'
-            >
-              <Mail className='w-5 h-5' />
-              <span className='text-lg'>info@madhubanvillage.com</span>
-            </a>
+            {/* Email Buttons */}
+            <div className='flex flex-col w-full items-center justify-center sm:flex-row gap-3'>
+              <a
+                href='mailto:info@madhubanvillage.in'
+                className='item-center inline-flex items-center gap-3 px-8 py-4 border-2 border-background/30 rounded-full hover:border-background hover:bg-background/10 transition-all duration-300 group'
+              >
+                <Mail className='w-5 h-5' />
+                <span className='text-lg'>info@madhubanvillage.in</span>
+              </a>
+              <a
+                href='mailto:madhubanvillage@gmail.com'
+                className='inline-flex items-center gap-3 px-8 py-4 border-2 border-background/30 rounded-full hover:border-background hover:bg-background/10 transition-all duration-300 group'
+              >
+                <Mail className='w-5 h-5' />
+                <span className='text-lg'>madhubanvillage@gmail.com</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -159,12 +174,12 @@ const Footer = () => {
               <img
                 src="/madhuban-wlogo.png"
                 alt="Madhuban Village"
-                className='h-12 object-contain mb-6'
+                className='h-28 lg:h-34 object-contain mb-6'
               />
               </a>
             </div>
             <p className='text-background/70 text-sm leading-relaxed mb-6'>
-              Your premier destination for luxurious weddings, exclusive events, and premium residential plots in Nagpur.
+              Central India's premier destination for luxury weddings, farmhouse living, and exclusive club experience
             </p>
             
             {/* Social Media */}
@@ -194,6 +209,13 @@ const Footer = () => {
             </h5>
             <div className='space-y-4'>
               <a
+                href='tel:+917020704418'
+                className='flex items-center gap-3 text-background/90 hover:text-background transition-colors duration-300 group'
+              >
+                <Phone className='w-4 h-4 text-background/60 group-hover:text-background transition-colors duration-300' />
+                <span>+91 7020704418</span>
+              </a>
+              <a
                 href='tel:+917020704420'
                 className='flex items-center gap-3 text-background/90 hover:text-background transition-colors duration-300 group'
               >
@@ -208,11 +230,18 @@ const Footer = () => {
                 <span>+91 7020704421</span>
               </a>
               <a
-                href='mailto:info@madhubanvillage.com'
+                href='mailto:info@madhubanvillage.in'
                 className='flex items-center gap-3 text-background/90 hover:text-background transition-colors duration-300 group underline'
               >
                 <Mail className='w-4 h-4 text-background/60 group-hover:text-background transition-colors duration-300' />
-                <span>info@madhubanvillage.com</span>
+                <span>info@madhubanvillage.in</span>
+              </a>
+              <a
+                href='mailto:madhubanvillage@gmail.com'
+                className='flex items-center gap-3 text-background/90 hover:text-background transition-colors duration-300 group underline'
+              >
+                <Mail className='w-4 h-4 text-background/60 group-hover:text-background transition-colors duration-300' />
+                <span>madhubanvillage@gmail.com</span>
               </a>
               <div className='flex items-start gap-3 text-background/90 pt-2'>
                 <MapPin className='w-4 h-4 text-background/60 mt-1 shrink-0' />
@@ -245,7 +274,7 @@ const Footer = () => {
           {/* Services Navigation */}
           <div>
             <h5 className='text-sm uppercase tracking-widest text-background/80 mb-6 font-light'>
-              Services
+              Our Services
             </h5>
             <ul className='space-y-3'>
               {navigationLinks.services.map((link) => (

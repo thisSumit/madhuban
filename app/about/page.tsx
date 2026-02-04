@@ -6,8 +6,11 @@ import Footer from '@/components/Footer'
 import { Quote, Calendar, Home, Building2, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { TextAnimate } from '@/components/ui/text-animate'
+import { useRouter } from 'next/navigation'
+
 
 const AboutPage = () => {
+  const router = useRouter()
   return (
     <div className='min-h-screen bg-background'>
       <Header />
@@ -38,7 +41,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className='h-full my-4 relative py-24 lg:py-32 px-4 lg:px-16 bg-background overflow-hidden'>
+      <section className='h-full my-4 relative pb-24 lg:pb-32 px-4 lg:px-16 bg-background overflow-hidden'>
       {/* Decorative Leaf Elements - Left Side */}
       <div className='absolute left-0 top-0 w-35 h-full pointer-events-none md:w-80 lg:block'>
         <img src="c2.png" alt="" />
@@ -51,7 +54,7 @@ const AboutPage = () => {
 
       {/* Main Content */}
       <div className='relative w-full gap-4 mx-auto text-center'>
-        <div className='flex justify-center m-4'>
+        <div className='flex justify-center mx-4'>
           <img src="madhuban-logo.png" className='w-64 py-4' alt="" />
         </div>
 
@@ -182,7 +185,7 @@ const AboutPage = () => {
                     variant='secondary'
                     size='default'
                     className='group/btn'
-                    onClick={() => window.location.href = '/plots'}
+                    onClick={() => router.push('/plots')}
                   >
                     <span className='flex items-center'>
                       Learn More

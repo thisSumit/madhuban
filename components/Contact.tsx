@@ -2,15 +2,6 @@
 
 import React, { useState } from 'react'
 
-type EventOption = 'resort' | 'lawn' | 'pool' | 'indraprath'
-
-const eventOptions: { label: string; value: EventOption; description: string }[] = [
-  { label: 'Resort', value: 'resort', description: 'Luxury stay with premium suites' },
-  { label: 'Lawn', value: 'lawn', description: 'Open-air celebrations under the stars' },
-  { label: 'Pool', value: 'pool', description: 'Poolside parties with cabanas' },
-  { label: 'Indraprath Hall', value: 'indraprath', description: 'Grand indoor banquet experience' },
-]
-
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -19,9 +10,10 @@ const Contact: React.FC = () => {
     budget: '',
     duration: '',
     guests: '',
-    interests: [] as EventOption[],
     notes: '',
   })
+
+  const [loading, setLoading] = useState(false)
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -30,21 +22,15 @@ const Contact: React.FC = () => {
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
-  const toggleInterest = (option: EventOption) => {
-    setFormData(prev => {
-      const exists = prev.interests.includes(option)
-      return {
-        ...prev,
-        interests: exists ? prev.interests.filter(item => item !== option) : [...prev.interests, option],
-      }
-    })
-  }
-
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-  
-    const scriptURL = "https://script.google.com/macros/s/AKfycbxR6DH8evia0snPI1KuYvo_0IRSW2RbOhmz2_uWYBjE5MAd5qBgDqp6O-Q7Ft47TZJw_w/exec"; // Integrated Google Apps Script URL
-  
+    e.preventDefault()
+    if (loading) return
+
+    setLoading(true)
+
+    const scriptURL =
+      'https://script.google.com/macros/s/AKfycbyuz7AI6YGgz23Vmt33MtEQkgKp87dpQuwFfFC75A13NUb_XEFVIcJ4a5Xw31Io15fO/exec'
+
     const payload = {
       name: formData.name.trim(),
       phone: formData.phone.trim(),
@@ -52,39 +38,40 @@ const Contact: React.FC = () => {
       budget: formData.budget,
       duration: formData.duration.trim(),
       guests: formData.guests,
-      interests: formData.interests, // array
       notes: formData.notes.trim(),
-      source: "Wedding Form", // Important: This identifies the form type
-      formType: "wedding",
-      timestamp: new Date().toISOString()
-    };
-  
+      source: 'Wedding Form',
+      formType: 'wedding',
+      timestamp: new Date().toISOString(),
+    }
+
     try {
       await fetch(scriptURL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
-  
-      alert("Thank you! Our wedding concierge will reach out shortly.");
-  
+        method: 'POST',
+        mode: 'no-cors', // IMPORTANT for Google Apps Script
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      })
+
+      alert('Thank you! Our wedding concierge will reach out shortly 💍')
+
       setFormData({
-        name: "",
-        phone: "",
-        email: "",
-        budget: "",
-        duration: "",
-        guests: "",
-        interests: [],
-        notes: "",
-      });
-  
+        name: '',
+        phone: '',
+        email: '',
+        budget: '',
+        duration: '',
+        guests: '',
+        notes: '',
+      })
     } catch (error) {
-      console.error("Error:", error);
-      alert("Something went wrong! Please try again.");
+      console.error('Submission error:', error)
+      alert('Something went wrong. Please try again.')
+    } finally {
+      setLoading(false)
     }
-  };
+  }
   
 
   return (
@@ -102,12 +89,14 @@ const Contact: React.FC = () => {
             <div className="grid grid-cols-1 gap-4">
               <div className="p-4 border border-foreground/10 rounded-lg bg-foreground/5">
                 <p className="text-sm text-foreground/60">Contact Us</p>
+                <p className="text-lg text-foreground font-semibold">+91 70207 04418</p>
                 <p className="text-lg text-foreground font-semibold">+91 70207 04420</p>
                 <p className="text-lg text-foreground font-semibold">+91 70207 04421</p>
               </div>
               <div className="p-4 border border-foreground/10 rounded-lg bg-foreground/5">
                 <p className="text-sm text-foreground/60">Email</p>
-                <p className="text-lg text-foreground font-semibold">info@madhubanvillage.com</p>
+                <p className="text-lg text-foreground font-semibold">info@madhubanvillage.in</p>
+                <p className="text-lg text-foreground font-semibold">madhubanvillage@gmail.com</p>
               </div>
             </div>
           </div>
@@ -192,37 +181,6 @@ const Contact: React.FC = () => {
                     className="w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
                     placeholder="Approx. guest count"
                   />
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                <label className="block text-sm text-foreground/70">I want to book (select multiple)</label>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {eventOptions.map(option => {
-                    const checked = formData.interests.includes(option.value)
-                    return (
-                      <button
-                        key={option.value}
-                        type="button"
-                        onClick={() => toggleInterest(option.value)}
-                        className={`flex items-start gap-3 rounded-lg border px-4 py-3 text-left transition ${
-                          checked
-                            ? 'border-[#D4AF37] bg-[#D4AF37]/10 text-foreground'
-                            : 'border-foreground/10 bg-background/70 text-foreground/80 hover:border-foreground/30'
-                        }`}
-                      >
-                        <span
-                          className={`mt-1 inline-block h-5 w-5 rounded-full border ${
-                            checked ? 'border-[#D4AF37] bg-[#D4AF37]' : 'border-foreground/30'
-                          }`}
-                        />
-                        <div>
-                          <p className="font-semibold">{option.label}</p>
-                          <p className="text-sm text-foreground/60">{option.description}</p>
-                        </div>
-                      </button>
-                    )
-                  })}
                 </div>
               </div>
 

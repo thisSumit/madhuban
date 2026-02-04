@@ -63,7 +63,7 @@ const ClubPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
   
-    const scriptURL = "https://script.google.com/macros/s/AKfycbxR6DH8evia0snPI1KuYvo_0IRSW2RbOhmz2_uWYBjE5MAd5qBgDqp6O-Q7Ft47TZJw_w/exec"; // Integrated Google Apps Script URL
+    const scriptURL = "https://script.google.com/macros/s/AKfycby4x2iVUWE1D3KxTqaFDOzL2d1ira36S4FNW7cl9uv-2XH8AGDDXMrpE2dBC9PFj6JD/exec"; // Integrated Google Apps Script URL
   
     const payload = {
       name: formData.name.trim(),
@@ -117,16 +117,17 @@ const ClubPage = () => {
   ]
 
   const amenities = [
-    { icon: Utensils, text: 'Food Court' },
-    { icon: TreePine, text: 'Adventure Park' },
-    { icon: Car, text: 'Parking' },
-    { icon: Music, text: 'Amphitheater' },
-    { icon: Home, text: 'Rooms & Cottages' },
-    { icon: Building2, text: 'Banquet Hall' },
-    { icon: Droplet, text: 'Swimming Pool' },
-    { icon: Droplet, text: 'Rain Dance' },
-    { icon: Droplet, text: 'Jacuzzi' },
-    { icon: TreePine, text: 'Party/Marriage Lawns' },
+    { icon: Building2, text: 'Exclusive Clubhouse & Lounge Areas' },
+    { icon: Droplet, text: 'Swimming Pool & Relaxation Zones' },
+    { icon: Home, text: 'Banquet & Celebration Spaces' },
+    { icon: Users, text: 'Indoor Games & Recreation Zone' },
+    { icon: TreePine, text: 'Outdoor Sports & Activity Areas' },
+    { icon: Sparkles, text: 'Kids’ Play Area' },
+    { icon: Star, text: 'Wellness & Fitness Spaces' },
+    { icon: Utensils, text: 'Restaurant & Café' },
+    { icon: Music, text: 'Event & Entertainment Areas' },
+    { icon: TreePine, text: 'Landscaped Open Spaces' },
+    { icon: Crown, text: 'Access to Select Resort Amenities at Madhuban Village' },
   ]
 
   return (
@@ -138,7 +139,7 @@ const ClubPage = () => {
         <div className='absolute inset-0 z-0'>
           <img
             src="/gentry.png" // You can change this image
-            alt="Anand Club"
+            alt="Club ANAND"
             className='h-full w-full object-cover'
           />
           <div className='absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60' />
@@ -156,11 +157,10 @@ const ClubPage = () => {
               <span className='block italic'><TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>Unforgettable Moments!</TextAnimate></span>
             </h1>
             <p className='text-xl lg:text-2xl text-background/90 font-light mb-10 leading-relaxed max-w-3xl mx-auto'>
-              Join us for a decade of affordable luxury and unforgettable experiences. Unlock exclusive 
-              membership privileges and indulge in endless amenities, from lush Mangalam lawns to thrilling adventures.
+              Club Anand is a members-only lifestyle club designed for vibrant celebrations, relaxed family time, and refined leisure. Set within the serene surroundings of Madhuban Village, it offers thoughtfully curated amenities and exclusive experiences that bring together comfort, community, and elegance
             </p>
             <p className='text-2xl lg:text-3xl font-[playfair-display] text-[#D4AF37] mb-10 italic'>
-              Your gateway to joy awaits!
+              A Place to Celebrate, Unwind, and Belong.
             </p>
             <div className='flex flex-col items-center justify-center gap-4'>
               <Button
@@ -170,7 +170,7 @@ const ClubPage = () => {
                 className='group'
               >
                 <span className='flex items-center'>
-                  Join Anand Club Now
+                  Pre Launch Membership Open
                   <ArrowRight className='w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300' />
                 </span>
               </Button>
@@ -237,7 +237,7 @@ const ClubPage = () => {
                 Why Join 
                 </TextAnimate>
                 <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
-                Anand Club?
+                Club ANAND?
                 </TextAnimate>
               </h2>
               <div className='space-y-6'>
@@ -245,11 +245,10 @@ const ClubPage = () => {
                   <Crown className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
                   <div>
                     <h3 className='text-xl font-[playfair-display] text-foreground mb-2'>
-                      Affordable Luxury
+                      Affordable Membership Value
                     </h3>
                     <p className='text-foreground/70 leading-relaxed'>
-                      Experience premium amenities and services at an affordable membership fee. 
-                      Get more value than you pay for.
+                      Premium lifestyle benefits at a thoughtfully priced membership.
                     </p>
                   </div>
                 </div>
@@ -257,11 +256,10 @@ const ClubPage = () => {
                   <Users className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
                   <div>
                     <h3 className='text-xl font-[playfair-display] text-foreground mb-2'>
-                      Family-Friendly
+                      Designed for Families
                     </h3>
                     <p className='text-foreground/70 leading-relaxed'>
-                      Your membership extends to your entire family. Create lasting memories 
-                      together in a safe, luxurious environment.
+                      A single membership that welcomes and serves the entire family.
                     </p>
                   </div>
                 </div>
@@ -269,11 +267,10 @@ const ClubPage = () => {
                   <Sparkles className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
                   <div>
                     <h3 className='text-xl font-[playfair-display] text-foreground mb-2'>
-                      Exclusive Privileges
+                      Exclusive Part of Madhuban Village
                     </h3>
                     <p className='text-foreground/70 leading-relaxed'>
-                      Enjoy exclusive access to events, special offers, and premium facilities 
-                      reserved only for members.
+                      A members-only club within the trusted and celebrated Madhuban Village.
                     </p>
                   </div>
                 </div>
@@ -282,7 +279,7 @@ const ClubPage = () => {
             <div className='relative h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-2xl'>
               <img
                 src="/relax.jpg" // Add club image
-                alt="Anand Club"
+                alt="Club ANAND"
                 className='w-full h-full object-cover'
               />
               <div className='absolute inset-0 bg-gradient-to-t from-foreground/80 to-transparent flex items-end p-8'>
@@ -301,7 +298,59 @@ const ClubPage = () => {
       </section>
 
       {/* Membership Benefits Section */}
-      <section className='py-20 lg:py-32 bg-background'>
+      
+
+      {/* Amenities Section */}
+      <section className='py-20 lg:py-32 border-b bg-foreground text-background'>
+        <div className='max-w-7xl mx-auto px-4 lg:px-16'>
+          <div className='text-center mb-16'>
+            <h2 className='text-4xl lg:text-6xl font-[playfair-display] mb-4'>
+            <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
+              Amenities at
+              </TextAnimate>
+                <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
+              Club ANAND
+              </TextAnimate>
+            </h2>
+            <p className='text-lg text-background/80 max-w-2xl mx-auto'>
+              Experience luxury at every corner of Club ANAND
+            </p>
+          </div>
+
+          <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6'>
+            {amenities.map((amenity, index) => {
+              const Icon = amenity.icon
+              return (
+                <div
+                  key={index}
+                  className='group relative p-6 bg-background/10 rounded-lg hover:bg-background/20 transition-all duration-500 hover:scale-110 cursor-pointer'
+                  style={{
+                    animationDelay: `${index * 0.05}s`,
+                  }}
+                >
+                  <div className='flex flex-col items-center text-center'>
+                    <div className='mb-4 p-4 rounded-full bg-background/20 group-hover:bg-background/30 transition-colors duration-300'>
+                      <Icon className='w-8 h-8 text-background group-hover:scale-110 transition-transform duration-300' />
+                    </div>
+                    <p className='text-sm lg:text-base text-background/90 font-medium'>
+                      {amenity.text}
+                    </p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+
+          <div className='mt-12 text-center'>
+            <p className='text-xl font-[playfair-display] text-background/80'>
+              Club ANAND members also enjoy access to select amenities across Madhuban Village Resort, enhancing the overall lifestyle experience.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+<section className='py-20 lg:py-32 bg-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <div className='text-center mb-16'>
             <h2 className='text-4xl lg:text-6xl font-[playfair-display] text-foreground mb-4'>
@@ -313,7 +362,7 @@ const ClubPage = () => {
               </TextAnimate>
             </h2>
             <p className='text-lg text-foreground/70 max-w-2xl mx-auto'>
-              Unlock a world of luxury and privileges with Anand Club membership
+              Unlock A world of luxury and privileges with Club ANAND  Membership
             </p>
           </div>
 
@@ -356,55 +405,6 @@ const ClubPage = () => {
         </div>
       </section>
 
-      {/* Amenities Section */}
-      <section className='py-20 lg:py-32 border-b bg-foreground text-background'>
-        <div className='max-w-7xl mx-auto px-4 lg:px-16'>
-          <div className='text-center mb-16'>
-            <h2 className='text-4xl lg:text-6xl font-[playfair-display] mb-4'>
-            <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-              World-Class 
-              </TextAnimate>
-                <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
-              Amenities
-              </TextAnimate>
-            </h2>
-            <p className='text-lg text-background/80 max-w-2xl mx-auto'>
-              Experience luxury at every corner of Anand Club
-            </p>
-          </div>
-
-          <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6'>
-            {amenities.map((amenity, index) => {
-              const Icon = amenity.icon
-              return (
-                <div
-                  key={index}
-                  className='group relative p-6 bg-background/10 rounded-lg hover:bg-background/20 transition-all duration-500 hover:scale-110 cursor-pointer'
-                  style={{
-                    animationDelay: `${index * 0.05}s`,
-                  }}
-                >
-                  <div className='flex flex-col items-center text-center'>
-                    <div className='mb-4 p-4 rounded-full bg-background/20 group-hover:bg-background/30 transition-colors duration-300'>
-                      <Icon className='w-8 h-8 text-background group-hover:scale-110 transition-transform duration-300' />
-                    </div>
-                    <p className='text-sm lg:text-base text-background/90 font-medium'>
-                      {amenity.text}
-                    </p>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-
-          <div className='mt-12 text-center'>
-            <p className='text-xl font-[playfair-display] text-background/80 italic'>
-              And much more!
-            </p>
-          </div>
-        </div>
-      </section>
-
 
       {/* CTA Section */}
       <section className='py-20 lg:py-32 bg-foreground text-background'>
@@ -419,7 +419,7 @@ const ClubPage = () => {
               </TextAnimate>
             </h2>
             <p className='text-xl lg:text-2xl text-background/90 mb-10 leading-relaxed'>
-              Join Anand Club today and unlock a decade of affordable luxury, unforgettable 
+              Join Club ANAND today and unlock a decade of affordable luxury, unforgettable 
               moments, and exclusive privileges.
             </p>
             <div className='flex flex-col sm:flex-row items-center justify-center gap-4'>
@@ -453,7 +453,7 @@ const ClubPage = () => {
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start'>
             <div className='space-y-5'>
               <h2 className='text-3xl sm:text-4xl lg:text-5xl font-[playfair-display] text-foreground leading-tight'>
-                Plan Your Anand Club Experience
+                Plan Your Club ANAND Experience
               </h2>
               <p className='text-base sm:text-lg text-foreground/70 leading-relaxed'>
                 Share your occasion—membership, day pass, celebrations, or corporate retreat.
@@ -463,12 +463,14 @@ const ClubPage = () => {
               <div className="grid grid-cols-1 gap-4">
               <div className="p-4 border border-foreground/10 rounded-lg bg-foreground/5">
                 <p className="text-sm text-foreground/60">Contact Us</p>
+                <p className="text-lg text-foreground font-semibold">+91 70207 04418</p>
                 <p className="text-lg text-foreground font-semibold">+91 70207 04420</p>
                 <p className="text-lg text-foreground font-semibold">+91 70207 04421</p>
               </div>
               <div className="p-4 border border-foreground/10 rounded-lg bg-foreground/5">
                 <p className="text-sm text-foreground/60">Email</p>
-                <p className="text-lg text-foreground font-semibold">info@madhubanvillage.com</p>
+                <p className="text-lg text-foreground font-semibold">info@madhubanvillage.in</p>
+                <p className="text-lg text-foreground font-semibold">madhubanvillage@gmail.com</p>
               </div>
             </div>
             </div>
@@ -527,7 +529,7 @@ const ClubPage = () => {
                 </div>
                 <div>
                 <label className='block text-sm text-foreground/70 mb-2'>
-                        Membership Type Interest
+                        Membership Type Interest *
                       </label>
                       <select
                       id='membershipType'
@@ -537,6 +539,7 @@ const ClubPage = () => {
                       required
                       className='w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]'
                     >
+                      <option value=''>Select membership type</option>
                       <option value='Lifetime'>Lifetime</option>
                       <option value='40 Years'>40 Years</option>
                       <option value='20 Years'>20 Years</option>

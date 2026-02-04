@@ -17,37 +17,58 @@ const venuesData: Venue[] = [
   {
     id: 1,
     number: '01',
-    name: 'Indraprastha Banquet Hall',
-    description: 'A grand, royal indoor banquet crafted for majestic wedding ceremonies, elegant sangeet nights, and luxurious receptions.',
-    image: 'indraprasth.png' // Uncomment and add image path
+    name: 'Indraprastha Palace',
+    description: 'An opulent palace setting ideal for grand royal weddings and lavish receptions.',
+    image: 'indraprasth.png'
   },
   {
     id: 2,
     number: '02',
     name: 'Mangalam Lawn',
-    description: 'One of Nagpur\'s largest and most magnificent wedding lawns, designed for opulent, large-scale royal celebrations under the open sky.',
-    image: '/d-2.png' // Uncomment and add image path
+    description: 'A coveted celebration space with Mangalam Kuti—perfect for sangeet, cocktail evenings, receptions, and wedding ceremonies.',
+    image: '/mangalam.jpg'
   },
   {
     id: 3,
     number: '03',
-    name: 'Ashok Vatika',
-    description: 'A serene, lush green garden venue with a beautiful poolside setting—ideal for cocktail nights, private parties, and intimate celebrations.',
-    image: '/pool.png' // Uncomment and add image path
+    name: 'Ashok Vatika (Poolside)',
+    description: 'A vibrant poolside venue apt for carnival celebrations, Phoolon Ki Holi, and joyful wedding functions.',
+    image: '/pool.png'
   },
   {
     id: 4,
     number: '04',
-    name: 'Poolside & Sunset Point',
-    description: 'An enchanting sunset-facing poolside arena, perfect for haldi, mehendi, sundown weddings, and breathtaking wedding photography.',
-    image: '/ex2.png' // Uncomment and add image path
+    name: 'Amphitheatre',
+    description: 'An open-air amphitheatre best suited for intimate sangeet and haldi functions for up to 200 guests.',
+    image: '/amphitheatre.jpg'
   },
   {
     id: 5,
     number: '05',
-    name: 'Luxury Guest Rooms',
-    description: 'Premium deluxe rooms offering refined comfort and elegance, thoughtfully designed to accommodate 200–400 wedding guests with resort-style luxury.',
-    image: 'in.png' // Uncomment and add image path
+    name: 'Gulmohar Lawn',
+    description: 'A warm and elegant lawn, ideal for myra, mehendi, and other small celebratory functions.',
+    image: '/gulmohar.jpg'
+  },
+  {
+    id: 6,
+    number: '06',
+    name: 'Lavender Lawn',
+    description: 'A charming venue perfect for evening hi-tea gatherings and intimate celebrations.',
+    image: '/lavender.jpg'
+  },
+  {
+    id: 7,
+    number: '07',
+    name: 'Annakut Hall',
+    description: 'A versatile multipurpose hall designed for breakfast setups, mandap, pooja, and small ceremonies.',
+    image: '/annakut.jpg'
+  },
+  {
+    id: 8,
+    number: '08',
+    name: 'Mangalam Kuti',
+    description: 'An open-air traditional space ideal for myra rituals and royal shahi bhoj arrangements.',
+    image: 'in.png'
   },
 ]
 

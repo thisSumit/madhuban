@@ -19,12 +19,17 @@ import {
   Phone,
   MessageCircle,
   ArrowRight,
-  PhoneCall
+  PhoneCall,
+  LandPlot,
+  User,
+  ExternalLink,
+  PlaneLandingIcon,
+  ChevronRight,
+  ChevronLeft
 } from 'lucide-react'
 import { TextAnimate } from '@/components/ui/text-animate'
 
 const plotsImages = [
-  '/dr.png',
   '/dr1.png',
   '/dr2.png',
   '/dr3.png',
@@ -33,71 +38,84 @@ const plotsImages = [
 
 function PlotsCarousel() {
   const [current, setCurrent] = useState(0)
-  const touchStartX = useRef<number | null>(null)
+  const startX = useRef<number | null>(null)
+  const isDragging = useRef(false)
   const lastIndex = plotsImages.length - 1
 
-  const nextSlide = () => setCurrent(current === lastIndex ? 0 : current + 1)
-  const prevSlide = () => setCurrent(current === 0 ? lastIndex : current - 1)
+  const next = () => setCurrent(c => (c === lastIndex ? 0 : c + 1))
+  const prev = () => setCurrent(c => (c === 0 ? lastIndex : c - 1))
 
-  const onTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX
+  const onStart = (x: number) => {
+    startX.current = x
+    isDragging.current = true
   }
 
-  const onTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current !== null) {
-      const diff = e.changedTouches[0].clientX - touchStartX.current
-      if (diff > 40) prevSlide()
-      else if (diff < -40) nextSlide()
-    }
-    touchStartX.current = null
+  const onEnd = (x: number) => {
+    if (!isDragging.current || startX.current === null) return
+    const diff = x - startX.current
+    if (diff > 60) prev()
+    else if (diff < -60) next()
+    isDragging.current = false
+    startX.current = null
   }
 
   return (
-    <div className="relative flex flex-col items-center">
+    <section className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
       <div
-        className="w-full overflow-hidden rounded-2xl shadow-xl bg-background border border-foreground/10"
-        onTouchStart={onTouchStart}
-        onTouchEnd={onTouchEnd}
+        className="relative overflow-hidden h-[85vh] md:h-[90vh] cursor-grab active:cursor-grabbing"
+        onMouseDown={e => onStart(e.clientX)}
+        onMouseUp={e => onEnd(e.clientX)}
+        onMouseLeave={e => isDragging.current && onEnd(e.clientX)}
+        onTouchStart={e => onStart(e.touches[0].clientX)}
+        onTouchEnd={e => onEnd(e.changedTouches[0].clientX)}
       >
-        <img
-          src={plotsImages[current]}
-          alt={`MV Plot ${current + 1}`}
-          className="w-full h-[620px] object-cover transition duration-500"
-          draggable={false}
-          style={{ userSelect: 'none' }}
-        />
-      </div>
-      <div className="flex justify-between w-full mt-4 px-3">
+        {/* Slides */}
+        <div
+          className="flex h-full transition-transform duration-500 ease-out"
+          style={{ transform: `translateX(-${current * 100}%)` }}
+        >
+          {plotsImages.map((img, idx) => (
+            <img
+              key={idx}
+              src={img}
+              alt={`Madhuban Village ${idx + 1}`}
+              className="w-screen h-full object-cover flex-shrink-0 select-none"
+              draggable={false}
+            />
+          ))}
+        </div>
+
+        {/* Arrows */}
         <button
-          className="bg-foreground text-background rounded-full p-2 bg-opacity-90 hover:bg-opacity-100 shadow transition disabled:opacity-50"
-          onClick={prevSlide}
+          onClick={prev}
+          className="absolute left-6 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-4 rounded-full backdrop-blur transition"
           aria-label="Previous"
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M15 19L8 12L15 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+          <ChevronLeft size={32} />
         </button>
+
         <button
-          className="bg-foreground text-background rounded-full p-2 bg-opacity-90 hover:bg-opacity-100 shadow transition disabled:opacity-50"
-          onClick={nextSlide}
+          onClick={next}
+          className="absolute right-6 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-4 rounded-full backdrop-blur transition"
           aria-label="Next"
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M9 5L16 12L9 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+          <ChevronRight size={32} />
         </button>
       </div>
-      <div className="flex gap-2 justify-center mt-3">
+
+      {/* Dots */}
+      <div className="absolute bottom-6 w-full flex justify-center gap-3">
         {plotsImages.map((_, idx) => (
           <button
             key={idx}
-            className={`w-2.5 h-2.5 rounded-full transition-colors ${current === idx ? 'bg-[#D4AF37]' : 'bg-foreground/30'}`}
             onClick={() => setCurrent(idx)}
-            aria-label={`Go to slide ${idx + 1}`}
-          ></button>
+            className={`h-3 w-3 rounded-full transition ${
+              current === idx ? 'bg-[#D4AF37]' : 'bg-white/40'
+            }`}
+          />
         ))}
       </div>
-    </div>
+    </section>
   )
 }
 
@@ -144,7 +162,7 @@ const PlotPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    const scriptURL = "https://script.google.com/macros/s/AKfycbxR6DH8evia0snPI1KuYvo_0IRSW2RbOhmz2_uWYBjE5MAd5qBgDqp6O-Q7Ft47TZJw_w/exec" // Integrated Google Apps Script URL
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxcNT7NKTGXRh_fedq1-0USZTWV22D5aAHKK9TGmSDsVTJoxyRV1Uz4ubqQeHwJ6uSs/exec" // Integrated Google Apps Script URL
     
     const payload = {
       name: formData.name.trim(),
@@ -200,7 +218,7 @@ const PlotPage = () => {
         <div className='absolute inset-0 z-0'>
           <img
             src="/dr1.png" // You can change this image
-            alt="MV Plots"
+            alt="Madhuban Village Farmhouse"
             className='h-full w-full object-cover'
           />
           <div className='absolute inset-0 bg-black/50' />
@@ -209,11 +227,11 @@ const PlotPage = () => {
         <div className='relative z-10 h-full flex items-center justify-center px-4 lg:px-16'>
           <div className='text-center max-w-5xl'>
             <h1 className='text-4xl lg:text-7xl font-playfair-display text-nowrap text-background mb-6 leading-tight'>
-              <TextAnimate animation="slideLeft" by="character" duration={0.5} delay={0.2} once>
-              Own a Private
-              </TextAnimate>
               <TextAnimate animation="slideLeft" className='italic' by="character" duration={0.5} delay={0.2} once>
-              Resort Like Lifestyle
+              Own Your Private Farmhouse
+              </TextAnimate>
+              <TextAnimate animation="slideLeft" by="character" duration={0.5} delay={0.2} once>
+              at Madhuban Village
               </TextAnimate>
             </h1>
             <div className='mb-10'>
@@ -242,24 +260,28 @@ const PlotPage = () => {
       <section className='py-12 bg-foreground text-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <h3 className='text-center text-xl lg:text-2xl font-playfair-display mb-8'>
-            Why Smart Buyers Are Choosing MV Plots
+            Why Smart Buyers Are Choosing Madhuban Village Farmhouse
           </h3>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
             <div className='text-center'>
               <TrendingUp className='w-8 h-8 mx-auto mb-3 text-[#D4AF37]' />
-              <p className='text-sm lg:text-base'>Appreciating land, not depreciating apartments</p>
-            </div>
-            <div className='text-center'>
-              <Home className='w-8 h-8 mx-auto mb-3 text-[#D4AF37]' />
-              <p className='text-sm lg:text-base'>Resort lifestyle + real estate investment</p>
-            </div>
-            <div className='text-center'>
-              <Shield className='w-8 h-8 mx-auto mb-3 text-[#D4AF37]' />
-              <p className='text-sm lg:text-base'>Limited inventory, high future value</p>
+              <h4 className='font-semibold text-lg mb-2'>Appreciating Land Asset</h4>
+              <p className='text-sm lg:text-base'>Secure ownership of land with strong appreciation potential over time.</p>
             </div>
             <div className='text-center'>
               <MapPin className='w-8 h-8 mx-auto mb-3 text-[#D4AF37]' />
-              <p className='text-sm lg:text-base'>Located at the iconic Madhuban Village destination</p>
+              <h4 className='font-semibold text-lg mb-2'>Strategic Location Advantage</h4>
+              <p className='text-sm lg:text-base'>Serene surroundings with seamless connectivity to the city.</p>
+            </div>
+            <div className='text-center'>
+              <Shield className='w-8 h-8 mx-auto mb-3 text-[#D4AF37]' />
+              <h4 className='font-semibold text-lg mb-2'>High Future Value</h4>
+              <p className='text-sm lg:text-base'>Part of a fast-developing destination with long-term growth prospects.</p>
+            </div>
+            <div className='text-center'>
+              <Home className='w-8 h-8 mx-auto mb-3 text-[#D4AF37]' />
+              <h4 className='font-semibold text-lg mb-2'>Elevated Lifestyle Living</h4>
+              <p className='text-sm lg:text-base'>A refined farmhouse lifestyle blending nature, privacy, and luxury.</p>
             </div>
           </div>
         </div>
@@ -271,22 +293,21 @@ const PlotPage = () => {
           <div className='max-w-4xl mx-auto text-center'>
             <h2 className='text-4xl lg:text-5xl font-playfair-display text-foreground mb-8'>
             <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-              Welcome to MV Plots
+              Welcome to
               </TextAnimate>
               <TextAnimate animation="blurInUp" className='italic' by="character" duration={0.5} delay={0.1} once>
-              Your Private Farmhouse Address
+              Madhuban Village 
+              </TextAnimate>
+              <TextAnimate animation="blurInUp" className='italic' by="character" duration={0.5} delay={0.1} once>
+              Farmhouse
               </TextAnimate>
             </h2>
             <div className='space-y-6 text-lg text-foreground/70 leading-relaxed'>
               <p>
-                MV Plots brings you premium farmhouse land parcels inside Madhuban Village, crafted for 
-                those who want more than just square feet. Whether you envision a weekend retreat, a 
-                celebration home, or a high-growth land investment — MV Plots delivers luxury, privacy, 
-                and long-term value in one destination.
+                Madhuban Village offers premium farmhouse land parcels designed for those who value space, privacy, and long-term growth. Whether it’s a peaceful getaway, a place to host meaningful celebrations, or a smart land investment, Madhuban Village combines thoughtful planning, natural surroundings, and future appreciation in one well-defined destination.
               </p>
               <p>
-                With plots starting from 5,000 sq. ft. and pricing from ₹700 per sq. ft., MV Plots is 
-                where lifestyle meets smart wealth creation.
+                With plots starting from 4,500 sq. ft. and pricing from ₹700 per sq. ft.
               </p>
             </div>
           </div>
@@ -294,7 +315,7 @@ const PlotPage = () => {
       </section>
 
       {/* 3A. PLOTS IMAGE CAROUSEL */}
-      <section className="pb-16 bg-background">
+      <section>
         <div className="max-w-5xl mx-auto px-4">
           <h3 className="text-center text-2xl lg:text-3xl font-playfair-display text-foreground mb-8">
             Explore Our Plots
@@ -312,7 +333,7 @@ const PlotPage = () => {
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <h2 className='text-4xl lg:text-5xl font-playfair-display text-center mb-16'>
           <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-            Luxury That Comes With 
+            Lifestyle Benefits That Come with
             </TextAnimate>
                             <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
             Your Land
@@ -335,6 +356,46 @@ const PlotPage = () => {
                 <div key={index} className='flex items-start gap-4 p-6 bg-background/5 rounded-lg hover:bg-background/10 transition-colors duration-300'>
                   <Icon className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
                   <p className='text-background/90 text-lg'>{amenity.text}</p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 4A. LIFESTYLE BENEFITS SECTION */}
+      <section className='py-20 lg:py-32 bg-background'>
+        <div className='max-w-7xl mx-auto px-4 lg:px-16'>
+          <h2 className='text-4xl lg:text-5xl font-playfair-display text-center mb-16 text-foreground'>
+          <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
+            Lifestyle Benefits That Come
+            </TextAnimate>
+            <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
+            With Your Land
+            </TextAnimate>
+          </h2>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+            {[
+              { icon: TreePine, text: 'Beautifully Landscaped Lawns', description: 'Thoughtfully designed green areas that enhance everyday living.' },
+              { icon: Users, text: 'Children\'s Play Area & Family Zone', description: 'Safe, dedicated spaces for recreation and family time.' },
+              { icon: Building2, text: 'Exclusive Clubhouse Access', description: 'A lifestyle clubhouse for leisure, socialising, and relaxation.' },
+              { icon: Check, text: 'Ready Infrastructure', description: 'Well-planned power supply, water connection, and internal roads.' },
+              { icon: Shield, text: 'Gated Community with 24×7 Security', description: 'Controlled access and round-the-clock security for complete peace of mind.' },
+              { icon: Home, text: 'Mandir Within the Community', description: 'A serene spiritual space for daily prayers and special occasions.' },
+              { icon: TreePine, text: 'Ample Green Open Spaces', description: 'Open, breathable surroundings that promote wellness and calm living.' },
+              { icon: TrendingUp, text: 'Rental Income Opportunity', description: 'Option to generate returns by renting your farmhouse or villa.' },
+              { icon: Home, text: 'Custom Construction Options', description: 'Freedom to design and build as per your lifestyle and vision.' },
+            ].map((benefit, index) => {
+              const Icon = benefit.icon
+              return (
+                <div key={index} className='p-6 bg-foreground/5 rounded-lg hover:bg-foreground/10 transition-colors duration-300 border border-foreground/10'>
+                  <div className='flex items-start gap-4'>
+                    <Icon className='w-6 h-6 text-foreground shrink-0 mt-1' />
+                    <div>
+                      <h3 className='text-lg font-semibold text-foreground mb-2'>{benefit.text}</h3>
+                      <p className='text-sm text-foreground/70 leading-relaxed'>{benefit.description}</p>
+                    </div>
+                  </div>
                 </div>
               )
             })}
@@ -397,7 +458,7 @@ const PlotPage = () => {
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <h2 className='text-4xl lg:text-5xl font-playfair-display text-center mb-16'>
           <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-            Why MV Plots
+            Why Madhuban Village Farmhouse
              </TextAnimate>
                              <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
              Is a Smart Investment
@@ -408,15 +469,35 @@ const PlotPage = () => {
               <div className='space-y-6 mb-8'>
                 <div className='flex items-start gap-4'>
                   <TrendingUp className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
-                  <p className='text-lg text-background/90'>Land that appreciates in value</p>
+                  <p className='text-lg text-background/90'>Strong Land Appreciation Potential</p>
                 </div>
                 <div className='flex items-start gap-4'>
                   <Home className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
-                  <p className='text-lg text-background/90'>Zero maintenance apartment alternative</p>
+                  <p className='text-lg text-background/90'>High Demand for Farmhouse & Weekend Properties</p>
                 </div>
                 <div className='flex items-start gap-4'>
-                  <TrendingUp className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
-                  <p className='text-lg text-background/90'>High demand for farmhouse & weekend properties</p>
+                  <Building2 className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
+                  <p className='text-lg text-background/90'>⁠Nagpur — A Rapidly Growing City</p>
+                </div>
+                <div className='flex items-start gap-4'>
+                  <LandPlot className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
+                  <p className='text-lg text-background/90'>Limited Land Availability</p>
+                </div>
+                <div className='flex items-start gap-4'>
+                  <User className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
+                  <p className='text-lg text-background/90'>Lifestyle-Driven Demand</p>
+                </div>
+                <div className='flex items-start gap-4'>
+                  <ExternalLink className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
+                  <p className='text-lg text-background/90'>⁠Multiple Exit Options</p>
+                </div>
+                <div className='flex items-start gap-4'>
+                  <Shield className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
+                  <p className='text-lg text-background/90'>Low-Maintenance Investment</p>
+                </div>
+                <div className='flex items-start gap-4'>
+                  <PlaneLandingIcon className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
+                  <p className='text-lg text-background/90'>⁠Ideal for NRI & HNI Investors</p>
                 </div>
               </div>
             </div>
@@ -459,7 +540,7 @@ const PlotPage = () => {
                 <ul className='space-y-4'>
                   <li className='flex items-center gap-3'>
                     <Check className='w-5 h-5 text-foreground' />
-                    <p className='text-lg text-foreground/70'>Farmhouse plots starting from 5,000 sq. ft.</p>
+                    <p className='text-lg text-foreground/70'>Farmhouse plots starting from 4,500 sq. ft.</p>
                   </li>
                   <li className='flex items-center gap-3'>
                     <Check className='w-5 h-5 text-foreground' />
@@ -497,7 +578,7 @@ const PlotPage = () => {
               Only Limited Plots Available
             </h2>
             <p className='text-xl lg:text-2xl text-background/90 mb-12 leading-relaxed'>
-              This is not a mass project. MV Plots is a limited-edition luxury land offering inside 
+              This is not a mass project. Madhuban Village Farmhouse is a limited-edition luxury land offering inside 
               Madhuban Village. Once sold out, the opportunity is gone forever.
             </p>
             <div className='bg-background/10 p-8 rounded-lg mb-8'>
@@ -533,7 +614,7 @@ const PlotPage = () => {
               green mornings, and peaceful weekends.
             </p>
             <p className='text-3xl lg:text-4xl font-playfair-display text-foreground italic'>
-              MV Plots isn't just land.<br />
+              Madhuban Village Farmhouse isn't just land.<br />
               It's your future lifestyle.
             </p>
           </div>
@@ -591,12 +672,14 @@ const PlotPage = () => {
               <div className="grid grid-cols-1 gap-4">
               <div className="p-4 border border-foreground/10 rounded-lg bg-foreground/5">
                 <p className="text-sm text-foreground/60">Contact Us</p>
+                <p className="text-lg text-foreground font-semibold">+91 70207 04418</p>
                 <p className="text-lg text-foreground font-semibold">+91 70207 04420</p>
                 <p className="text-lg text-foreground font-semibold">+91 70207 04421</p>
               </div>
               <div className="p-4 border border-foreground/10 rounded-lg bg-foreground/5">
                 <p className="text-sm text-foreground/60">Email</p>
-                <p className="text-lg text-foreground font-semibold">info@madhubanvillage.com</p>
+                <p className="text-lg text-foreground font-semibold">info@madhubanvillage.in</p>
+                <p className="text-lg text-foreground font-semibold">madhubanvillage@gmail.com</p>
               </div>
             </div>
             </div>
@@ -670,34 +753,6 @@ const PlotPage = () => {
                     </select>
                   </div>
                   <div>
-                    <label className='block text-sm text-foreground/70 mb-2'>Budget (₹)</label>
-                    <select
-                      name='budget'
-                      value={formData.budget}
-                      onChange={handleChange}
-                      className='w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]'
-                    >
-                      <option value=''>Select range</option>
-                      <option value='10-20L'>₹10L - ₹20L</option>
-                      <option value='20-40L'>₹20L - ₹40L</option>
-                      <option value='40-75L'>₹40L - ₹75L</option>
-                      <option value='75L+'>₹75L+</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                  <div>
-                    <label className='block text-sm text-foreground/70 mb-2'>Preferred Visit Date</label>
-                    <input
-                      type='date'
-                      name='visitDate'
-                      value={formData.visitDate}
-                      onChange={handleChange}
-                      className='w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]'
-                    />
-                  </div>
-                  <div>
                     <label className='block text-sm text-foreground/70 mb-2'>Buying Timeline</label>
                     <select
                       name='timeline'
@@ -711,36 +766,6 @@ const PlotPage = () => {
                       <option value='6m'>3-6 months</option>
                       <option value='exploring'>Just exploring</option>
                     </select>
-                  </div>
-                </div>
-
-                <div className='space-y-3'>
-                  <label className='block text-sm text-foreground/70'>I’m interested in (select multiple)</label>
-                  <div className='grid grid-cols-1 md:grid-cols-2 gap-3'>
-                    {plotInterests.map(option => {
-                      const checked = formData.interests.includes(option.value)
-                      return (
-                        <button
-                          key={option.value}
-                          type='button'
-                          onClick={() => toggleInterest(option.value)}
-                          className={`flex items-start gap-3 rounded-lg border px-4 py-3 text-left transition ${
-                            checked
-                              ? 'border-[#D4AF37] bg-[#D4AF37]/10 text-foreground'
-                              : 'border-foreground/10 bg-background/70 text-foreground/80 hover:border-foreground/30'
-                          }`}
-                        >
-                          <span
-                            className={`mt-1 inline-block h-5 w-5 rounded-full border ${
-                              checked ? 'border-[#D4AF37] bg-[#D4AF37]' : 'border-foreground/30'
-                            }`}
-                          />
-                          <div>
-                            <p className='font-semibold'>{option.label}</p>
-                          </div>
-                        </button>
-                      )
-                    })}
                   </div>
                 </div>
 
@@ -778,7 +803,7 @@ const PlotPage = () => {
             <div className="space-y-4">
               <h2 className="text-3xl lg:text-4xl font-playfair-display text-foreground">
               <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-                Visit Us At MV Plots
+                Visit Us At Madhuban Village Farmhouse
                 </TextAnimate>
               </h2>
               <p className="text-lg text-foreground/70 leading-relaxed">
@@ -787,20 +812,26 @@ const PlotPage = () => {
               <div className="flex items-start gap-3 text-foreground/70">
                 <MapPin className="w-5 h-5 text-[#D4AF37] mt-1" />
                 <p>
-                  Ward no.09, Tehsil Katol, Katol Road, Gondkhari, Saoner, Maharashtra 441203
+                  Madhuban Village, Hatla, Panjra, Katol Road, Katol, Nagpur- 441302
                 </p>
               </div>
               <div className="flex items-center gap-3 text-foreground/70">
                 <PhoneCall className="w-5 h-5 text-[#D4AF37]" />
                 <a href="tel:917020704420" className="underline decoration-[#D4AF37] underline-offset-4">
+                  +91 70207 04418
+                </a>
+                <a href="tel:917020704420" className="underline decoration-[#D4AF37] underline-offset-4">
                   +91 70207 04420
+                </a>
+                <a href="tel:917020704420" className="underline decoration-[#D4AF37] underline-offset-4">
+                  +91 70207 04421
                 </a>
               </div>
             </div>
             <div className="relative overflow-hidden rounded-2xl shadow-2xl border border-foreground/10">
               <div className="absolute right-4 bottom-4 z-10 flex items-center gap-2 bg-background/90 backdrop-blur px-3 py-2 rounded-full shadow">
                 <img src="/madhuban-logo.png" alt="Madhuban Village" className="w-8 h-8 object-contain" />
-                <span className="text-sm font-semibold text-foreground">MV Plots</span>
+                <span className="text-sm font-semibold text-foreground">Madhuban Village Farmhouse</span>
               </div>
               <div className="relative">
                 <iframe

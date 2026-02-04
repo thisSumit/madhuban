@@ -50,8 +50,8 @@ const Header = () => {
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ease-in-out ${
           isScrolled 
-            ? 'bg-background/95 backdrop-blur-md shadow-lg py-4' 
-            : 'bg-transparent text-background py-6'
+            ? 'bg-background/95 backdrop-blur-md shadow-lg py-1' 
+            : 'bg-transparent text-background py-1'
         }`}
       >
         <div className='px-8 lg:px-16 flex items-center justify-between max-w-7xl mx-auto'>
@@ -61,7 +61,7 @@ const Header = () => {
               <img 
                 src={isScrolled ? "/madhuban-logo.png" : "/madhuban-wlogo.png"}
                 alt="Madhuban Village" 
-                className='h-10 lg:h-12 object-contain transition-all duration-300'
+                className='h-28 lg:h-34 object-fill transition-all duration-300'
               />
             </a>
           </div>
@@ -78,7 +78,7 @@ const Header = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <span className='relative z-10'>{link.label}</span>
-                <span className={`absolute bottom-0 left-0 w-0 h-px transition-all duration-300 group-hover:w-full ${
+                <span className={`absolute bottom-0 left-0 w-0 transition-all duration-300 group-hover:w-full ${
                   isScrolled ? 'bg-foreground' : 'bg-background'
                 }`}></span>
               </a>
@@ -149,7 +149,7 @@ const Header = () => {
                 }}
               >
                 <span className='relative z-10'>{link.label}</span>
-                <span className='absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-[2px] bg-background transition-all duration-500 group-hover:w-full'></span>
+                <span className='absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 bg-background transition-all duration-500 group-hover:w-full'></span>
               </a>
             ))}
             <div 
