@@ -158,7 +158,7 @@ const Venue = () => {
 
             {/* Action Buttons */}
             <div className='flex flex-col sm:flex-row gap-4 mt-12'>
-              <Button onClick={() => window.location.href = "/contact"} variant="default" size="lg" className='flex-1'>
+              <Button onClick={() => document.getElementById('membership-form')?.scrollIntoView({ behavior: 'smooth' })} variant="default" size="lg" className='flex-1'>
                 Request a Tour
               </Button>
             </div>

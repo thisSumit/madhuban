@@ -27,7 +27,7 @@ const Info = () => {
 
         {/* Ring Image */}
         <div className='flex justify-center m-4'>
-          <img src="indra.png" className='w-64' alt="" />
+          <img src="madhuban-logo.png" className='w-64' alt="" />
         </div>
 
         {/* Description */}
