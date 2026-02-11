@@ -15,6 +15,7 @@
     "lucide-react": "^0.556.0",
     "motion": "^12.23.25",
     "next": "16.0.7",
+    "next-cloudinary": "^6.17.5",
     "node": "^20.19.6",
     "react": "19.2.0",
     "react-dom": "19.2.0",
