@@ -10,15 +10,16 @@ const Hero = () => {
     <div className='relative h-screen w-full overflow-hidden'>
       {/* Video Background */}
       <div className='absolute inset-0 z-0'>
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          className='h-full w-full object-cover'
-          src="/hero.mp4"
-          poster='/indraprastha3.png'
-        />
+        <video
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="absolute inset-0 h-full w-full object-cover"
+  poster="/indraprastha3.png"
+>
+  <source src="/hero.mp4" type="video/mp4" />
+</video>
         {/* Overlay for better text readability */}
         <div className='absolute inset-0 bg-black/20' />
       </div>
