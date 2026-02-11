@@ -16,7 +16,6 @@ const Hero = () => {
   muted
   playsInline
   className="absolute inset-0 h-full w-full object-cover"
-  poster="/indraprastha3.png"
 >
   <source src="/hero.mp4" type="video/mp4" />
 </video>
