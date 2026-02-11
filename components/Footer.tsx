@@ -300,11 +300,14 @@ const Footer = () => {
               © {new Date().getFullYear()} Madhuban Village. All rights reserved.
             </p>
             <div className='flex items-center gap-6 text-sm'>
-              <a href='#privacy' className='text-background/60 hover:text-background transition-colors duration-300'>
+              <a href='/privacy' className='text-background/60 hover:text-background transition-colors duration-300'>
                 Privacy Policy
               </a>
-              <a href='#terms' className='text-background/60 hover:text-background transition-colors duration-300'>
+              <a href='/terms' className='text-background/60 hover:text-background transition-colors duration-300'>
                 Terms of Service
+              </a>
+              <a href='https://avantula.live' className='text-background/60 hover:text-background transition-colors duration-300'>
+                Created by <span className='font-semibold text-lg'>Avantula</span>
               </a>
             </div>
           </div>
