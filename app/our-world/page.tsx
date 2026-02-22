@@ -169,7 +169,7 @@ const galleryItems: GalleryItem[] = [
   {
     id: 20,
     type: 'video',
-    src: 'https://res.cloudinary.com/dsqqoh9m8/video/upload/v1770801396/hero_b0kbug.mp4',
+    src: 'https://res.cloudinary.com/dsqqoh9m8/video/upload/v1771769161/C6017_lw5wde.mov',
     thumbnail: '/indraprastha3.png',
     title: 'Madhuban Experience',
     description: 'A journey through luxury and tradition',

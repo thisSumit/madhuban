@@ -19,7 +19,7 @@ const Hero = () => {
   className="absolute inset-0 h-full w-full object-cover"
   poster="/indraprastha3.png"
 >
-  <source src="https://res.cloudinary.com/dsqqoh9m8/video/upload/v1770801396/hero_b0kbug.mp4" type="video/mp4" />
+  <source src="https://res.cloudinary.com/dsqqoh9m8/video/upload/v1771769161/C6017_lw5wde.mov" type="video/mp4" />
 </video>
 
         {/* Overlay for better text readability */}
