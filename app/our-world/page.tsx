@@ -36,7 +36,7 @@ const galleryItems: GalleryItem[] = [
   {
     id: 2,
     type: 'video',
-    src: 'exp-1.mp4',
+    src: 'https://res.cloudinary.com/dsqqoh9m8/video/upload/v1771766233/exp-1_qrdkvq.mp4',
     thumbnail: '/exp-1.png',
     title: 'Celebration Highlights',
     description: 'Experience the joy and grandeur of our events',
@@ -61,7 +61,7 @@ const galleryItems: GalleryItem[] = [
   {
     id: 11,
     type: 'video',
-    src: 'exp-3.mp4',
+    src: 'https://res.cloudinary.com/dsqqoh9m8/video/upload/v1771766240/exp-3_ibul1h.mp4',
     thumbnail: '/exp-3.png',
     title: 'Premium Experience',
     description: 'Experience the finest amenities and services',
@@ -86,7 +86,7 @@ const galleryItems: GalleryItem[] = [
   {
     id: 3,
     type: 'video',
-    src: 'exp-2.mp4',
+    src: 'https://res.cloudinary.com/dsqqoh9m8/video/upload/v1771766239/exp-2_dzbzv8.mp4',
     thumbnail: '/exp-2.png',
     title: 'Luxury Experience',
     description: 'Immerse yourself in our premium offerings',
@@ -111,7 +111,7 @@ const galleryItems: GalleryItem[] = [
   {
     id: 5,
     type: 'video',
-    src: 'exp-4.mp4',
+    src: 'https://res.cloudinary.com/dsqqoh9m8/video/upload/v1771766233/exp-4_iqtsgv.mp4',
     thumbnail: '/exp-4.png',
     title: 'Madhuban Moments',
     description: 'Capturing unforgettable memories at Madhuban Village',
@@ -144,7 +144,7 @@ const galleryItems: GalleryItem[] = [
   {
     id: 6,
     type: 'video',
-    src: 'exp-5.mp4',
+    src: 'https://res.cloudinary.com/dsqqoh9m8/video/upload/v1771766225/exp-5_k7v4yr.mp4',
     thumbnail: '/exp-5.png',
     title: 'Unforgettable Experience',
     description: 'Creating unforgettable moments for our guests',
