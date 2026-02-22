@@ -60,9 +60,9 @@ function PlotsCarousel() {
   }
 
   return (
-    <section className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+    <section className="relative w-full overflow-hidden">
       <div
-        className="relative overflow-hidden h-[85vh] md:h-[90vh] cursor-grab active:cursor-grabbing"
+        className="relative overflow-hidden h-[85vh] md:h-[90vh] cursor-grab active:cursor-grabbing w-full"
         onMouseDown={e => onStart(e.clientX)}
         onMouseUp={e => onEnd(e.clientX)}
         onMouseLeave={e => isDragging.current && onEnd(e.clientX)}
@@ -79,7 +79,7 @@ function PlotsCarousel() {
               key={idx}
               src={img}
               alt={`Madhuban Village ${idx + 1}`}
-              className="w-screen h-full object-cover flex-shrink-0 select-none"
+              className="w-full h-full object-cover shrink-0 select-none"
               draggable={false}
             />
           ))}
@@ -210,7 +210,7 @@ const PlotPage = () => {
   }
 
   return (
-    <div className='min-h-screen bg-background'>
+    <div className='min-h-screen bg-background overflow-hidden'>
       <Header />
 
       {/* 1. HERO SECTION */}
@@ -228,7 +228,7 @@ const PlotPage = () => {
           <div className='text-center max-w-5xl'>
             <h1 className='text-4xl lg:text-7xl font-playfair-display text-nowrap text-background mb-6 leading-tight'>
               <TextAnimate animation="slideLeft" className='italic' by="character" duration={0.5} delay={0.2} once>
-              Own Your Private Farmhouse
+              Your Private Farmhouse
               </TextAnimate>
               <TextAnimate animation="slideLeft" by="character" duration={0.5} delay={0.2} once>
               at Madhuban Village
@@ -315,8 +315,8 @@ const PlotPage = () => {
       </section>
 
       {/* 3A. PLOTS IMAGE CAROUSEL */}
-      <section>
-        <div className="max-w-5xl mx-auto px-4">
+      <section className="overflow-hidden py-16">
+        <div className="max-w-full mx-auto px-0">
           <h3 className="text-center text-2xl lg:text-3xl font-playfair-display text-foreground mb-8">
             Explore Our Plots
           </h3>
@@ -331,12 +331,12 @@ const PlotPage = () => {
       {/* 4. AMENITIES SECTION */}
       <section className='py-20 lg:py-32 bg-foreground text-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
-          <h2 className='text-4xl lg:text-5xl font-playfair-display text-center mb-16'>
+          <h2 className='text-4xl lg:text-5xl font-playfair-display text-left md:text-center mb-16'>
           <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-            Lifestyle Benefits That Come with
+            Lifestyle Benefits
             </TextAnimate>
                             <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
-            Your Land
+            That Come with Land
             </TextAnimate>
           </h2>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
@@ -364,14 +364,14 @@ const PlotPage = () => {
       </section>
 
       {/* 4A. LIFESTYLE BENEFITS SECTION */}
-      <section className='py-20 lg:py-32 bg-background'>
+      {/* <section className='py-20 lg:py-32 bg-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
-          <h2 className='text-4xl lg:text-5xl font-playfair-display text-center mb-16 text-foreground'>
+          <h2 className='text-4xl lg:text-5xl font-playfair-display text-left md:text-center mb-16 text-foreground'>
           <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-            Lifestyle Benefits That Come
+            Lifestyle Benefits
             </TextAnimate>
             <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
-            With Your Land
+            That Come With Land
             </TextAnimate>
           </h2>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
@@ -401,7 +401,7 @@ const PlotPage = () => {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* 5. LOCATION ADVANTAGE */}
       <section className='py-20 lg:py-32 bg-background'>
@@ -456,12 +456,12 @@ const PlotPage = () => {
       {/* 6. INVESTMENT & USE CASE */}
       <section className='py-20 lg:py-32 bg-foreground text-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
-          <h2 className='text-4xl lg:text-5xl font-playfair-display text-center mb-16'>
+          <h2 className='text-4xl lg:text-5xl font-playfair-display items-start text-left md:text-center mb-16'>
           <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-            Why Madhuban Village Farmhouse
+            Why Farmhouse
              </TextAnimate>
-                             <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
-             Is a Smart Investment
+             <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
+              Is a Smart Investment
             </TextAnimate>
           </h2>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
@@ -526,7 +526,7 @@ const PlotPage = () => {
       <section className='py-20 lg:py-32 bg-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <div className='max-w-4xl mx-auto'>
-            <h2 className='text-4xl lg:text-5xl font-playfair-display text-foreground text-center mb-16'>
+            <h2 className='text-4xl lg:text-5xl items-start text-left md:text-center font-playfair-display text-foreground mb-16'>
             <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
               Size & 
               </TextAnimate>
@@ -802,30 +802,21 @@ const PlotPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="space-y-4">
               <h2 className="text-3xl lg:text-4xl font-playfair-display text-foreground">
-              <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-                Visit Us At Madhuban Village Farmhouse
-                </TextAnimate>
+                <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
+              Visit Us At
+              </TextAnimate>
+              <TextAnimate animation="blurInUp" className='italic' by="character" duration={0.5} delay={0.1} once>
+              Madhuban Village Farmhouse
+              </TextAnimate>
               </h2>
               <p className="text-lg text-foreground/70 leading-relaxed">
-                Madhuban Village - Farmhouse | Club | Resort | Banquets
+                Farmhouse | Club | Resort | Banquets
               </p>
               <div className="flex items-start gap-3 text-foreground/70">
                 <MapPin className="w-5 h-5 text-[#D4AF37] mt-1" />
                 <p>
                   Madhuban Village, Hatla, Panjra, Katol Road, Katol, Nagpur- 441302
                 </p>
-              </div>
-              <div className="flex items-center gap-3 text-foreground/70">
-                <PhoneCall className="w-5 h-5 text-[#D4AF37]" />
-                <a href="tel:917020704420" className="underline decoration-[#D4AF37] underline-offset-4">
-                  +91 70207 04418
-                </a>
-                <a href="tel:917020704420" className="underline decoration-[#D4AF37] underline-offset-4">
-                  +91 70207 04420
-                </a>
-                <a href="tel:917020704420" className="underline decoration-[#D4AF37] underline-offset-4">
-                  +91 70207 04421
-                </a>
               </div>
             </div>
             <div className="relative overflow-hidden rounded-2xl shadow-2xl border border-foreground/10">

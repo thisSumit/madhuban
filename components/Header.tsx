@@ -41,7 +41,7 @@ const Header = () => {
     { href: '/about', label: 'About' },
     { href: '/plots', label: 'Plots' },
     { href: '/club', label: 'Club' },
-    { href: 'https://www.instagram.com/madhuban.village/', label: 'Gallery' },
+    { href: '/our-world', label: 'Our World' },
     { href: '/contact', label: 'Contact' },
   ]
 

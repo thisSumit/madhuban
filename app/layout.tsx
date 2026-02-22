@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Open_Sans } from "next/font/google";
 import "./globals.css";
 import { Lenis } from "lenis/react";
+import PhonePopup from "@/components/PhonePopup";
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair-display",
@@ -30,6 +31,7 @@ export default function RootLayout({
         className={`${playfairDisplay.variable} ${openSans.variable} antialiased`}
       >
         {children}
+        <PhonePopup />
       </body>
       </Lenis>
     </html>

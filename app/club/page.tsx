@@ -147,7 +147,7 @@ const ClubPage = () => {
         
         <div className='relative z-10 h-full flex items-center justify-center px-4 lg:px-16'>
           <div className={`text-center max-w-5xl transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className='my-6'>
+            <div className='mt-20'>
               <span className='inline-block px-6 py-2 bg-[#D4AF37]/20 border border-[#D4AF37] rounded-full text-[#D4AF37] text-sm uppercase tracking-widest mb-8 animate-pulse'>
                 Membership Open
               </span>
