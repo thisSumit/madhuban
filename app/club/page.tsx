@@ -147,19 +147,17 @@ const ClubPage = () => {
         
         <div className='relative z-10 h-full flex items-center justify-center px-4 lg:px-16'>
           <div className={`text-center max-w-5xl transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className='mt-20'>
-              <span className='inline-block px-6 py-2 bg-[#D4AF37]/20 border border-[#D4AF37] rounded-full text-[#D4AF37] text-sm uppercase tracking-widest mb-8 animate-pulse'>
+              {/* <span className='inline-block px-6 py-2 bg-[#D4AF37]/20 border border-[#D4AF37] rounded-full text-[#D4AF37] text-sm uppercase tracking-widest mb-2 animate-pulse'>
                 Membership Open
-              </span>
-            </div>
-            <h1 className='text-4xl lg:text-7xl font-[playfair-display] text-background mb-6 leading-tight'>
+              </span> */}
+            <h1 className='text-4xl lg:text-7xl font-[playfair-display] text-background mb-4 leading-tight'>
               <span className='block'><TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>Affordable Luxury,</TextAnimate></span>
               <span className='block italic'><TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>Unforgettable Moments!</TextAnimate></span>
             </h1>
-            <p className='text-xl lg:text-2xl text-background/90 font-light mb-10 leading-relaxed max-w-3xl mx-auto'>
-              Club Anand is a members-only lifestyle club designed for vibrant celebrations, relaxed family time, and refined leisure. Set within the serene surroundings of Madhuban Village, it offers thoughtfully curated amenities and exclusive experiences that bring together comfort, community, and elegance
+            <p className='text-xl lg:text-2xl text-background/90 font-light mb-6 leading-relaxed max-w-3xl mx-auto'>
+              Club Anand is a members-only lifestyle club in Madhuban Village offering premium amenities, vibrant celebrations, and relaxing family experiences—where comfort, community, and elegance come together.
             </p>
-            <p className='text-2xl lg:text-3xl font-[playfair-display] text-[#D4AF37] mb-10 italic'>
+            <p className='text-2xl lg:text-3xl font-[playfair-display] text-[#D4AF37] mb-6 italic'>
               A Place to Celebrate, Unwind, and Belong.
             </p>
             <div className='flex flex-col items-center justify-center gap-4'>

@@ -48,7 +48,7 @@ const Info = () => {
         {/* Button */}
         <div className='flex justify-center'>
           <a href='/about' className='nav-link'>
-            Discover Our Story
+            About Us
           </a>
         </div>
       </div>

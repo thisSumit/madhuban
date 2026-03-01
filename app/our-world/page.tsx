@@ -291,9 +291,9 @@ const OurWorld = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-background/70">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-background/70">
           <span className="text-xs uppercase tracking-wider">Scroll to explore</span>
-          <div className="w-px h-12 bg-background/30 animate-pulse" />
+          <div className="w-px h-8 bg-background/30 animate-pulse" />
         </div>
       </section>
 

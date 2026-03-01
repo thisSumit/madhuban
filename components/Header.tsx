@@ -38,7 +38,8 @@ const Header = () => {
   }
 
   const navLinks = [
-    { href: '/about', label: 'About' },
+    { href: '/about', label: 'Home' },
+    { href: '/', label: 'Wedding' },
     { href: '/plots', label: 'Plots' },
     { href: '/club', label: 'Club' },
     { href: '/our-world', label: 'Our World' },
@@ -49,7 +50,9 @@ const Header = () => {
     <>
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ease-in-out ${
-          isScrolled 
+          isMenuOpen
+            ? 'bg-transparent shadow-none backdrop-blur-none py-1 text-background'
+            : isScrolled 
             ? 'bg-background/95 backdrop-blur-md shadow-lg py-1' 
             : 'bg-transparent text-background py-1'
         }`}
@@ -59,14 +62,13 @@ const Header = () => {
           <div className='flex items-center z-50'>
             <a href='/' className='transition-transform duration-300'>
               <img 
-                src={isScrolled ? "/madhuban-logo.png" : "/madhuban-wlogo.png"}
+                src={isScrolled && !isMenuOpen ? "/madhuban-logo.png" : "/madhuban-wlogo.png"}
                 alt="Madhuban Village" 
                 className='h-28 lg:h-34 object-fill transition-all duration-300'
               />
             </a>
           </div>
 
-          {/* Desktop Navigation Links */}
           <nav className='hidden lg:flex items-center gap-8'>
             {navLinks.map((link, index) => (
               <a
@@ -90,7 +92,7 @@ const Header = () => {
           <button
             onClick={toggleMenu}
             className={`lg:hidden p-2 hover:opacity-60 transition-all duration-300 z-50 relative ${
-              isScrolled ? 'text-foreground' : 'text-background'
+              isMenuOpen || !isScrolled ? 'text-background' : 'text-foreground'
             }`}
             aria-label="Toggle menu"
           >
@@ -136,7 +138,7 @@ const Header = () => {
           onClick={(e) => e.stopPropagation()}
         >
           {/* Navigation Links */}
-          <nav className='flex flex-col items-center gap-8 mb-16'>
+          <nav className='flex flex-col items-center gap-4 mb-4'>
             {navLinks.map((link, index) => (
               <a
                 key={link.href}
@@ -145,7 +147,10 @@ const Header = () => {
                 className='nav-link-mobile text-background text-2xl font-light tracking-wider uppercase relative group transition-all duration-300'
                 style={{
                   animationDelay: `${index * 0.1}s`,
-                  animation: isMenuOpen ? 'fadeInUp 0.6s ease-out forwards' : 'none',
+                  animationName: isMenuOpen ? 'fadeInUp' : 'none',
+                  animationDuration: isMenuOpen ? '0.6s' : '0s',
+                  animationTimingFunction: 'ease-out',
+                  animationFillMode: 'forwards',
                 }}
               >
                 <span className='relative z-10'>{link.label}</span>
@@ -156,7 +161,10 @@ const Header = () => {
               className='mt-4'
               style={{
                 animationDelay: `${navLinks.length * 0.1}s`,
-                animation: isMenuOpen ? 'fadeInUp 0.6s ease-out forwards' : 'none',
+                animationName: isMenuOpen ? 'fadeInUp' : 'none',
+                animationDuration: isMenuOpen ? '0.6s' : '0s',
+                animationTimingFunction: 'ease-out',
+                animationFillMode: 'forwards',
               }}
             >
               <Button variant="secondary" size="lg" onClick={() => window.location.href = "tel:+917020704420"}>
@@ -170,13 +178,16 @@ const Header = () => {
             className='absolute bottom-12 left-1/2 transform -translate-x-1/2 transition-all duration-700 ease-out'
             style={{
               animationDelay: `${(navLinks.length + 1) * 0.1}s`,
-              animation: isMenuOpen ? 'fadeInUp 0.8s ease-out forwards' : 'none',
+              animationName: isMenuOpen ? 'fadeInUp' : 'none',
+              animationDuration: isMenuOpen ? '0.8s' : '0s',
+              animationTimingFunction: 'ease-out',
+              animationFillMode: 'forwards',
             }}
           >
             <img
               src="/madhuban-wlogo.png"
               alt="Madhuban Village"
-              className='h-16 object-contain opacity-90'
+              className='h-26 object-contain opacity-90'
             />
           </div>
         </div>

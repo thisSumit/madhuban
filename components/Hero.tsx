@@ -33,7 +33,7 @@ const Hero = () => {
           </h1>
         </div>
         
-        <Button onClick={() => document.getElementById('membership-form')?.scrollIntoView({ behavior: 'smooth' })} className='absolute bottom-40' variant="primary" size="lg">Book Now</Button>
+        <Button onClick={() => document.getElementById('membership-form')?.scrollIntoView({ behavior: 'smooth' })} className='absolute md:bottom-8 bottom-34' variant="primary" size="lg">Book Now</Button>
 
         {/* Scroll Indicator - Bottom Left */}
         <div className='absolute bottom-8 left-6 flex flex-col items-start gap-2 text-white'>
@@ -42,7 +42,7 @@ const Hero = () => {
         </div>
           <a href="https://wa.me/+917020704420">
         <div className='fixed bottom-8 z-10 bg-foreground p-2 right-6 flex items-end gap-2 text-white'>
-          <span className='text-xs tracking-wider uppercase'>Inquery Now</span>
+          <span className='text-xs tracking-wider uppercase'>Inquire Now</span>
             <MessageCircle className='w-5 h-5' strokeWidth={1.5} />
             
         </div>

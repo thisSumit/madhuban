@@ -35,7 +35,7 @@ const AboutPage = () => {
               </TextAnimate>
             </h1>
             <p className='text-xl lg:text-2xl text-background/90 font-light tracking-wide'>
-              Nature's Heart
+              Farmhouse | Club | Resort | Banquets
             </p>
           </div>
         </div>
@@ -61,19 +61,16 @@ const AboutPage = () => {
         {/* Description */}
         <div className='space-y-6 text-foreground/90 mb-8'>
           <p className='text-base lg:text-lg leading-relaxed max-w-3xl mx-auto'>
-          Nestled in the heart of Nagpur, Madhuban Village stands as a testament to luxury, 
-                  elegance, and timeless beauty. Our sprawling property offers a unique blend of 
-                  natural serenity and sophisticated amenities, creating the perfect backdrop for 
-                  your most cherished moments.
+          Located on Katol Road, Madhuban Village Farms & Resort is Central India’s emerging luxury wedding destination, premium farmhouse project, and exclusive club community. Spread across 100+ acres, Madhuban offers a seamless blend of royal architecture, natural landscapes, and world-class hospitality.
           </p>
           <p className='text-base lg:text-lg leading-relaxed max-w-3xl mx-auto'>
-          Whether you're planning a grand wedding celebration, seeking premium residential 
-                  plots, or looking for exclusive club memberships, Madhuban Village provides an 
-                  unparalleled experience that exceeds expectations.
+          Home to the majestic Indraprastha Palace, grand celebration lawns, premium rooms and cottages, and curated event management services, we specialize in destination weddings in Nagpur, multi-day celebrations, corporate events, and social gatherings.
           </p>
           <p className='text-base lg:text-lg leading-relaxed max-w-3xl mx-auto'>
-          With our commitment to excellence and attention to detail, we transform your 
-          vision into reality, ensuring every occasion becomes a cherished memory.
+          Beyond events, Madhuban features NA farmhouse plots ranging from 4,000 to 20,000 sq. ft., offering peaceful nature living with strong investment potential. Club Anand, Nagpur’s largest upcoming members-only club, adds a new dimension of luxury recreation and community lifestyle.
+          </p>
+          <p className='text-base lg:text-lg leading-relaxed max-w-3xl mx-auto'>
+          Whether you are planning a wedding, investing in farmhouse land, or seeking premium club membership, Madhuban Village is a complete lifestyle destination designed for celebration, comfort, and legacy.
           </p>
         </div>
       </div>
@@ -144,7 +141,7 @@ const AboutPage = () => {
                     <Calendar className='w-8 h-8 text-background' />
                   </div>
                   <h3 className='text-2xl lg:text-3xl font-[playfair-display] mb-4'>
-                    Wedding
+                    Wedding Resort
                   </h3>
                   <p className='text-background/90 leading-relaxed mb-6'>
                     Experience the grandeur of royal wedding celebrations in our magnificent venues. 
@@ -174,7 +171,7 @@ const AboutPage = () => {
                     <Home className='w-8 h-8 text-background' />
                   </div>
                   <h3 className='text-2xl lg:text-3xl font-[playfair-display] mb-4'>
-                    Plots
+                    ⁠Farmhouses/Plots
                   </h3>
                   <p className='text-background/90 leading-relaxed mb-6'>
                     Invest in premium residential plots in the most serene and well-connected 
@@ -204,7 +201,7 @@ const AboutPage = () => {
                     <Building2 className='w-8 h-8 text-background' />
                   </div>
                   <h3 className='text-2xl lg:text-3xl font-[playfair-display] mb-4'>
-                    Club
+                    ⁠Exclusive Lifestyle Club
                   </h3>
                   <p className='text-background/90 leading-relaxed mb-6'>
                     Join an exclusive community with world-class facilities and amenities. 
