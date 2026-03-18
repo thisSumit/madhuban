@@ -432,9 +432,9 @@ const PlotPage = () => {
               >
                 Book a Farm Tour
               </Button>
-              <a className='flex items-center text-background/95 gap-2' href='tel:917020704420'>
+              <a className='flex items-center text-background/95 gap-2' href='tel:917020704418'>
                 <Phone className='w-5 h-5' />
-                +91 70207 04420
+                +91 70207 04418
               </a>
             </div>
           </div>
@@ -482,6 +482,26 @@ const PlotPage = () => {
               With plots starting from 4,500 sq. ft. and pricing from ₹700 per sq. ft.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* PANORAMIC IMAGE BREAK */}
+      <section className='relative w-full h-[55vh] lg:h-[70vh] overflow-hidden'>
+        <img
+          src='https://static2.tripoto.com/media/filter/tst/img/249000/SpotDocument/1505706943_1505706930892.jpg.webp'
+          alt='Madhuban Village Farmhouse Vista'
+          className='w-full h-full object-cover transition-transform duration-700 hover:scale-105'
+        />
+        <div className='absolute inset-0 bg-linear-to-t from-black/75 via-black/25 to-black/10' />
+        <div className='absolute inset-0 flex flex-col items-center justify-end pb-14 text-center px-4'>
+          <div className='w-16 h-px bg-[#D4AF37] mb-5' />
+          <span className='text-[#D4AF37] text-xs tracking-[0.35em] uppercase font-medium mb-3'>
+            Premium Farmhouse Land
+          </span>
+          <p className='text-white/80 text-lg lg:text-2xl font-playfair-display italic max-w-xl'>
+            A peaceful space where nature surrounds you and your dream farmhouse takes shape.
+          </p>
+          <div className='w-16 h-px bg-[#D4AF37] mt-5' />
         </div>
       </section>
 
@@ -567,64 +587,6 @@ const PlotPage = () => {
                     </div>
 
           <AmenitiesAutoScroller />
-        </div>
-      </section>
-
-      {/* PANORAMIC IMAGE BREAK */}
-      <section className='relative w-full h-[55vh] lg:h-[70vh] overflow-hidden'>
-        <img
-          src='https://static2.tripoto.com/media/filter/tst/img/249000/SpotDocument/1505706943_1505706930892.jpg.webp'
-          alt='Madhuban Village Farmhouse Vista'
-          className='w-full h-full object-cover transition-transform duration-700 hover:scale-105'
-        />
-        <div className='absolute inset-0 bg-linear-to-t from-black/75 via-black/25 to-black/10' />
-        <div className='absolute inset-0 flex flex-col items-center justify-end pb-14 text-center px-4'>
-          <div className='w-16 h-px bg-[#D4AF37] mb-5' />
-          <span className='text-[#D4AF37] text-xs tracking-[0.35em] uppercase font-medium mb-3'>
-            Premium Farmhouse Land
-          </span>
-          <p className='text-white/80 text-lg lg:text-2xl font-playfair-display italic max-w-xl'>
-            A peaceful space where nature surrounds you and your dream farmhouse takes shape.
-          </p>
-          <div className='w-16 h-px bg-[#D4AF37] mt-5' />
-        </div>
-      </section>
-
-      <section className='relative w-full h-[55vh] lg:h-[70vh] overflow-hidden'>
-        <img
-          src='https://genuineplots.com/images/actualimages/WhatsApp%20Image%202024-08-06%20at%2016.27.40.jpeg'
-          alt='Madhuban Village Farmhouse Vista'
-          className='w-full h-full object-cover transition-transform duration-700 hover:scale-105'
-        />
-        <div className='absolute inset-0 bg-linear-to-t from-black/75 via-black/25 to-black/10' />
-        <div className='absolute inset-0 flex flex-col items-center justify-end pb-14 text-center px-4'>
-          <div className='w-16 h-px bg-[#D4AF37] mb-5' />
-          <span className='text-[#D4AF37] text-xs tracking-[0.35em] uppercase font-medium mb-3'>
-            Exclusive Farmhouse Plots
-          </span>
-          <p className='text-white/80 text-lg lg:text-2xl font-playfair-display italic max-w-xl'>
-            Create your private escape, a place to relax, reconnect with nature, and build lasting memories.
-          </p>
-          <div className='w-16 h-px bg-[#D4AF37] mt-5' />
-        </div>
-      </section>
-
-      <section className='relative w-full h-[55vh] lg:h-[70vh] overflow-hidden'>
-        <img
-          src='https://svrfarms.com/wp-content/uploads/2025/09/luxury-rural-living-in-india.webp'
-          alt='Madhuban Village Farmhouse Vista'
-          className='w-full h-full object-cover transition-transform duration-700 hover:scale-105'
-        />
-        <div className='absolute inset-0 bg-linear-to-t from-black/75 via-black/25 to-black/10' />
-        <div className='absolute inset-0 flex flex-col items-center justify-end pb-14 text-center px-4'>
-          <div className='w-16 h-px bg-[#D4AF37] mb-5' />
-          <span className='text-[#D4AF37] text-xs tracking-[0.35em] uppercase font-medium mb-3'>
-            Luxury Farmland Living
-          </span>
-          <p className='text-white/80 text-lg lg:text-2xl font-playfair-display italic max-w-xl'>
-            More than land, it’s an opportunity to design the farmhouse lifestyle you’ve always imagined.
-          </p>
-          <div className='w-16 h-px bg-[#D4AF37] mt-5' />
         </div>
       </section>
 
@@ -844,22 +806,22 @@ const PlotPage = () => {
       {/* LIFESTYLE QUOTE IMAGE BREAK */}
       <section className='relative w-full h-[70vh] lg:h-[88vh] overflow-hidden'>
         <img
-          src='/lifestyle-break.jpg'
+          src='https://www.shutterstock.com/shutterstock/videos/1035863255/thumb/1.jpg?ip=x480'
           alt='Madhuban Village Lifestyle'
           className='w-full h-full object-cover transition-transform duration-700 hover:scale-105'
         />
         <div className='absolute inset-0 bg-black/55' />
         <div className='absolute inset-0 flex items-center justify-center text-center px-4'>
           <div className='max-w-3xl'>
-            <div className='w-12 h-px bg-foreground mx-auto mb-8' />
-            <p className='text-foreground text-xs tracking-[0.35em] uppercase font-medium mb-6'>Your Future Lifestyle</p>
+            <div className='w-12 h-px bg-[#D4AF37] mx-auto mb-8' />
+            <p className='text-[#D4AF37] text-xs tracking-[0.35em] uppercase font-medium mb-6'>Your Future Lifestyle</p>
             <h2 className='text-4xl lg:text-6xl font-playfair-display text-white italic leading-tight mb-6'>
               More than land.<br />It&apos;s your legacy.
             </h2>
             <p className='text-white/70 text-lg lg:text-xl leading-relaxed max-w-xl mx-auto'>
               Wake up to open skies, fresh air, and the quiet luxury of space that is entirely yours.
             </p>
-            <div className='w-12 h-px bg-foreground mx-auto mt-8' />
+            <div className='w-12 h-px bg-[#D4AF37] mx-auto mt-8' />
           </div>
         </div>
       </section>
