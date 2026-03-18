@@ -113,7 +113,7 @@ const ContactPage = () => {
                           >
                             +91 7020704418
                           </a>
-                          <a
+                          {/* <a
                             href='tel:+917020704420'
                             className='block text-foreground font-medium hover:text-foreground/70 transition-all duration-300'
                           >
@@ -124,7 +124,7 @@ const ContactPage = () => {
                             className='block text-foreground font-medium hover:text-foreground/70 transition-all duration-300'
                           >
                             +91 7020704421
-                          </a>
+                          </a> */}
                         </div>
                       </div>
                     </div>

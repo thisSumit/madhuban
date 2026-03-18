@@ -94,13 +94,6 @@ const PhonePopup = () => {
                 +91 70207 04421
               </a> */}
             </div>
-
-            {/* Bottom message */}
-            <div className="text-center mt-10 lg:mt-12 pt-8 border-t border-background/10">
-              <p className="text-xs uppercase tracking-widest text-background/50 font-light">
-                Available 24/7 • Tap to Call
-              </p>
-            </div>
           </div>
         </div>
       </div>

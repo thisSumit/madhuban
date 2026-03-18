@@ -10,6 +10,7 @@ const Contact: React.FC = () => {
     budget: '',
     duration: '',
     guests: '',
+    city: '',
     notes: '',
   })
 
@@ -38,6 +39,7 @@ const Contact: React.FC = () => {
       budget: formData.budget,
       duration: formData.duration.trim(),
       guests: formData.guests,
+      city: formData.city.trim(),
       notes: formData.notes.trim(),
       source: 'Wedding Form',
       formType: 'wedding',
@@ -63,6 +65,7 @@ const Contact: React.FC = () => {
         budget: '',
         duration: '',
         guests: '',
+        city: '',
         notes: '',
       })
     } catch (error) {
@@ -90,8 +93,8 @@ const Contact: React.FC = () => {
               <div className="p-4 border border-foreground/10 rounded-lg bg-foreground/5">
                 <p className="text-sm text-foreground/60">Contact Us</p>
                 <p className="text-lg text-foreground font-semibold">+91 70207 04418</p>
-                <p className="text-lg text-foreground font-semibold">+91 70207 04420</p>
-                <p className="text-lg text-foreground font-semibold">+91 70207 04421</p>
+                {/* <p className="text-lg text-foreground font-semibold">+91 70207 04420</p>
+                <p className="text-lg text-foreground font-semibold">+91 70207 04421</p> */}
               </div>
               <div className="p-4 border border-foreground/10 rounded-lg bg-foreground/5">
                 <p className="text-sm text-foreground/60">Email</p>
@@ -151,10 +154,10 @@ const Contact: React.FC = () => {
                     className="w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
                   >
                     <option value="">Select range</option>
-                    <option value="10-20L">₹10L - ₹20L</option>
-                    <option value="20-40L">₹20L - ₹40L</option>
-                    <option value="40-75L">₹40L - ₹75L</option>
-                    <option value="75L+">₹75L+</option>
+                    <option value="Below ₹20L">Below ₹20L</option>
+                    <option value="₹20L - ₹30L">₹20L - ₹30L</option>
+                    <option value="₹30L - ₹40L">₹30L - ₹40L</option>
+                    <option value="₹40L+">₹40L+</option>
                   </select>
                 </div>
               </div>
@@ -182,6 +185,18 @@ const Contact: React.FC = () => {
                     placeholder="Approx. guest count"
                   />
                 </div>
+              </div>
+              <div>
+                <label className="block text-sm text-foreground/70 mb-2">City *</label>
+                  <input
+                    type="text"
+                    name="city"
+                    value={formData.city}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
+                    placeholder="Nagpur"
+                  />
               </div>
 
               <div>

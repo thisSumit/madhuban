@@ -17,7 +17,7 @@ const Footer = () => {
     //   id: 2,
     //   title: 'Clubs',
     //   description: 'Exclusive club memberships with world-class amenities',
-    //   href: '/club',
+    //   href: '/club-anand',
     //   image: '/gentry.png', // Add your clubs image path
     // },
     // {
@@ -38,7 +38,7 @@ const Footer = () => {
       id: 2,
       title: 'Clubs',
       description: 'Exclusive club memberships with world-class amenities',
-      href: '/club',
+      href: '/club-anand',
       image: '/ex.png', // Add your clubs image path
     },
     {
@@ -53,14 +53,15 @@ const Footer = () => {
   const navigationLinks = {
     about: [
       { label: 'About Us', href: '/about' },
+      { label: 'Wedding', href: '/' },
       { label: 'Plots', href: '/plots' },
-      { label: 'Club', href: '/club' },
-      { label: 'Gallery', href: 'https://www.instagram.com/madhuban.village/' },
+      { label: 'Club', href: '/club-anand' },
+      { label: 'Gallery', href: '/our-world' },
     ],
     services: [
-      { label: 'Wedding Packages', href: 'tel:7020704420' },
-      { label: 'Farmhouse & Farmland Sales', href: 'tel:7020704420' },
-      { label: 'Club Memberships', href: 'tel:7020704420' },
+      { label: 'Destination Weddings', href: '/' },
+      { label: 'Farmhouse & Farmland Investment', href: '/plots' },
+      { label: 'Club Anand Membership', href: '/club-anand' },
     ],
   }
 
@@ -88,7 +89,7 @@ const Footer = () => {
               >
                 +917020704418
               </a>
-              <span className='text-background/40 hidden lg:block'>|</span>
+              {/* <span className='text-background/40 hidden lg:block'>|</span>
               <a
                 href='tel:+917020704420'
                 className='text-4xl lg:text-5xl font-playfair-display text-background hover:text-background/80 transition-colors duration-300'
@@ -101,7 +102,7 @@ const Footer = () => {
                 className='text-4xl lg:text-5xl font-playfair-display text-background hover:text-background/80 transition-colors duration-300'
               >
                 +917020704421
-              </a>
+              </a> */}
             </div>
 
             {/* Email Buttons */}
@@ -215,7 +216,7 @@ const Footer = () => {
                 <Phone className='w-4 h-4 text-background/60 group-hover:text-background transition-colors duration-300' />
                 <span>+91 7020704418</span>
               </a>
-              <a
+              {/* <a
                 href='tel:+917020704420'
                 className='flex items-center gap-3 text-background/90 hover:text-background transition-colors duration-300 group'
               >
@@ -228,7 +229,7 @@ const Footer = () => {
               >
                 <Phone className='w-4 h-4 text-background/60 group-hover:text-background transition-colors duration-300' />
                 <span>+91 7020704421</span>
-              </a>
+              </a> */}
               <a
                 href='mailto:info@madhubanvillage.in'
                 className='flex items-center gap-3 text-background/90 hover:text-background transition-colors duration-300 group underline'

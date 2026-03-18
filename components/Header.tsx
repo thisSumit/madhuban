@@ -41,7 +41,7 @@ const Header = () => {
     { href: '/about', label: 'Home' },
     { href: '/', label: 'Wedding' },
     { href: '/plots', label: 'Plots' },
-    { href: '/club', label: 'Club' },
+    { href: '/club-anand', label: 'Club' },
     { href: '/our-world', label: 'Our World' },
     { href: '/contact', label: 'Contact' },
   ]

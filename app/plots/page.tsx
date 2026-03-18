@@ -4,14 +4,14 @@ import React, { useRef, useState } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Button } from '@/components/ui/Button'
-import { 
-  Check, 
-  MapPin, 
-  Clock, 
-  TrendingUp, 
-  Home, 
-  Calendar, 
-  Users, 
+import {
+  Check,
+  MapPin,
+  Clock,
+  TrendingUp,
+  Home,
+  Calendar,
+  Users,
   Shield,
   Droplet,
   TreePine,
@@ -109,9 +109,8 @@ function PlotsCarousel() {
           <button
             key={idx}
             onClick={() => setCurrent(idx)}
-            className={`h-3 w-3 rounded-full transition ${
-              current === idx ? 'bg-[#D4AF37]' : 'bg-white/40'
-            }`}
+            className={`h-3 w-3 rounded-full transition ${current === idx ? 'bg-[#D4AF37]' : 'bg-white/40'
+              }`}
           />
         ))}
       </div>
@@ -161,9 +160,9 @@ const PlotPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
+
     const scriptURL = "https://script.google.com/macros/s/AKfycbxcNT7NKTGXRh_fedq1-0USZTWV22D5aAHKK9TGmSDsVTJoxyRV1Uz4ubqQeHwJ6uSs/exec" // Integrated Google Apps Script URL
-    
+
     const payload = {
       name: formData.name.trim(),
       mobile: formData.mobile.trim(),
@@ -179,7 +178,7 @@ const PlotPage = () => {
       formType: "plots",
       timestamp: new Date().toISOString()
     }
-    
+
     try {
       await fetch(scriptURL, {
         method: "POST",
@@ -187,9 +186,9 @@ const PlotPage = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
       })
-      
+
       alert('Thank you! Our property advisor will contact you within 30 minutes.')
-      
+
       setFormData({
         name: '',
         mobile: '',
@@ -202,7 +201,7 @@ const PlotPage = () => {
         interests: [],
         notes: '',
       })
-      
+
     } catch (error) {
       console.error('Error:', error)
       alert('Something went wrong! Please try again or call us directly.')
@@ -217,26 +216,26 @@ const PlotPage = () => {
       <section className='relative h-screen w-full overflow-hidden'>
         <div className='absolute inset-0 z-0'>
           <img
-            src="/dr1.png" // You can change this image
+            src="/farm2.jpeg" // You can change this image
             alt="Madhuban Village Farmhouse"
             className='h-full w-full object-cover'
           />
           <div className='absolute inset-0 bg-black/50' />
         </div>
-        
+
         <div className='relative z-10 h-full flex items-center justify-center px-4 lg:px-16'>
           <div className='text-center max-w-5xl'>
             <h1 className='text-4xl lg:text-7xl font-playfair-display text-nowrap text-background mb-6 leading-tight'>
               <TextAnimate animation="slideLeft" className='italic' by="character" duration={0.5} delay={0.2} once>
-              Your Private Farmhouse
+                Your Private Farmhouse
               </TextAnimate>
               <TextAnimate animation="slideLeft" by="character" duration={0.5} delay={0.2} once>
-              at Madhuban Village
+                at Madhuban Village
               </TextAnimate>
             </h1>
             <div className='mb-10'>
               <p className='text-2xl lg:text-4xl font-playfair-display text-background mb-2'>
-                Plots starting from<span className='text-[#D4AF37]'>₹700 per sq. ft.</span>
+                Plots starting from<span className='text-[#D4AF37]'> ₹700 per sq. ft.</span>
               </p>
             </div>
             <div className='flex flex-col items-center justify-center gap-4'>
@@ -292,14 +291,14 @@ const PlotPage = () => {
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <div className='max-w-4xl mx-auto text-center'>
             <h2 className='text-4xl lg:text-5xl font-playfair-display text-foreground mb-8'>
-            <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-              Welcome to
+              <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
+                Welcome to
               </TextAnimate>
               <TextAnimate animation="blurInUp" className='italic' by="character" duration={0.5} delay={0.1} once>
-              Madhuban Village 
+                Madhuban Village
               </TextAnimate>
               <TextAnimate animation="blurInUp" className='italic' by="character" duration={0.5} delay={0.1} once>
-              Farmhouse
+                Farmhouse
               </TextAnimate>
             </h2>
             <div className='space-y-6 text-lg text-foreground/70 leading-relaxed'>
@@ -314,105 +313,136 @@ const PlotPage = () => {
         </div>
       </section>
 
-      {/* 3A. PLOTS IMAGE CAROUSEL */}
-      <section className="overflow-hidden py-16">
-        <div className="max-w-full mx-auto px-0">
-          <h3 className="text-center text-2xl lg:text-3xl font-playfair-display text-foreground mb-8">
-            Explore Our Plots
-          </h3>
-          <PlotsCarousel />
+      {/* PANORAMIC IMAGE BREAK */}
+      <section className='relative w-full h-[55vh] lg:h-[70vh] overflow-hidden'>
+        <img
+          src='https://static2.tripoto.com/media/filter/tst/img/249000/SpotDocument/1505706943_1505706930892.jpg.webp'
+          alt='Madhuban Village Farmhouse Vista'
+          className='w-full h-full object-cover transition-transform duration-700 hover:scale-105'
+        />
+        <div className='absolute inset-0 bg-linear-to-t from-black/75 via-black/25 to-black/10' />
+        <div className='absolute inset-0 flex flex-col items-center justify-end pb-14 text-center px-4'>
+          <div className='w-16 h-px bg-[#D4AF37] mb-5' />
+          <span className='text-[#D4AF37] text-xs tracking-[0.35em] uppercase font-medium mb-3'>
+            Premium Farmhouse Land
+          </span>
+          <p className='text-white/80 text-lg lg:text-2xl font-playfair-display italic max-w-xl'>
+            Where your story begins
+          </p>
+          <div className='w-16 h-px bg-[#D4AF37] mt-5' />
         </div>
       </section>
-
-      {/* Carousel component - can be defined above or in same file */}
-      {/* You can replace the image src with real plot images */}
-      {/* Minimal dependencies, pure React/Next image carousel */}
 
       {/* 4. AMENITIES SECTION */}
       <section className='py-20 lg:py-32 bg-foreground text-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
-          <h2 className='text-4xl lg:text-5xl font-playfair-display text-left md:text-center mb-16'>
-          <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-            Lifestyle Benefits
-            </TextAnimate>
-                            <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
-            That Come with Land
-            </TextAnimate>
-          </h2>
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+          <div className='max-w-2xl mx-auto text-center mb-16'>
+            <h2 className='text-4xl lg:text-5xl font-playfair-display'>
+              <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
+                Lifestyle Benefits
+              </TextAnimate>
+              <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
+                That Come with Your Land
+              </TextAnimate>
+            </h2>
+            <p className='mt-4 text-base lg:text-lg text-background/60 leading-relaxed'>
+              Every plot at Madhuban Village comes backed by a curated set of lifestyle amenities designed to elevate everyday living.
+            </p>
+          </div>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
             {[
-              { icon: Droplet, text: 'Private Swimming Pool Access' },
-              { icon: Building2, text: 'Your Personal Banquet & Celebration Hall' },
-              { icon: TreePine, text: 'Resort-Style Landscaped Lawns' },
-              { icon: Building2, text: "Nagpur's Biggest Clubhouse" },
-              { icon: Users, text: "Children's Play Area & Family Zones" },
-              { icon: TreePine, text: 'Jogging Tracks & Green Open Spaces' },
-              { icon: Shield, text: 'Gated Community with 24×7 Security' },
-              { icon: Check, text: 'Power, Water & Internal Roads' },
-              { icon: Calendar, text: 'Perfect for Weekend Living & Celebrations' },
-            ].map((amenity, index) => {
-              const Icon = amenity.icon
-              return (
-                <div key={index} className='flex items-start gap-4 p-6 bg-background/5 rounded-lg hover:bg-background/10 transition-colors duration-300'>
-                  <Icon className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
-                  <p className='text-background/90 text-lg'>{amenity.text}</p>
+              { icon: TreePine, title: 'Beautifully Landscaped Lawns', desc: 'Thoughtfully designed green areas that enhance everyday living.' },
+              { icon: Users, title: "Children's Play Area & Family Zone", desc: 'Safe, dedicated spaces for recreation and family time.' },
+              { icon: Building2, title: 'Exclusive Clubhouse Access', desc: 'A lifestyle clubhouse for leisure, socialising, and relaxation.' },
+              { icon: Check, title: 'Ready Infrastructure', desc: 'Well-planned power supply, water connection, and internal roads.' },
+              { icon: Shield, title: 'Gated Community with 24×7 Security', desc: 'Controlled access and round-the-clock security for complete peace of mind.' },
+              { icon: Home, title: 'Mandir Within the Community', desc: 'A serene spiritual space for daily prayers and special occasions.' },
+              { icon: TreePine, title: 'Ample Green Open Spaces', desc: 'Open, breathable surroundings that promote wellness and calm living.' },
+              { icon: TrendingUp, title: 'Rental Income Opportunity', desc: 'Option to generate returns by renting your farmhouse or villa.' },
+              { icon: Home, title: 'Custom Construction Options', desc: 'Freedom to design and build as per your lifestyle and vision.' },
+            ].map(({ icon: Icon, title, desc }, index) => (
+              <div
+                key={index}
+                className='group flex flex-col gap-3 p-6 bg-background/5 border border-background/10 rounded-xl hover:bg-background/10 hover:border-[#D4AF37]/40 transition-all duration-300'
+              >
+                <div className='flex items-center gap-3'>
+                  <span className='flex items-center justify-center w-10 h-10 rounded-full bg-[#D4AF37]/10 group-hover:bg-[#D4AF37]/20 transition-colors duration-300'>
+                    <Icon className='w-5 h-5 text-[#D4AF37]' />
+                  </span>
+                  <h3 className='text-base font-semibold text-background/95 leading-snug'>{title}</h3>
                 </div>
-              )
-            })}
+                <p className='text-sm text-background/60 leading-relaxed pl-[52px]'>{desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 4A. LIFESTYLE BENEFITS SECTION */}
-      {/* <section className='py-20 lg:py-32 bg-background'>
+      {/* 3A. PLOTS IMAGE CAROUSEL */}
+      <section className="overflow-hidden">
+        <div className="max-w-full mx-auto px-0">
+          <PlotsCarousel />
+        </div>
+      </section>
+
+      {/* IMAGE GALLERY GRID */}
+      <section className='py-16 lg:py-24 bg-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
-          <h2 className='text-4xl lg:text-5xl font-playfair-display text-left md:text-center mb-16 text-foreground'>
-          <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-            Lifestyle Benefits
-            </TextAnimate>
-            <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
-            That Come With Land
-            </TextAnimate>
-          </h2>
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-            {[
-              { icon: TreePine, text: 'Beautifully Landscaped Lawns', description: 'Thoughtfully designed green areas that enhance everyday living.' },
-              { icon: Users, text: 'Children\'s Play Area & Family Zone', description: 'Safe, dedicated spaces for recreation and family time.' },
-              { icon: Building2, text: 'Exclusive Clubhouse Access', description: 'A lifestyle clubhouse for leisure, socialising, and relaxation.' },
-              { icon: Check, text: 'Ready Infrastructure', description: 'Well-planned power supply, water connection, and internal roads.' },
-              { icon: Shield, text: 'Gated Community with 24×7 Security', description: 'Controlled access and round-the-clock security for complete peace of mind.' },
-              { icon: Home, text: 'Mandir Within the Community', description: 'A serene spiritual space for daily prayers and special occasions.' },
-              { icon: TreePine, text: 'Ample Green Open Spaces', description: 'Open, breathable surroundings that promote wellness and calm living.' },
-              { icon: TrendingUp, text: 'Rental Income Opportunity', description: 'Option to generate returns by renting your farmhouse or villa.' },
-              { icon: Home, text: 'Custom Construction Options', description: 'Freedom to design and build as per your lifestyle and vision.' },
-            ].map((benefit, index) => {
-              const Icon = benefit.icon
-              return (
-                <div key={index} className='p-6 bg-foreground/5 rounded-lg hover:bg-foreground/10 transition-colors duration-300 border border-foreground/10'>
-                  <div className='flex items-start gap-4'>
-                    <Icon className='w-6 h-6 text-foreground shrink-0 mt-1' />
-                    <div>
-                      <h3 className='text-lg font-semibold text-foreground mb-2'>{benefit.text}</h3>
-                      <p className='text-sm text-foreground/70 leading-relaxed'>{benefit.description}</p>
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
+          <div className='text-center mb-10'>
+            <span className='text-[#D4AF37] text-xs tracking-[0.3em] uppercase font-medium'>Visual Tour</span>
+            <h3 className='text-3xl lg:text-4xl font-playfair-display text-foreground mt-3'>
+              A Glimpse of <span className='italic'>Your Future Home</span>
+            </h3>
+          </div>
+          <div className='grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4'>
+            <div className='col-span-2 lg:col-span-1 lg:row-span-2 relative overflow-hidden rounded-2xl h-64 lg:h-[524px] group cursor-pointer'>
+              <img
+                src='/farm5.jpeg'
+                alt='Farmhouse view'
+                className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-700'
+              />
+              <div className='absolute inset-0 bg-linear-to-t from-black/40 to-transparent opacity-60 group-hover:opacity-20 transition-opacity duration-500' />
+            </div>
+            <div className='relative overflow-hidden rounded-2xl h-48 lg:h-[254px] group cursor-pointer'>
+              <img
+                src='/farm2.jpeg'
+                alt='Landscape view'
+                className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-700'
+              />
+              <div className='absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500' />
+            </div>
+            <div className='relative overflow-hidden rounded-2xl h-48 lg:h-[254px] group cursor-pointer'>
+              <img
+                src='/farm3.jpeg'
+                alt='Amenities'
+                className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-700'
+              />
+              <div className='absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500' />
+            </div>
+            <div className='col-span-2 relative overflow-hidden rounded-2xl h-48 lg:h-[254px] group cursor-pointer'>
+              <img
+                src='/farm4.jpeg'
+                alt='Community'
+                className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-700'
+              />
+              <div className='absolute inset-0 bg-linear-to-r from-black/50 to-transparent' />
+              <div className='absolute bottom-5 left-6 translate-y-1 group-hover:translate-y-0 transition-transform duration-500'>
+                <p className='text-white font-playfair-display italic text-xl drop-shadow'>Experience the life you deserve</p>
+              </div>
+            </div>
           </div>
         </div>
-      </section> */}
-
+      </section>
       {/* 5. LOCATION ADVANTAGE */}
       <section className='py-20 lg:py-32 bg-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
             <div>
               <h2 className='text-4xl lg:text-5xl font-playfair-display text-foreground mb-8'>
-              <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-                Perfect Balance of 
+                <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
+                  Perfect Balance of
                 </TextAnimate>
-                                <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
+                <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
                   Connectivity & Peace
                 </TextAnimate>
               </h2>
@@ -457,57 +487,96 @@ const PlotPage = () => {
       <section className='py-20 lg:py-32 bg-foreground text-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <h2 className='text-4xl lg:text-5xl font-playfair-display items-start text-left md:text-center mb-16'>
-          <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-            Why Farmhouse
-             </TextAnimate>
-             <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
+            <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
+              Why Farmhouse
+            </TextAnimate>
+            <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
               Is a Smart Investment
             </TextAnimate>
           </h2>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
             <div>
               <div className='space-y-6 mb-8'>
-                <div className='flex items-start gap-4'>
-                  <TrendingUp className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
-                  <p className='text-lg text-background/90'>Strong Land Appreciation Potential</p>
+                <div className='flex-col items-start gap-4'>
+                  <div className='flex items-start gap-4'>
+                    <TrendingUp className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
+                    <p className='text-lg text-background/90'>Strong Land Appreciation Potential</p>
+                  </div>
+                  <p className='text-sm text-background/70'>Land assets in this location are poised for steady long-term value growth.</p>
                 </div>
-                <div className='flex items-start gap-4'>
-                  <Home className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
-                  <p className='text-lg text-background/90'>High Demand for Farmhouse & Weekend Properties</p>
+                <div className='flex-col items-start gap-4'>
+                  <div className='flex items-start gap-4'>
+                    <Home className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
+                    <p className='text-lg text-background/90'>High Demand for Farmhouse & Weekend Properties</p>
+                  </div>
+                  <p className='text-sm text-background/70'>Increasing preference for private getaways continues to drive demand.</p>
                 </div>
-                <div className='flex items-start gap-4'>
-                  <Building2 className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
-                  <p className='text-lg text-background/90'>⁠Nagpur — A Rapidly Growing City</p>
+
+                <div className='flex-col items-start gap-4'>
+                  <div className='flex items-start gap-4'>
+                    <Building2 className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
+                    <p className='text-lg text-background/90'>⁠Nagpur — A Rapidly Growing City</p>
+                  </div>
+                  <p className='text-sm text-background/70'>Strategic development and infrastructure expansion make Nagpur a strong investment hub.</p>
                 </div>
-                <div className='flex items-start gap-4'>
-                  <LandPlot className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
-                  <p className='text-lg text-background/90'>Limited Land Availability</p>
+
+                <div className='flex-col items-start gap-4'>
+                  <div className='flex items-start gap-4'>
+                    <LandPlot className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
+                    <p className='text-lg text-background/90'>Limited Land Availability</p>
+                  </div>
+                  <p className='text-sm text-background/70'>Planned farmhouse communities are limited, enhancing long-term value through scarcity.</p>
                 </div>
-                <div className='flex items-start gap-4'>
-                  <User className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
-                  <p className='text-lg text-background/90'>Lifestyle-Driven Demand</p>
+                <div className='flex-col items-start gap-4'>
+                  <div className='flex items-start gap-4'>
+                    <User className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
+                    <p className='text-lg text-background/90'>Lifestyle-Driven Demand</p>
+                  </div>
+                  <p className='text-sm text-background/70'>Growing focus on wellness, open spaces, and private living supports sustained interest.</p>
                 </div>
-                <div className='flex items-start gap-4'>
-                  <ExternalLink className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
-                  <p className='text-lg text-background/90'>⁠Multiple Exit Options</p>
+                <div className='flex-col items-start gap-4'>
+                  <div className='flex items-start gap-4'>
+                    <ExternalLink className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
+                    <p className='text-lg text-background/90'>Multiple Exit Options</p>
+                  </div>
+                  <p className='text-sm text-background/70'>Flexibility to self-use, lease, or resell based on personal and market goals.</p>
                 </div>
-                <div className='flex items-start gap-4'>
-                  <Shield className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
-                  <p className='text-lg text-background/90'>Low-Maintenance Investment</p>
+                <div className='flex-col items-start gap-4'>
+                  <div className='flex items-start gap-4'>
+                    <Shield className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
+                    <p className='text-lg text-background/90'>Low-Maintenance Investment</p>
+                  </div>
+                  <p className='text-sm text-background/70'>Land requires minimal upkeep compared to constructed properties.</p>
                 </div>
-                <div className='flex items-start gap-4'>
-                  <PlaneLandingIcon className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
-                  <p className='text-lg text-background/90'>⁠Ideal for NRI & HNI Investors</p>
+                <div className='flex-col items-start gap-4'>
+                  <div className='flex items-start gap-4'>
+                    <PlaneLandingIcon className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
+                    <p className='text-lg text-background/90'>Ideal for NRI & HNI Investors</p>
+                  </div>
+                  <p className='text-sm text-background/70'>A secure, tangible asset offering both stability and long-term appreciation.</p>
                 </div>
               </div>
             </div>
             <div>
+              <div className='relative h-56 lg:h-72 rounded-2xl overflow-hidden mb-8 shadow-xl group'>
+                <img
+                  src='/invest-lifestyle.jpg'
+                  alt='Madhuban Village Investment'
+                  className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-700'
+                />
+                <div className='absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent' />
+                <div className='absolute bottom-5 left-5 right-5'>
+                  <p className='text-white/95 font-playfair-display italic text-lg leading-snug drop-shadow'>
+                    "Your land. Your legacy. Your freedom."
+                  </p>
+                </div>
+              </div>
               <h3 className='text-2xl font-playfair-display mb-6'>Ideal for:</h3>
               <div className='space-y-4'>
                 {[
                   'Private farmhouse',
                   'Family vacation home',
-                  'Event & party hosting',
+                  'Event hosting',
                   'Rental weekend getaway',
                   'Long-term land investment',
                 ].map((use, index) => (
@@ -522,16 +591,39 @@ const PlotPage = () => {
         </div>
       </section>
 
+      {/* LIFESTYLE QUOTE IMAGE BREAK */}
+      <section className='relative w-full h-[70vh] lg:h-[88vh] overflow-hidden'>
+        <img
+          src='/lifestyle-break.jpg'
+          alt='Madhuban Village Lifestyle'
+          className='w-full h-full object-cover transition-transform duration-700 hover:scale-105'
+        />
+        <div className='absolute inset-0 bg-black/55' />
+        <div className='absolute inset-0 flex items-center justify-center text-center px-4'>
+          <div className='max-w-3xl'>
+            <div className='w-12 h-px bg-[#D4AF37] mx-auto mb-8' />
+            <p className='text-[#D4AF37] text-xs tracking-[0.35em] uppercase font-medium mb-6'>Your Future Lifestyle</p>
+            <h2 className='text-4xl lg:text-6xl font-playfair-display text-white italic leading-tight mb-6'>
+              More than land.<br />It&apos;s your legacy.
+            </h2>
+            <p className='text-white/70 text-lg lg:text-xl leading-relaxed max-w-xl mx-auto'>
+              Wake up to open skies, fresh air, and the quiet luxury of space that is entirely yours.
+            </p>
+            <div className='w-12 h-px bg-[#D4AF37] mx-auto mt-8' />
+          </div>
+        </div>
+      </section>
+
       {/* 7. SIZE & PRICE TRANSPARENCY */}
       <section className='py-20 lg:py-32 bg-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <div className='max-w-4xl mx-auto'>
             <h2 className='text-4xl lg:text-5xl items-start text-left md:text-center font-playfair-display text-foreground mb-16'>
-            <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-              Size & 
+              <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
+                Size &
               </TextAnimate>
               <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
-              Price Transparency
+                Price Transparency
               </TextAnimate>
             </h2>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
@@ -621,16 +713,61 @@ const PlotPage = () => {
         </div>
       </section> */}
 
+      {/* 12. GOOGLE MAP LOCATION */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 lg:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="space-y-4">
+              <h2 className="text-3xl lg:text-4xl font-playfair-display text-foreground">
+                <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
+                  Visit Us At
+                </TextAnimate>
+                <TextAnimate animation="blurInUp" className='italic' by="character" duration={0.5} delay={0.1} once>
+                  Madhuban Village Farmhouse
+                </TextAnimate>
+              </h2>
+              <p className="text-lg text-foreground/70 leading-relaxed">
+                Farmhouse | Club | Resort | Banquets
+              </p>
+              <div className="flex items-start gap-3 text-foreground/70">
+                <MapPin className="w-5 h-5 text-[#D4AF37] mt-1" />
+                <p>
+                  Madhuban Village, Hatla, Panjra, Katol Road, Katol, Nagpur- 441302
+                </p>
+              </div>
+            </div>
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl border border-foreground/10">
+              <div className="absolute right-4 bottom-4 z-10 flex items-center gap-2 bg-background/90 backdrop-blur px-3 py-2 rounded-full shadow">
+                <img src="/madhuban-logo.png" alt="Madhuban Village" className="w-8 h-8 object-contain" />
+                <span className="text-sm font-semibold text-foreground">Madhuban Village Farmhouse</span>
+              </div>
+              <div className="relative">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1843.7910705490574!2d78.64734126630019!3d21.25138632020649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd45878357e8927%3A0xa6b5bbd3a81926a9!2sMadhuban%20Village%20-%20FARMSHOUSE%20%7C%20CLUB%20%7C%20RESORT%20%7C%20BANQUETS!5e0!3m2!1sen!2sin!4v1765449947326!5m2!1sen!2sin"
+                  width="100%"
+                  height="420"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  aria-label="Google map showing Madhuban Village location"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 10. FINAL CTA SECTION */}
       <section className='py-20 lg:py-32 bg-foreground text-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <div className='max-w-4xl mx-auto text-center'>
             <h2 className='text-4xl lg:text-5xl font-playfair-display mb-8'>
-            <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-              Book Your Private 
+              <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
+                Book Your Private
               </TextAnimate>
               <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
-              Site Visit Now
+                Site Visit Now
               </TextAnimate>
             </h2>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mb-12'>
@@ -670,18 +807,18 @@ const PlotPage = () => {
                 showcase available inventory, and share the best pricing options for you.
               </p>
               <div className="grid grid-cols-1 gap-4">
-              <div className="p-4 border border-foreground/10 rounded-lg bg-foreground/5">
-                <p className="text-sm text-foreground/60">Contact Us</p>
-                <p className="text-lg text-foreground font-semibold">+91 70207 04418</p>
-                <p className="text-lg text-foreground font-semibold">+91 70207 04420</p>
-                <p className="text-lg text-foreground font-semibold">+91 70207 04421</p>
+                <div className="p-4 border border-foreground/10 rounded-lg bg-foreground/5">
+                  <p className="text-sm text-foreground/60">Contact Us</p>
+                  <p className="text-lg text-foreground font-semibold">+91 70207 04418</p>
+                  {/* <p className="text-lg text-foreground font-semibold">+91 70207 04420</p>
+                <p className="text-lg text-foreground font-semibold">+91 70207 04421</p> */}
+                </div>
+                <div className="p-4 border border-foreground/10 rounded-lg bg-foreground/5">
+                  <p className="text-sm text-foreground/60">Email</p>
+                  <p className="text-lg text-foreground font-semibold">info@madhubanvillage.in</p>
+                  <p className="text-lg text-foreground font-semibold">madhubanvillage@gmail.com</p>
+                </div>
               </div>
-              <div className="p-4 border border-foreground/10 rounded-lg bg-foreground/5">
-                <p className="text-sm text-foreground/60">Email</p>
-                <p className="text-lg text-foreground font-semibold">info@madhubanvillage.in</p>
-                <p className="text-lg text-foreground font-semibold">madhubanvillage@gmail.com</p>
-              </div>
-            </div>
             </div>
 
             <div className='bg-foreground/5 border border-foreground/10 rounded-2xl shadow-xl p-5 sm:p-6 lg:p-8 backdrop-blur'>
@@ -796,50 +933,7 @@ const PlotPage = () => {
         </div>
       </section>
 
-      {/* 12. GOOGLE MAP LOCATION */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            <div className="space-y-4">
-              <h2 className="text-3xl lg:text-4xl font-playfair-display text-foreground">
-                <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-              Visit Us At
-              </TextAnimate>
-              <TextAnimate animation="blurInUp" className='italic' by="character" duration={0.5} delay={0.1} once>
-              Madhuban Village Farmhouse
-              </TextAnimate>
-              </h2>
-              <p className="text-lg text-foreground/70 leading-relaxed">
-                Farmhouse | Club | Resort | Banquets
-              </p>
-              <div className="flex items-start gap-3 text-foreground/70">
-                <MapPin className="w-5 h-5 text-[#D4AF37] mt-1" />
-                <p>
-                  Madhuban Village, Hatla, Panjra, Katol Road, Katol, Nagpur- 441302
-                </p>
-              </div>
-            </div>
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl border border-foreground/10">
-              <div className="absolute right-4 bottom-4 z-10 flex items-center gap-2 bg-background/90 backdrop-blur px-3 py-2 rounded-full shadow">
-                <img src="/madhuban-logo.png" alt="Madhuban Village" className="w-8 h-8 object-contain" />
-                <span className="text-sm font-semibold text-foreground">Madhuban Village Farmhouse</span>
-              </div>
-              <div className="relative">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1843.7910705490574!2d78.64734126630019!3d21.25138632020649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd45878357e8927%3A0xa6b5bbd3a81926a9!2sMadhuban%20Village%20-%20FARMSHOUSE%20%7C%20CLUB%20%7C%20RESORT%20%7C%20BANQUETS!5e0!3m2!1sen!2sin!4v1765449947326!5m2!1sen!2sin"
-                  width="100%"
-                  height="420"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  aria-label="Google map showing Madhuban Village location"
-                ></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       <Footer />
     </div>

@@ -135,7 +135,7 @@ export default function TermsAndConditions() {
                         <strong>Madhuban Village</strong><br />
                         Katol Road, Nagpur,
                         Maharashtra, India<br />
-                        Phone: +91 7020704418 | +91 7020704420 | +91 7020704421<br />
+                        Phone: +91 7020704418<br />
                         Email: info@madhubanvillage.in | madhubanvillage@gmail.com
                     </p>
                 </section>

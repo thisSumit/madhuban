@@ -3,6 +3,7 @@ import { Playfair_Display, Open_Sans } from "next/font/google";
 import "./globals.css";
 import { Lenis } from "lenis/react";
 import PhonePopup from "@/components/PhonePopup";
+import { MessageCircle } from "lucide-react";
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair-display",
@@ -32,6 +33,13 @@ export default function RootLayout({
       >
         {children}
         <PhonePopup />
+        <a href="https://wa.me/+917020704420">
+        <div className='fixed bottom-8 z-10 bg-foreground p-2 right-6 flex items-end gap-2 text-white'>
+          <span className='text-xs tracking-wider uppercase'>Inquire Now</span>
+            <MessageCircle className='w-5 h-5' strokeWidth={1.5} />
+            
+        </div>
+        </a>
       </body>
       </Lenis>
     </html>

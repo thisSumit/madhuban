@@ -40,13 +40,6 @@ const Hero = () => {
           <span className='text-xs tracking-wider uppercase'>Scroll to explore</span>
             <ChevronDown className='w-5 h-5 animate-bounce' strokeWidth={1.5} />
         </div>
-          <a href="https://wa.me/+917020704420">
-        <div className='fixed bottom-8 z-10 bg-foreground p-2 right-6 flex items-end gap-2 text-white'>
-          <span className='text-xs tracking-wider uppercase'>Inquire Now</span>
-            <MessageCircle className='w-5 h-5' strokeWidth={1.5} />
-            
-        </div>
-        </a>
       </div>
     </div>
   )

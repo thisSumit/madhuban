@@ -47,8 +47,7 @@ const ClubPage = () => {
     name: '',
     mobile: '',
     email: '',
-    guests: '',
-    membershipType: '',
+    city: '',
     notes: '',
   })
 
@@ -69,8 +68,6 @@ const ClubPage = () => {
       name: formData.name.trim(),
       mobile: formData.mobile.trim(),
       email: formData.email.trim(),
-      guests: formData.guests,
-      membershipType: formData.membershipType,
       notes: formData.notes.trim(),
       source: "Club Form", // Important: This identifies the form type
       formType: "club",
@@ -94,9 +91,8 @@ const ClubPage = () => {
         name: "",
         mobile: "",
         email: "",
-        guests: "",
-        membershipType: "",
         notes: "",
+        city: "",
       });
   
     } catch (error) {
@@ -168,7 +164,7 @@ const ClubPage = () => {
                 className='group'
               >
                 <span className='flex items-center'>
-                  Pre Launch Membership Open
+                  Comming Soon
                   <ArrowRight className='w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300' />
                 </span>
               </Button>
@@ -462,8 +458,8 @@ const ClubPage = () => {
               <div className="p-4 border border-foreground/10 rounded-lg bg-foreground/5">
                 <p className="text-sm text-foreground/60">Contact Us</p>
                 <p className="text-lg text-foreground font-semibold">+91 70207 04418</p>
-                <p className="text-lg text-foreground font-semibold">+91 70207 04420</p>
-                <p className="text-lg text-foreground font-semibold">+91 70207 04421</p>
+                {/* <p className="text-lg text-foreground font-semibold">+91 70207 04420</p>
+                <p className="text-lg text-foreground font-semibold">+91 70207 04421</p> */}
               </div>
               <div className="p-4 border border-foreground/10 rounded-lg bg-foreground/5">
                 <p className="text-sm text-foreground/60">Email</p>
@@ -513,39 +509,18 @@ const ClubPage = () => {
                     />
                   </div>
                   <div>
-                    <label className='block text-sm text-foreground/70 mb-2'>Number of Members</label>
+                    <label className='block text-sm text-foreground/70 mb-2'>City</label>
                     <input
-                      type='number'
-                      name='guests'
-                      value={formData.guests}
+                      type='text'
+                      name='city'
+                      value={formData.city}
                       onChange={handleChange}
                       min={1}
                       className='w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]'
-                      placeholder='Approx. count'
+                      placeholder='Nagpur'
                     />
                   </div>
                 </div>
-                <div>
-                <label className='block text-sm text-foreground/70 mb-2'>
-                        Membership Type Interest *
-                      </label>
-                      <select
-                      id='membershipType'
-                      name='membershipType'
-                      value={formData.membershipType}
-                      onChange={handleChange}
-                      required
-                      className='w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]'
-                    >
-                      <option value=''>Select membership type</option>
-                      <option value='Lifetime'>Lifetime</option>
-                      <option value='40 Years'>40 Years</option>
-                      <option value='20 Years'>20 Years</option>
-                      <option value='10 Years'>10 Years</option>
-                      <option value='5 Years'>5 Years</option>
-                    </select>
-                    </div>
-
                 <div>
                   <label className='block text-sm text-foreground/70 mb-2'>Notes or special requests</label>
                   <textarea

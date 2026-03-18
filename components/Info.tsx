@@ -48,9 +48,20 @@ const Info = () => {
         {/* Button */}
         <div className='flex justify-center'>
           <a href='/about' className='nav-link'>
-            About Us
+            Learn More
           </a>
         </div>
+
+<div className='h-[1px] my-8 bg-[#313131]'/>
+
+        <div className='h-full w-full justify-center items-center'>
+          <h2 className='text-xl lg:text-2xl font-playfair-display text-foreground leading-tight mt-10'>Awards</h2>
+          <div className='flex items-center justify-center gap-4 mt-6'>
+            <img className='h-[150px]' src="weddingwire-26.jpg" alt="" />
+            <img className='h-[150px]' src="weddingwire-24.jpg" alt="" />
+          </div>
+        </div>
+
       </div>
     </section>
   )
