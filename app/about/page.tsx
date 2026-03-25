@@ -19,7 +19,7 @@ const AboutPage = () => {
       <section className='relative h-screen w-full overflow-hidden'>
         <div className='absolute inset-0 z-0'>
           <img
-            src="/indraprasta1.png" // You can change this to your preferred hero image
+            src="/madhuban-main.png" // You can change this to your preferred hero image
             alt="Madhuban Village"
             className='h-full w-full object-cover'
           />
@@ -93,13 +93,13 @@ const AboutPage = () => {
                 offering world-class amenities that cater to your every need.
               </p>
               <p>
-                Our vision extends beyond being just a venue—we aim to be a destination where 
+                Our vision extends beyond being just a venue-we aim to be a destination where 
                 families come together, where celebrations become legendary, and where memories 
                 are crafted with care and precision. We are committed to excellence in every 
                 aspect, from our meticulously maintained grounds to our personalized service.
               </p>
               <p>
-                Through our three pillars—Weddings, Plots, and Club memberships—we strive to 
+                Through our three pillars-Weddings, Plots, and Club memberships-we strive to 
                 build a community that values quality, elegance, and the finer things in life. 
                 Our intention is to be your trusted partner in creating moments that matter.
               </p>
@@ -171,7 +171,7 @@ const AboutPage = () => {
                     <Home className='w-8 h-8 text-background' />
                   </div>
                   <h3 className='text-2xl lg:text-3xl font-[playfair-display] mb-4'>
-                    ⁠Farmhouses/Plots
+                    Plot Villa
                   </h3>
                   <p className='text-background/90 leading-relaxed mb-6'>
                     Invest in premium residential plots in the most serene and well-connected 
@@ -257,7 +257,7 @@ const AboutPage = () => {
                   <blockquote className='text-2xl lg:text-3xl font-[playfair-display] text-background leading-relaxed mb-8 italic'>
                     "Our aspiration is to create a legacy of excellence, where every guest 
                     experiences the perfect blend of luxury, nature, and heartfelt hospitality. 
-                    At Madhuban Village, we don't just host events—we craft experiences that 
+                    At Madhuban Village, we don't just host events-we craft experiences that 
                     become treasured memories for generations to come."
                   </blockquote>
                   <div className='flex items-center gap-4 pt-4 border-t border-background/20'>
@@ -277,7 +277,7 @@ const AboutPage = () => {
       <section className='relative h-[400px] lg:h-[600px] w-full overflow-hidden'>
         <div className='absolute inset-0 z-0'>
           <img
-            src="/indraprasth.png" // You can change this to your preferred image
+            src="/madhuban-main.png" // You can change this to your preferred image
             alt="Our World"
             className='h-full w-full object-cover'
           />

@@ -14,38 +14,38 @@ const galleryData: GalleryItem[] = [
   {
     id: 1,
     title: 'Multiple Venues Within the Resort',
-    description: 'Choose from a range of stunning venues—grand palace settings, lush lawns, poolside spaces, amphitheatre, and indoor halls—each crafted for different wedding moments.',
-    image: '/reception1.png'
+    description: 'Choose from a range of stunning venues-grand palace settings, lush lawns, poolside spaces, amphitheatre, and indoor halls-each crafted for different wedding moments.',
+    image: '/madhuban-main.png'
   },
   {
     id: 2,
     title: 'A Versatile Wedding Ambience',
     description: 'From royal elegance to nature-inspired celebrations, choose from a variety of wedding themes designed to reflect your unique love story.',
-    image: '/indraprasta1.png'
+    image: '/indraprasta2.png'
   },
   {
     id: 3,
     title: 'Resort-Style Luxury Experience',
-    description: 'A serene, expansive resort setting that blends natural beauty with refined comfort—perfect for a relaxed yet grand destination wedding.',
+    description: 'A serene, expansive resort setting that blends natural beauty with refined comfort-perfect for a relaxed yet grand destination wedding.',
     image: '/ex2.png'
   },
   {
     id: 4,
     title: 'Exceptional Dining Experience',
     description: 'Curated pure-vegetarian menus crafted by expert chefs, offering regional, national, and international cuisines with impeccable presentation.',
-    image: '/d-2.png'
+    image: '/indraprasta-in5.png'
   },
   {
     id: 5,
     title: 'Customised Multi-Day Wedding Packages',
-    description: 'Flexible and thoughtfully designed wedding packages tailored to your guest count, event flow, and celebration duration—ideal for immersive wedding experiences.',
-    image: '/ex.png'
+    description: 'Flexible and thoughtfully designed wedding packages tailored to your guest count, event flow, and celebration duration-ideal for immersive wedding experiences.',
+    image: '/multiday.jpg'
   },
   {
     id: 6,
     title: 'Spacious Cottages for Family & Friends',
     description: 'Comfortable, well-appointed cottages that provide privacy, warmth, and a home-like stay for close family and guests.',
-    image: 'hut2.png'
+    image: 'gokul-cottage.jpg'
   },
   {
     id: 7,

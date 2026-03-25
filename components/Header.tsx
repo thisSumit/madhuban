@@ -40,10 +40,11 @@ const Header = () => {
   const navLinks = [
     { href: '/about', label: 'Home' },
     { href: '/', label: 'Wedding' },
-    { href: '/plots', label: 'Plots' },
+    { href: '/farmland-plots', label: 'Plot Villa' },
     { href: '/club-anand', label: 'Club' },
     { href: '/our-world', label: 'Our World' },
     { href: '/contact', label: 'Contact' },
+    { href: 'https://www.madhubanvillage.in/member/home/membership_login', label: 'Members Login' },
   ]
 
   return (

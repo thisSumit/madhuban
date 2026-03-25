@@ -151,7 +151,7 @@ const ClubPage = () => {
               <span className='block italic'><TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>Unforgettable Moments!</TextAnimate></span>
             </h1>
             <p className='text-xl lg:text-2xl text-background/90 font-light mb-6 leading-relaxed max-w-3xl mx-auto'>
-              Club Anand is a members-only lifestyle club in Madhuban Village offering premium amenities, vibrant celebrations, and relaxing family experiences—where comfort, community, and elegance come together.
+              Club Anand is a members-only lifestyle club in Madhuban Village offering premium amenities, vibrant celebrations, and relaxing family experiences-where comfort, community, and elegance come together.
             </p>
             <p className='text-2xl lg:text-3xl font-[playfair-display] text-[#D4AF37] mb-6 italic'>
               A Place to Celebrate, Unwind, and Belong.
@@ -450,7 +450,7 @@ const ClubPage = () => {
                 Plan Your Club ANAND Experience
               </h2>
               <p className='text-base sm:text-lg text-foreground/70 leading-relaxed'>
-                Share your occasion—membership, day pass, celebrations, or corporate retreat.
+                Share your occasion-membership, day pass, celebrations, or corporate retreat.
                 Our team will curate the right package across pools, banquets, lawns, and
                 experiences.
               </p>

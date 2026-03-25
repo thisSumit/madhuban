@@ -86,7 +86,7 @@ const Contact: React.FC = () => {
               Plan a Luxury Wedding at Madhuban
             </h2>
             <p className="text-base sm:text-lg text-foreground/70 leading-relaxed">
-              Tell us what you have in mind—our concierge will craft a bespoke experience across our
+              Tell us what you have in mind-our concierge will craft a bespoke experience across our
               resort suites, grand lawns, pool deck, or the Indraprath banquet hall.
             </p>
             <div className="grid grid-cols-1 gap-4">

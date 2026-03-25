@@ -515,7 +515,7 @@ const PlotPage = () => {
                 <div className='flex-col items-start gap-4'>
                   <div className='flex items-start gap-4'>
                     <Building2 className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
-                    <p className='text-lg text-background/90'>⁠Nagpur — A Rapidly Growing City</p>
+                    <p className='text-lg text-background/90'>⁠Nagpur - A Rapidly Growing City</p>
                   </div>
                   <p className='text-sm text-background/70'>Strategic development and infrastructure expansion make Nagpur a strong investment hub.</p>
                 </div>

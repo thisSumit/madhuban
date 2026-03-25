@@ -284,7 +284,7 @@ const OurWorld = () => {
               Our World
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-background/80 max-w-2xl mx-auto leading-relaxed font-light">
-              Experience the grandeur and elegance of Madhuban Village—where every corner tells a story 
+              Experience the grandeur and elegance of Madhuban Village-where every corner tells a story 
               of luxury, tradition, and unforgettable celebrations.
             </p>
           </div>

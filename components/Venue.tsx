@@ -19,13 +19,13 @@ const venuesData: Venue[] = [
     number: '01',
     name: 'Indraprastha Palace',
     description: 'An opulent palace setting ideal for grand royal weddings and lavish receptions.',
-    image: 'indraprasth.png'
+    image: 'indraprasta2.png'
   },
   {
     id: 2,
     number: '02',
     name: 'Mangalam Lawn',
-    description: 'A coveted celebration space with Mangalam Kuti—perfect for sangeet, cocktail evenings, receptions, and wedding ceremonies.',
+    description: 'A coveted celebration space with Mangalam Kuti-perfect for sangeet, cocktail evenings, receptions, and wedding ceremonies.',
     image: '/mangalam.jpg'
   },
   {
@@ -40,20 +40,20 @@ const venuesData: Venue[] = [
     number: '04',
     name: 'Amphitheatre',
     description: 'An open-air amphitheatre best suited for intimate sangeet and haldi functions for up to 200 guests.',
-    image: '/amphitheatre.jpg'
+    image: '/amphi2.jpg'
   },
   {
     id: 5,
     number: '05',
     name: 'Gulmohar Lawn',
     description: 'A warm and elegant lawn, ideal for myra, mehendi, and other small celebratory functions.',
-    image: '/gulmohar.jpg'
+    image: '/gulmohar-1.jpg'
   },
   {
     id: 6,
     number: '06',
-    name: 'Lavender Lawn',
-    description: 'A charming venue perfect for evening hi-tea gatherings and intimate celebrations.',
+    name: 'Lavender',
+    description: 'A best rooms for comfortable stay, after wedding rituals and party.',
     image: '/lavender.jpg'
   },
   {
@@ -61,14 +61,14 @@ const venuesData: Venue[] = [
     number: '07',
     name: 'Annakut Hall',
     description: 'A versatile multipurpose hall designed for breakfast setups, mandap, pooja, and small ceremonies.',
-    image: '/annakut.jpg'
+    image: '/d-2.png'
   },
   {
     id: 8,
     number: '08',
     name: 'Mangalam Kuti',
     description: 'An open-air traditional space ideal for myra rituals and royal shahi bhoj arrangements.',
-    image: 'in.png'
+    image: 'hut.png'
   },
 ]
 

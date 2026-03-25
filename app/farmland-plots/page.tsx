@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Button } from '@/components/ui/Button'
+import InvestmentAutoScroller from '@/components/InvestmentAutoScroller'
 import { 
   Check, 
   MapPin, 
@@ -13,21 +14,16 @@ import {
   Shield,
   Droplet,
   TreePine,
-  Building2,
   Phone,
   ChevronRight,
   ChevronLeft,
-  PlaneLandingIcon,
-  ExternalLink,
-  User,
-  LandPlot
 } from 'lucide-react'
 import { TextAnimate } from '@/components/ui/text-animate'
 
 const plotsImages = [
-  '/dr1.png',
+  '/lands.jpg',
   '/dr2.png',
-  '/dr3.png',
+  '/lands-1.jpg',
   '/dr4.png',
 ]
 
@@ -154,7 +150,7 @@ const amenitiesList = [
     description: 'Thoughtfully designed green areas that enhance everyday living.',
   },
   {
-    image: '/dr3.png',
+    image: '/childrens-play.jpg',
     title: 'Children’s Play Area & Family Zone',
     description: 'Safe, dedicated spaces for recreation and family time.',
   },
@@ -164,22 +160,22 @@ const amenitiesList = [
     description: 'A lifestyle clubhouse for leisure, socialising, and relaxation.',
   },
   {
-    image: '/entry.png',
+    image: '/ready-infra.jpeg',
     title: 'Ready Infrastructure',
     description: 'Well-planned power supply, water connection, and internal roads.',
   },
   {
-    image: '/gentry.png',
+    image: '/high-demand.jpg',
     title: 'Gated Community with 24×7 Security',
     description: 'Controlled access and round-the-clock security for complete peace of mind.',
   },
   {
-    image: '/annakut.jpg',
+    image: '/temple.png',
     title: 'Mandir Within the Community',
     description: 'A serene spiritual space for daily prayers and special occasions.',
   },
   {
-    image: '/farm4.jpeg',
+    image: '/ample-garden.jpg',
     title: 'Ample Green Open Spaces',
     description: 'Open, breathable surroundings that promote wellness and calm living.',
   },
@@ -293,7 +289,7 @@ function AmenitiesAutoScroller() {
                   draggable={false}
                   className='h-full w-full object-cover'
                 />
-                <div className='absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent' />
+                <div className='absolute inset-0 bg-linear-to-t from-black/0 via-black/10 to-transparent' />
                 <p className='absolute left-4 bottom-4 right-4 text-white text-lg font-semibold leading-snug drop-shadow'>
                   {title}
                 </p>
@@ -416,7 +412,7 @@ const PlotPage = () => {
 
         <div className='relative z-10 h-full max-w-7xl mx-auto px-4 lg:px-16 grid grid-cols-1 lg:grid-cols-2 items-center gap-10'>
           <div className='pt-20 lg:pt-24'>
-            <p className='text-background/80 text-xl italic'>Your Private Farmhouse at</p>
+            <p className='text-background/80 text-xl italic'>Your Private Villa Plots at</p>
             <h1 className='text-4xl lg:text-7xl font-playfair-display text-nowrap text-background mb-2 leading-tight'>
               Madhuban Village
             </h1>
@@ -470,7 +466,7 @@ const PlotPage = () => {
                           Madhuban Village 
                           </TextAnimate>
                           <TextAnimate animation="blurInUp" className='italic' by="character" duration={0.5} delay={0.1} once>
-                          Farmhouse
+                          Plot Villa
                           </TextAnimate>
                         </h2>
           </div>
@@ -508,7 +504,7 @@ const PlotPage = () => {
       <section className='py-12 bg-foreground text-background'>
               <div className='max-w-7xl mx-auto px-4 lg:px-16'>
                 <h3 className='text-center text-xl lg:text-2xl font-playfair-display mb-8'>
-                  Why Smart Buyers Are Choosing Madhuban Village Farmhouse
+                  Why Most People Are Choosing Madhuban Village Farmhouse
                 </h3>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
                   <div className='text-center'>
@@ -547,7 +543,7 @@ const PlotPage = () => {
           <div className='absolute inset-0 max-w-7xl mx-auto px-4 lg:px-16 flex items-center justify-between'>
             <div className='max-w-lg text-background'>
               <h3 className='text-4xl lg:text-6xl font-playfair-display leading-tight'>
-                India&apos;s 1st ever farm-themed plotted community.
+                India&apos;s 1st Villa-themed Farm Land community.
               </h3>
               <p className='mt-6 text-2xl font-playfair-display'>Set against open natural landscapes</p>
             </div>
@@ -569,26 +565,35 @@ const PlotPage = () => {
         </div>
       </section>
 
-      {/* 4. AMENITIES SECTION */}
-      <section className='py-20 lg:py-24 bg-background'>
+      {/* 6. INVESTMENT & USE CASE */}
+      <section className='py-20 lg:py-32 bg-foreground text-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
-          <div className='max-w-2xl mx-auto text-center mb-16'>
-                      <h2 className='text-4xl lg:text-5xl font-playfair-display'>
-                        <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-                          Lifestyle Benefits
-                        </TextAnimate>
-                        <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
-                          That Come with Your Land
-                        </TextAnimate>
-                      </h2>
-                      <p className='mt-4 text-base lg:text-lg text-foreground/70 leading-relaxed'>
-                        Every plot at Madhuban Village comes backed by a curated set of lifestyle amenities designed to elevate everyday living.
-                      </p>
-                    </div>
+          <div className='max-w-4xl mx-auto text-center mb-12'>
+            <h2 className='text-4xl lg:text-5xl font-playfair-display mb-5'>
+              <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
+                Why Farmhouse
+              </TextAnimate>
+              <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
+                Is a Smart Investment
+              </TextAnimate>
+            </h2>
+            <p className='text-background/70 text-base lg:text-lg leading-relaxed'>
+              A premium, image-led USP carousel designed to showcase your strongest investment reasons and increase buyer confidence.
+            </p>
+          </div>
 
-          <AmenitiesAutoScroller />
+          <InvestmentAutoScroller />
+
+          <div className='mt-10 flex flex-wrap justify-center gap-3'>
+            {['Private farmhouse', 'Family vacation home', 'Event hosting', 'Rental weekend getaway', 'Long-term land investment'].map((use, index) => (
+              <div key={index} className='rounded-full border border-background/20 bg-background/10 px-4 py-2'>
+                <p className='text-sm lg:text-base text-background/90'>{use}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
+
 
 {/* 3A. PLOTS IMAGE CAROUSEL */}
       <section className="overflow-hidden">
@@ -645,6 +650,28 @@ const PlotPage = () => {
           </div>
         </div>
       </section>
+
+      {/* 4. AMENITIES SECTION */}
+      <section className='py-20 lg:py-24 bg-background'>
+        <div className='max-w-7xl mx-auto px-4 lg:px-16'>
+          <div className='max-w-2xl mx-auto text-center mb-16'>
+                      <h2 className='text-4xl lg:text-5xl font-playfair-display'>
+                        <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
+                          Lifestyle Benefits
+                        </TextAnimate>
+                        <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
+                          That Come with Your Land
+                        </TextAnimate>
+                      </h2>
+                      <p className='mt-4 text-base lg:text-lg text-foreground/70 leading-relaxed'>
+                        Every plot at Madhuban Village comes backed by a curated set of lifestyle amenities designed to elevate everyday living.
+                      </p>
+                    </div>
+
+          <AmenitiesAutoScroller />
+        </div>
+      </section>
+
       {/* 5. LOCATION ADVANTAGE */}
       <section className='py-20 lg:py-32 bg-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
@@ -695,113 +722,6 @@ const PlotPage = () => {
         </div>
       </section>
 
-      {/* 6. INVESTMENT & USE CASE */}
-      <section className='py-20 lg:py-32 bg-foreground text-background'>
-        <div className='max-w-7xl mx-auto px-4 lg:px-16'>
-          <h2 className='text-4xl lg:text-5xl font-playfair-display items-start text-left md:text-center mb-16'>
-            <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-              Why Farmhouse
-            </TextAnimate>
-            <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
-              Is a Smart Investment
-            </TextAnimate>
-          </h2>
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
-            <div>
-              <div className='space-y-6 mb-8'>
-                <div className='flex-col items-start gap-4'>
-                  <div className='flex items-start gap-4'>
-                    <TrendingUp className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
-                    <p className='text-lg text-background/90'>Strong Land Appreciation Potential</p>
-                  </div>
-                  <p className='text-sm text-background/70'>Land assets in this location are poised for steady long-term value growth.</p>
-                </div>
-                <div className='flex-col items-start gap-4'>
-                  <div className='flex items-start gap-4'>
-                    <Home className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
-                    <p className='text-lg text-background/90'>High Demand for Farmhouse & Weekend Properties</p>
-                  </div>
-                  <p className='text-sm text-background/70'>Increasing preference for private getaways continues to drive demand.</p>
-                </div>
-
-                <div className='flex-col items-start gap-4'>
-                  <div className='flex items-start gap-4'>
-                    <Building2 className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
-                    <p className='text-lg text-background/90'>⁠Nagpur — A Rapidly Growing City</p>
-                  </div>
-                  <p className='text-sm text-background/70'>Strategic development and infrastructure expansion make Nagpur a strong investment hub.</p>
-                </div>
-
-                <div className='flex-col items-start gap-4'>
-                  <div className='flex items-start gap-4'>
-                    <LandPlot className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
-                    <p className='text-lg text-background/90'>Limited Land Availability</p>
-                  </div>
-                  <p className='text-sm text-background/70'>Planned farmhouse communities are limited, enhancing long-term value through scarcity.</p>
-                </div>
-                <div className='flex-col items-start gap-4'>
-                  <div className='flex items-start gap-4'>
-                    <User className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
-                    <p className='text-lg text-background/90'>Lifestyle-Driven Demand</p>
-                  </div>
-                  <p className='text-sm text-background/70'>Growing focus on wellness, open spaces, and private living supports sustained interest.</p>
-                </div>
-                <div className='flex-col items-start gap-4'>
-                  <div className='flex items-start gap-4'>
-                    <ExternalLink className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
-                    <p className='text-lg text-background/90'>Multiple Exit Options</p>
-                  </div>
-                  <p className='text-sm text-background/70'>Flexibility to self-use, lease, or resell based on personal and market goals.</p>
-                </div>
-                <div className='flex-col items-start gap-4'>
-                  <div className='flex items-start gap-4'>
-                    <Shield className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
-                    <p className='text-lg text-background/90'>Low-Maintenance Investment</p>
-                  </div>
-                  <p className='text-sm text-background/70'>Land requires minimal upkeep compared to constructed properties.</p>
-                </div>
-                <div className='flex-col items-start gap-4'>
-                  <div className='flex items-start gap-4'>
-                    <PlaneLandingIcon className='w-6 h-6 text-[#D4AF37] shrink-0 mt-1' />
-                    <p className='text-lg text-background/90'>Ideal for NRI & HNI Investors</p>
-                  </div>
-                  <p className='text-sm text-background/70'>A secure, tangible asset offering both stability and long-term appreciation.</p>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className='relative h-56 lg:h-72 rounded-2xl overflow-hidden mb-8 shadow-xl group'>
-                <img
-                  src='/invest-lifestyle.jpg'
-                  alt='Madhuban Village Investment'
-                  className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-700'
-                />
-                <div className='absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent' />
-                <div className='absolute bottom-5 left-5 right-5'>
-                  <p className='text-white/95 font-playfair-display italic text-lg leading-snug drop-shadow'>
-                    "Your land. Your legacy. Your freedom."
-                  </p>
-                </div>
-              </div>
-              <h3 className='text-2xl font-playfair-display mb-6'>Ideal for:</h3>
-              <div className='space-y-4'>
-                {[
-                  'Private farmhouse',
-                  'Family vacation home',
-                  'Event hosting',
-                  'Rental weekend getaway',
-                  'Long-term land investment',
-                ].map((use, index) => (
-                  <div key={index} className='flex items-center gap-3'>
-                    <Check className='w-5 h-5 text-[#D4AF37]' />
-                    <p className='text-lg text-background/90'>{use}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* LIFESTYLE QUOTE IMAGE BREAK */}
       <section className='relative w-full h-[70vh] lg:h-[88vh] overflow-hidden'>
