@@ -34,7 +34,7 @@ export default function RootLayout({
         {children}
         <PhonePopup />
         <a href="https://wa.me/+917020704420">
-        <div className='fixed bottom-8 z-10 bg-foreground p-2 right-6 flex items-end gap-2 text-white'>
+        <div className='fixed bottom-4 z-10 bg-foreground p-2 right-4 flex items-end gap-2 text-white'>
           <span className='text-xs tracking-wider uppercase'>Inquire Now</span>
             <MessageCircle className='w-5 h-5' strokeWidth={1.5} />
             

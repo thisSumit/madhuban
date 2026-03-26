@@ -26,7 +26,7 @@ const Info = () => {
         </h2>
 
         {/* Ring Image */}
-        <div className='flex justify-center m-4'>
+        <div className='flex justify-center mx-4'>
           <img src="madhuban-logo.png" className='w-64' alt="" />
         </div>
 
@@ -57,8 +57,8 @@ const Info = () => {
         <div className='h-full w-full justify-center items-center'>
           <h2 className='text-xl lg:text-2xl font-playfair-display text-foreground leading-tight mt-10'>Awards</h2>
           <div className='flex items-center justify-center gap-4 mt-6'>
-            <img className='h-[150px]' src="weddingwire-26.jpg" alt="" />
-            <img className='h-[150px]' src="weddingwire-24.jpg" alt="" />
+            <img className='md:h-[150px] h-[120px]' src="weddingwire-26.jpg" alt="" />
+            <img className='md:h-[150px] h-[120px]' src="weddingwire-24.jpg" alt="" />
           </div>
         </div>
 

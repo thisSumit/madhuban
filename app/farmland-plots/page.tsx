@@ -855,7 +855,10 @@ const PlotPage = () => {
                     Visit Us At
                     </TextAnimate>
                     <TextAnimate animation="blurInUp" className='italic' by="character" duration={0.5} delay={0.1} once>
-                    Madhuban Village Farmhouse
+                    Madhuban Village
+                    </TextAnimate>
+                    <TextAnimate animation="blurInUp" className='italic' by="character" duration={0.5} delay={0.1} once>
+                    Plot Villa
                     </TextAnimate>
                     </h2>
                     <p className="text-lg text-foreground/70 leading-relaxed">

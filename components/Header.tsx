@@ -139,13 +139,13 @@ const Header = () => {
           onClick={(e) => e.stopPropagation()}
         >
           {/* Navigation Links */}
-          <nav className='flex flex-col items-center gap-4 mb-4'>
+          <nav className='flex flex-col items-center gap-1'>
             {navLinks.map((link, index) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={closeMenu}
-                className='nav-link-mobile text-background text-2xl font-light tracking-wider uppercase relative group transition-all duration-300'
+                className='nav-link-mobile text-background text-xl font-light tracking-wider uppercase relative group transition-all duration-300'
                 style={{
                   animationDelay: `${index * 0.1}s`,
                   animationName: isMenuOpen ? 'fadeInUp' : 'none',
@@ -159,7 +159,7 @@ const Header = () => {
               </a>
             ))}
             <div 
-              className='mt-4'
+              className='mt-2'
               style={{
                 animationDelay: `${navLinks.length * 0.1}s`,
                 animationName: isMenuOpen ? 'fadeInUp' : 'none',
