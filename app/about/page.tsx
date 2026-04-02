@@ -3,7 +3,7 @@
 import React from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Quote, Calendar, Home, Building2, ArrowRight } from 'lucide-react'
+import { Quote, Calendar, Home, Building2, ArrowRight, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { TextAnimate } from '@/components/ui/text-animate'
 import { useRouter } from 'next/navigation'
@@ -26,19 +26,16 @@ const AboutPage = () => {
           <div className='absolute inset-0 bg-black/40' />
         </div>
         
-        <div className='relative z-10 h-full flex items-center justify-center px-4 lg:px-16'>
-          <div className='text-center max-w-6xl'>
-            <h1 className='text-4xl lg:text-7xl font-[playfair-display] text-background mb-6 leading-tight'>
-            Welcome to <br />
-            <TextAnimate animation="slideLeft" by="character" duration={0.5} delay={0.2} once>
-            Madhuban Village
-              </TextAnimate>
-            </h1>
-            <p className='text-xl lg:text-2xl text-background/90 font-light tracking-wide'>
-              Farmhouse | Club | Resort | Banquets
-            </p>
-          </div>
+        <div className='relative z-10 h-full w-full flex flex-col items-center justify-center'>
+        <div className='flex flex-col items-center justify-center h-full'>
+          <p className='text-white font-playfair-display md:text-2xl text-xl leading-tighter tracking-tight font-bold'>Madhuban Village</p>
+          <div className='h-px w-20 my-2 bg-background/40' />
+          <h1 className='text-white font-playfair-display text-4xl lg:text-8xl text-center leading-tighter tracking-tight px-4'>
+            <span className='italic block mt-2'> <TextAnimate animation="slideLeft" by="character" duration={0.5} delay={0.2} once>Luxury Destination</TextAnimate>Estate</span>
+          </h1>
+          <p className='text-white font-playfair-display md:text-2xl text-lg py-2'>Weddings | Club | Plots</p>
         </div>
+      </div>
       </section>
 
       <section className='h-full my-4 relative pb-24 lg:pb-32 px-4 lg:px-16 bg-background overflow-hidden'>
@@ -67,7 +64,7 @@ const AboutPage = () => {
           Home to the majestic Indraprastha Palace, grand celebration lawns, premium rooms and cottages, and curated event management services, we specialize in destination weddings in Nagpur, multi-day celebrations, corporate events, and social gatherings.
           </p>
           <p className='text-base lg:text-lg leading-relaxed max-w-3xl mx-auto'>
-          Beyond events, Madhuban features NA farmhouse plots ranging from 4,000 to 20,000 sq. ft., offering peaceful nature living with strong investment potential. Club Anand, Nagpur’s largest upcoming members-only club, adds a new dimension of luxury recreation and community lifestyle.
+          Beyond events, Madhuban features NA farmhouse Villa Plots ranging from 4,000 to 20,000 sq. ft., offering peaceful nature living with strong investment potential. Club Anand, Nagpur’s largest upcoming members-only club, adds a new dimension of luxury recreation and community lifestyle.
           </p>
           <p className='text-base lg:text-lg leading-relaxed max-w-3xl mx-auto'>
           Whether you are planning a wedding, investing in farmhouse land, or seeking premium club membership, Madhuban Village is a complete lifestyle destination designed for celebration, comfort, and legacy.
@@ -171,11 +168,11 @@ const AboutPage = () => {
                     <Home className='w-8 h-8 text-background' />
                   </div>
                   <h3 className='text-2xl lg:text-3xl font-[playfair-display] mb-4'>
-                    Plot Villa
+                    Villa Plots
                   </h3>
                   <p className='text-background/90 leading-relaxed mb-6'>
-                    Invest in premium residential plots in the most serene and well-connected 
-                    locations. Our carefully planned plots offer the perfect blend of nature 
+                    Invest in premium residential Villa Plots in the most serene and well-connected 
+                    locations. Our carefully planned Villa Plots offer the perfect blend of nature 
                     and modern amenities for your dream home.
                   </p>
                   <Button
@@ -212,7 +209,7 @@ const AboutPage = () => {
                     variant='secondary'
                     size='default'
                     className='group/btn'
-                    onClick={() => window.location.href = '/club'}
+                    onClick={() => window.location.href = '/club-anand'}
                   >
                     <span className='flex items-center'>
                       Learn More
@@ -227,10 +224,9 @@ const AboutPage = () => {
       </section>
 
       {/* Directors Section with Quotation */}
-      <section className='py-20 lg:py-32 bg-foreground text-background'>
+      {/* <section className='py-20 lg:py-32 bg-foreground text-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center'>
-            {/* Director Image */}
             <div className='order-2 lg:order-1'>
               <div className='relative max-w-lg mx-auto'>
                 <div className='h-full rounded-lg overflow-hidden shadow-2xl'>
@@ -244,7 +240,6 @@ const AboutPage = () => {
               </div>
             </div>
 
-            {/* Quotation */}
             <div className='order-1 lg:order-2'>
               <div className='relative'>
                 <Quote className='w-20 h-20 text-background/20 absolute -top-6 -left-6' />
@@ -267,6 +262,33 @@ const AboutPage = () => {
                     </p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+      <section className='min-h-screen bg-foreground text-background flex items-center'>
+        <div className='w-full max-w-5xl mx-auto px-4 lg:px-16 py-16 lg:py-24'>
+          <div className='relative text-center'>
+            <Quote className='w-16 h-16 lg:w-20 lg:h-20 text-background/20 mx-auto mb-6 lg:mb-8' />
+            <div className='relative z-10'>
+              <h3 className='text-3xl lg:text-5xl font-[playfair-display] mb-8'>
+                <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
+                  Our Directors
+                </TextAnimate>
+              </h3>
+              <blockquote className='text-xl lg:text-3xl font-[playfair-display] text-background leading-relaxed mb-8 italic max-w-4xl mx-auto'>
+                "Our aspiration is to create a legacy of excellence, where every guest
+                experiences the perfect blend of luxury, nature, and heartfelt hospitality.
+                At Madhuban Village, we don't just host events-we craft experiences that
+                become treasured memories for generations to come."
+              </blockquote>
+              <div className='flex items-center justify-center gap-4 pt-4 border-t border-background/20 max-w-md mx-auto'>
+                <div className='h-px w-8 bg-background/40' />
+                <p className='text-lg text-background/80 font-light'>
+                  Directors, Madhuban Village
+                </p>
               </div>
             </div>
           </div>

@@ -5,12 +5,12 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Button } from '@/components/ui/Button'
 import InvestmentAutoScroller from '@/components/InvestmentAutoScroller'
-import { 
-  Check, 
-  MapPin, 
-  TrendingUp, 
-  Home, 
-  Users, 
+import {
+  Check,
+  MapPin,
+  TrendingUp,
+  Home,
+  Users,
   Shield,
   Droplet,
   TreePine,
@@ -100,9 +100,8 @@ function PlotsCarousel() {
           <button
             key={idx}
             onClick={() => setCurrent(idx)}
-            className={`h-3 w-3 rounded-full transition ${
-              current === idx ? 'bg-foreground' : 'bg-white/40'
-            }`}
+            className={`h-3 w-3 rounded-full transition ${current === idx ? 'bg-foreground' : 'bg-white/40'
+              }`}
           />
         ))}
       </div>
@@ -266,9 +265,8 @@ function AmenitiesAutoScroller() {
     <div className='relative'>
       <div
         ref={containerRef}
-        className={`overflow-x-auto scrollbar-hide mask-[linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] touch-pan-y select-none ${
-          isDragging ? 'cursor-grabbing' : 'cursor-grab'
-        }`}
+        className={`overflow-x-auto scrollbar-hide mask-[linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] touch-pan-y select-none ${isDragging ? 'cursor-grabbing' : 'cursor-grab'
+          }`}
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
         onPointerDown={handlePointerDown}
@@ -347,9 +345,9 @@ const PlotPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
+
     const scriptURL = "https://script.google.com/macros/s/AKfycbxcNT7NKTGXRh_fedq1-0USZTWV22D5aAHKK9TGmSDsVTJoxyRV1Uz4ubqQeHwJ6uSs/exec" // Integrated Google Apps Script URL
-    
+
     const payload = {
       name: formData.name.trim(),
       mobile: formData.mobile.trim(),
@@ -365,7 +363,7 @@ const PlotPage = () => {
       formType: "plots",
       timestamp: new Date().toISOString()
     }
-    
+
     try {
       await fetch(scriptURL, {
         method: "POST",
@@ -373,9 +371,9 @@ const PlotPage = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
       })
-      
+
       alert('Thank you! Our property advisor will contact you within 30 minutes.')
-      
+
       setFormData({
         name: '',
         mobile: '',
@@ -388,7 +386,7 @@ const PlotPage = () => {
         interests: [],
         notes: '',
       })
-      
+
     } catch (error) {
       console.error('Error:', error)
       alert('Something went wrong! Please try again or call us directly.')
@@ -411,7 +409,7 @@ const PlotPage = () => {
         </div>
 
         <div className='relative z-10 h-full max-w-7xl mx-auto px-4 lg:px-16 grid grid-cols-1 lg:grid-cols-2 items-center gap-10'>
-          <div className='pt-20 lg:pt-24'>
+          {/* <div className='pt-20 lg:pt-24'>
             <p className='text-background/80 text-xl italic'>Your Private Villa Plots at</p>
             <h1 className='text-4xl lg:text-7xl font-playfair-display text-nowrap text-background mb-2 leading-tight'>
               Madhuban Village
@@ -420,20 +418,56 @@ const PlotPage = () => {
             <p className='text-lg lg:text-xl text-background/85 mb-8 max-w-xl leading-relaxed'>
               Build a private farmhouse in a planned green community and create a long-term lifestyle and investment asset.
             </p>
-            <div className='flex flex-col sm:flex-row sm:items-center gap-4'>
+              <div className='flex flex-col sm:flex-row items-center justify-center gap-4'>
               <Button
                 variant='primary'
                 size='lg'
                 onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Book a Farm Tour
+                Book A Tour
               </Button>
-              <a className='flex items-center text-background/95 gap-2' href='tel:917020704418'>
+                <a className='inline-flex items-center text-background/95 gap-2' href='tel:917020704418'>
                 <Phone className='w-5 h-5' />
                 +91 70207 04418
               </a>
             </div>
-          </div>
+          </div> */}
+
+          <div className='relative z-10 h-full w-full flex flex-col items-center justify-center'>
+  <div className='flex flex-col items-center justify-center h-full'>
+    
+    <p className='text-white font-playfair-display md:text-2xl text-xl leading-tighter tracking-tight font-bold'>
+      Madhuban Aaranya
+    </p>
+
+    <div className='h-px w-20 my-2 bg-background/40' />
+
+    <h1 className='text-white font-playfair-display text-4xl lg:text-8xl text-center leading-tighter tracking-tight px-4'>
+      <span className='italic block mt-2'>
+        <TextAnimate animation="slideLeft" by="character" duration={0.5} delay={0.2} once>
+          Premium Farm
+        </TextAnimate>
+        Plots
+      </span>
+    </h1>
+
+    <p className='text-white font-playfair-display md:text-2xl text-lg py-2'>
+      Investment | Weekend Homes | Managed Living
+    </p>
+
+    <Button
+      variant='primary'
+      size='lg'
+      className='mt-8'
+      onClick={() =>
+        document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })
+      }
+    >
+      Book A Tour
+    </Button>
+
+  </div>
+</div>
 
           <div className='hidden lg:block justify-self-end mt-20'>
             <div className='w-[360px] rounded-[48px] bg-background/90 backdrop-blur border border-background/30 p-8 shadow-xl'>
@@ -443,12 +477,6 @@ const PlotPage = () => {
                 <p><span className='font-semibold text-foreground'>Plot Size:</span> 4,500 sq. ft. onwards</p>
                 <p><span className='font-semibold text-foreground'>Pricing:</span> ₹700/sq. ft. onwards</p>
               </div>
-              <button
-                className='mt-7 w-full rounded-full bg-foreground text-background py-3 font-semibold hover:bg-foreground/90 transition'
-                onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                View Plot Options
-              </button>
             </div>
           </div>
         </div>
@@ -459,23 +487,23 @@ const PlotPage = () => {
         <div className='max-w-7xl mx-auto px-4 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center'>
           <div>
             <h2 className='text-4xl lg:text-5xl font-playfair-display text-foreground mb-8'>
-                        <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-                          Welcome to
-                          </TextAnimate>
-                          <TextAnimate animation="blurInUp" className='italic' by="character" duration={0.5} delay={0.1} once>
-                          Madhuban Village 
-                          </TextAnimate>
-                          <TextAnimate animation="blurInUp" className='italic' by="character" duration={0.5} delay={0.1} once>
-                          Plot Villa
-                          </TextAnimate>
-                        </h2>
+              <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
+                Welcome to
+              </TextAnimate>
+              <TextAnimate animation="blurInUp" className='italic' by="character" duration={0.5} delay={0.1} once>
+                Madhuban Village
+              </TextAnimate>
+              <TextAnimate animation="blurInUp" className='italic' by="character" duration={0.5} delay={0.1} once>
+                Villa Plots
+              </TextAnimate>
+            </h2>
           </div>
           <div className='text-foreground/70 text-lg leading-relaxed space-y-4'>
             <p>
               Madhuban Village offers premium farmhouse land designed for those who value space, privacy, and long-term growth. Whether it’s a peaceful getaway, a place to host meaningful celebrations, or a smart land investment.
             </p>
             <p>
-              With plots starting from 4,500 sq. ft. and pricing from ₹700 per sq. ft.
+              With Villa Plots starting from 4,500 sq. ft. and pricing from ₹700 per sq. ft.
             </p>
           </div>
         </div>
@@ -502,37 +530,37 @@ const PlotPage = () => {
       </section>
 
       <section className='py-12 bg-foreground text-background'>
-              <div className='max-w-7xl mx-auto px-4 lg:px-16'>
-                <h3 className='text-center text-xl lg:text-2xl font-playfair-display mb-8'>
-                  Why Most People Are Choosing Madhuban Village Farmhouse
-                </h3>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
-                  <div className='text-center'>
-                    <TrendingUp className='w-8 h-8 mx-auto mb-3 text-[#D4AF37]' />
-                    <h4 className='font-semibold text-lg mb-2'>Appreciating Land Asset</h4>
-                    <p className='text-sm lg:text-base'>Secure ownership of land with strong appreciation potential over time.</p>
-                  </div>
-                  <div className='text-center'>
-                    <MapPin className='w-8 h-8 mx-auto mb-3 text-[#D4AF37]' />
-                    <h4 className='font-semibold text-lg mb-2'>Strategic Location Advantage</h4>
-                    <p className='text-sm lg:text-base'>Serene surroundings with seamless connectivity to the city.</p>
-                  </div>
-                  <div className='text-center'>
-                    <Shield className='w-8 h-8 mx-auto mb-3 text-[#D4AF37]' />
-                    <h4 className='font-semibold text-lg mb-2'>High Future Value</h4>
-                    <p className='text-sm lg:text-base'>Part of a fast-developing destination with long-term growth prospects.</p>
-                  </div>
-                  <div className='text-center'>
-                    <Home className='w-8 h-8 mx-auto mb-3 text-[#D4AF37]' />
-                    <h4 className='font-semibold text-lg mb-2'>Elevated Lifestyle Living</h4>
-                    <p className='text-sm lg:text-base'>A refined farmhouse lifestyle blending nature, privacy, and luxury.</p>
-                  </div>
-                </div>
-              </div>
-            </section>
+        <div className='max-w-7xl mx-auto px-4 lg:px-16'>
+          <h3 className='text-center text-xl lg:text-2xl font-playfair-display mb-8'>
+            Why Most People Are Choosing Madhuban Village Farmhouse
+          </h3>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+            <div className='text-center'>
+              <TrendingUp className='w-8 h-8 mx-auto mb-3 text-[#D4AF37]' />
+              <h4 className='font-semibold text-lg mb-2'>Appreciating Land Asset</h4>
+              <p className='text-sm lg:text-base'>Secure ownership of land with strong appreciation potential over time.</p>
+            </div>
+            <div className='text-center'>
+              <MapPin className='w-8 h-8 mx-auto mb-3 text-[#D4AF37]' />
+              <h4 className='font-semibold text-lg mb-2'>Strategic Location Advantage</h4>
+              <p className='text-sm lg:text-base'>Serene surroundings with seamless connectivity to the city.</p>
+            </div>
+            <div className='text-center'>
+              <Shield className='w-8 h-8 mx-auto mb-3 text-[#D4AF37]' />
+              <h4 className='font-semibold text-lg mb-2'>High Future Value</h4>
+              <p className='text-sm lg:text-base'>Part of a fast-developing destination with long-term growth prospects.</p>
+            </div>
+            <div className='text-center'>
+              <Home className='w-8 h-8 mx-auto mb-3 text-[#D4AF37]' />
+              <h4 className='font-semibold text-lg mb-2'>Elevated Lifestyle Living</h4>
+              <p className='text-sm lg:text-base'>A refined farmhouse lifestyle blending nature, privacy, and luxury.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* 3. LOCATION & SIZE FEATURE */}
-      <section className='py-4 bg-foreground/10'>
+      <section>
         <div className='relative w-full h-[60vh] lg:h-[72vh] overflow-hidden'>
           <img
             src='/dr2.png'
@@ -543,9 +571,9 @@ const PlotPage = () => {
           <div className='absolute inset-0 max-w-7xl mx-auto px-4 lg:px-16 flex items-center justify-between'>
             <div className='max-w-lg text-background'>
               <h3 className='text-4xl lg:text-6xl font-playfair-display leading-tight'>
-                India&apos;s 1st Villa-themed Farm Land community.
+                Experience India&apos;s 1st Villa-Themed Plot Community,
               </h3>
-              <p className='mt-6 text-2xl font-playfair-display'>Set against open natural landscapes</p>
+              <p className='mt-6 text-2xl font-playfair-display'>Blending luxury living, club amenities, and serene natural surroundings.</p>
             </div>
             <div className='hidden lg:block w-[330px] bg-background/90 rounded-[50px] p-8 shadow-xl'>
               <h4 className='text-3xl font-playfair-display text-foreground mb-5'>Location</h4>
@@ -558,7 +586,7 @@ const PlotPage = () => {
                 className='w-full rounded-full bg-foreground text-background py-3 font-semibold hover:bg-foreground/90 transition'
                 onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Book a Farm Tour
+                Book A Tour
               </button>
             </div>
           </div>
@@ -578,14 +606,14 @@ const PlotPage = () => {
               </TextAnimate>
             </h2>
             <p className='text-background/70 text-base lg:text-lg leading-relaxed'>
-              A premium, image-led USP carousel designed to showcase your strongest investment reasons and increase buyer confidence.
+              Earn passive income, enjoy nature, and benefit from long-term land appreciation. A perfect blend of lifestyle, sustainability, and high-return investment.
             </p>
           </div>
 
           <InvestmentAutoScroller />
 
           <div className='mt-10 flex flex-wrap justify-center gap-3'>
-            {['Private farmhouse', 'Family vacation home', 'Event hosting', 'Rental weekend getaway', 'Long-term land investment'].map((use, index) => (
+            {['Private farmhouse', 'Family vacation home', 'Sandalwood Plantation Profits', 'Rental weekend getaway', 'Long-term land investment'].map((use, index) => (
               <div key={index} className='rounded-full border border-background/20 bg-background/10 px-4 py-2'>
                 <p className='text-sm lg:text-base text-background/90'>{use}</p>
               </div>
@@ -594,8 +622,6 @@ const PlotPage = () => {
         </div>
       </section>
 
-
-{/* 3A. PLOTS IMAGE CAROUSEL */}
       <section className="overflow-hidden">
         <div className="max-w-full mx-auto px-0">
           <PlotsCarousel />
@@ -655,18 +681,18 @@ const PlotPage = () => {
       <section className='py-20 lg:py-24 bg-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <div className='max-w-2xl mx-auto text-center mb-16'>
-                      <h2 className='text-4xl lg:text-5xl font-playfair-display'>
-                        <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-                          Lifestyle Benefits
-                        </TextAnimate>
-                        <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
-                          That Come with Your Land
-                        </TextAnimate>
-                      </h2>
-                      <p className='mt-4 text-base lg:text-lg text-foreground/70 leading-relaxed'>
-                        Every plot at Madhuban Village comes backed by a curated set of lifestyle amenities designed to elevate everyday living.
-                      </p>
-                    </div>
+            <h2 className='text-4xl lg:text-5xl font-playfair-display'>
+              <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
+                Lifestyle Benefits
+              </TextAnimate>
+              <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
+                That Come with Your Land
+              </TextAnimate>
+            </h2>
+            <p className='mt-4 text-base lg:text-lg text-foreground/70 leading-relaxed'>
+              Every plot at Madhuban Village comes backed by a curated set of lifestyle amenities designed to elevate everyday living.
+            </p>
+          </div>
 
           <AmenitiesAutoScroller />
         </div>
@@ -678,10 +704,10 @@ const PlotPage = () => {
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
             <div>
               <h2 className='text-4xl lg:text-5xl font-playfair-display text-foreground mb-8'>
-              <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-                Perfect Balance of 
+                <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
+                  Perfect Balance of
                 </TextAnimate>
-                                <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
+                <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
                   Connectivity & Peace
                 </TextAnimate>
               </h2>
@@ -751,11 +777,11 @@ const PlotPage = () => {
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <div className='max-w-4xl mx-auto'>
             <h2 className='text-4xl lg:text-5xl items-start text-left md:text-center font-playfair-display text-foreground mb-16'>
-            <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-              Size & 
+              <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
+                Size &
               </TextAnimate>
               <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
-              Price Transparency
+                Price Transparency
               </TextAnimate>
             </h2>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
@@ -764,7 +790,7 @@ const PlotPage = () => {
                 <ul className='space-y-4'>
                   <li className='flex items-center gap-3'>
                     <Check className='w-5 h-5 text-foreground' />
-                    <p className='text-lg text-foreground/70'>Farmhouse plots starting from 4,500 sq. ft.</p>
+                    <p className='text-lg text-foreground/70'>Farmhouse Villa Plots starting from 4,500 sq. ft.</p>
                   </li>
                   <li className='flex items-center gap-3'>
                     <Check className='w-5 h-5 text-foreground' />
@@ -846,227 +872,230 @@ const PlotPage = () => {
       </section> */}
 
       {/* 12. GOOGLE MAP LOCATION */}
-            <section className="py-20 bg-background">
-              <div className="max-w-7xl mx-auto px-4 lg:px-16">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                  <div className="space-y-4">
-                    <h2 className="text-3xl lg:text-4xl font-playfair-display text-foreground">
-                      <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-                    Visit Us At
-                    </TextAnimate>
-                    <TextAnimate animation="blurInUp" className='italic' by="character" duration={0.5} delay={0.1} once>
-                    Madhuban Village
-                    </TextAnimate>
-                    <TextAnimate animation="blurInUp" className='italic' by="character" duration={0.5} delay={0.1} once>
-                    Plot Villa
-                    </TextAnimate>
-                    </h2>
-                    <p className="text-lg text-foreground/70 leading-relaxed">
-                      Farmhouse | Club | Resort | Banquets
-                    </p>
-                    <div className="flex items-start gap-3 text-foreground/70">
-                      <MapPin className="w-5 h-5 text-[#D4AF37] mt-1" />
-                      <p>
-                        Madhuban Village, Hatla, Panjra, Katol Road, Katol, Nagpur- 441302
-                      </p>
-                    </div>
-                  </div>
-                  <div className="relative overflow-hidden rounded-2xl shadow-2xl border border-foreground/10">
-                    <div className="absolute right-4 bottom-4 z-10 flex items-center gap-2 bg-background/90 backdrop-blur px-3 py-2 rounded-full shadow">
-                      <img src="/madhuban-logo.png" alt="Madhuban Village" className="w-8 h-8 object-contain" />
-                      <span className="text-sm font-semibold text-foreground">Madhuban Village Farmhouse</span>
-                    </div>
-                    <div className="relative">
-                      <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1843.7910705490574!2d78.64734126630019!3d21.25138632020649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd45878357e8927%3A0xa6b5bbd3a81926a9!2sMadhuban%20Village%20-%20FARMSHOUSE%20%7C%20CLUB%20%7C%20RESORT%20%7C%20BANQUETS!5e0!3m2!1sen!2sin!4v1765449947326!5m2!1sen!2sin"
-                        width="100%"
-                        height="420"
-                        style={{ border: 0 }}
-                        allowFullScreen
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                        aria-label="Google map showing Madhuban Village location"
-                      ></iframe>
-                    </div>
-                  </div>
-                </div>
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 lg:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="space-y-4">
+              <h2 className="text-3xl lg:text-4xl font-playfair-display text-foreground">
+                <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
+                  Visit Us At
+                </TextAnimate>
+                <TextAnimate animation="blurInUp" className='italic' by="character" duration={0.5} delay={0.1} once>
+                  Madhuban Village
+                </TextAnimate>
+                <TextAnimate animation="blurInUp" className='italic' by="character" duration={0.5} delay={0.1} once>
+                  Villa Plots
+                </TextAnimate>
+              </h2>
+              <p className="text-lg text-foreground/70 leading-relaxed">
+                Farmhouse | Club | Resort | Banquets
+              </p>
+              <div className="flex items-start gap-3 text-foreground/70">
+                <MapPin className="w-5 h-5 text-[#D4AF37] mt-1" />
+                <p>
+                  Madhuban Village,
+                  Hatla, Panjra,
+                  Katol Road,
+                  Katol, Nagpur, Maharashtra,  India- 441302
+                </p>
               </div>
-            </section>
-      
-            {/* 10. FINAL CTA SECTION */}
-            <section className='py-20 lg:py-32 bg-foreground text-background'>
-              <div className='max-w-7xl mx-auto px-4 lg:px-16'>
-                <div className='max-w-4xl mx-auto text-center'>
-                  <h2 className='text-4xl lg:text-5xl font-playfair-display mb-8'>
-                  <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-                    Book Your Private 
-                    </TextAnimate>
-                    <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
-                    Site Visit Now
-                    </TextAnimate>
-                  </h2>
-                  <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mb-12'>
-                    {[
-                      'See the land',
-                      'Experience the amenities',
-                      'Understand your investment',
-                      'Lock your preferred plot',
-                    ].map((item, index) => (
-                      <div key={index} className='flex items-center gap-3 justify-center'>
-                        <Check className='w-6 h-6 text-[#D4AF37]' />
-                        <p className='text-lg text-background/90'>{item}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <Button
-                    variant='secondary'
-                    size='lg'
-                    onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-                  >
-                    Book Now
-                  </Button>
-                </div>
+            </div>
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl border border-foreground/10">
+              <div className="absolute right-4 bottom-4 z-10 flex items-center gap-2 bg-background/90 backdrop-blur px-3 py-2 rounded-full shadow">
+                <img src="/madhuban-logo.png" alt="Madhuban Village" className="w-8 h-8 object-contain" />
+                <span className="text-sm font-semibold text-foreground">Madhuban Village Farmhouse</span>
               </div>
-            </section>
-      
-            {/* 11. CONTACT FORM - PLOTS */}
-            <section id='contact-form' className='py-16 sm:py-20 bg-background'>
-              <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-12'>
-                <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start'>
-                  <div className='space-y-5'>
-                    <h2 className='text-3xl sm:text-4xl lg:text-5xl font-playfair-display text-foreground leading-tight'>
-                      Book a Private Plot Tour
-                    </h2>
-                    <p className='text-base sm:text-lg text-foreground/70 leading-relaxed'>
-                      Share your details and preferences. Our property advisor will tailor a site visit,
-                      showcase available inventory, and share the best pricing options for you.
-                    </p>
-                    <div className="grid grid-cols-1 gap-4">
-                    <div className="p-4 border border-foreground/10 rounded-lg bg-foreground/5">
-                      <p className="text-sm text-foreground/60">Contact Us</p>
-                      <p className="text-lg text-foreground font-semibold">+91 70207 04418</p>
-                      {/* <p className="text-lg text-foreground font-semibold">+91 70207 04420</p>
+              <div className="relative">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1843.7910705490574!2d78.64734126630019!3d21.25138632020649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd45878357e8927%3A0xa6b5bbd3a81926a9!2sMadhuban%20Village%20-%20FARMSHOUSE%20%7C%20CLUB%20%7C%20RESORT%20%7C%20BANQUETS!5e0!3m2!1sen!2sin!4v1765449947326!5m2!1sen!2sin"
+                  width="100%"
+                  height="420"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  aria-label="Google map showing Madhuban Village location"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 10. FINAL CTA SECTION */}
+      <section className='py-20 lg:py-32 bg-foreground text-background'>
+        <div className='max-w-7xl mx-auto px-4 lg:px-16'>
+          <div className='max-w-4xl mx-auto text-center'>
+            <h2 className='text-4xl lg:text-5xl font-playfair-display mb-8'>
+              <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
+                Book Your Private
+              </TextAnimate>
+              <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
+                Site Visit Now
+              </TextAnimate>
+            </h2>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mb-12'>
+              {[
+                'See the land',
+                'Experience the amenities',
+                'Understand your investment',
+                'Lock your preferred plot',
+              ].map((item, index) => (
+                <div key={index} className='flex items-center gap-3 justify-center'>
+                  <Check className='w-6 h-6 text-[#D4AF37]' />
+                  <p className='text-lg text-background/90'>{item}</p>
+                </div>
+              ))}
+            </div>
+            <Button
+              variant='secondary'
+              size='lg'
+              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Book Now
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* 11. CONTACT FORM - PLOTS */}
+      <section id='contact-form' className='py-16 sm:py-20 bg-background'>
+        <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-12'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start'>
+            <div className='space-y-5'>
+              <h2 className='text-3xl sm:text-4xl lg:text-5xl font-playfair-display text-foreground leading-tight'>
+                Book a Private Plot Tour
+              </h2>
+              <p className='text-base sm:text-lg text-foreground/70 leading-relaxed'>
+                Share your details and preferences. Our property advisor will tailor a site visit,
+                showcase available inventory, and share the best pricing options for you.
+              </p>
+              <div className="grid grid-cols-1 gap-4">
+                <div className="p-4 border border-foreground/10 rounded-lg bg-foreground/5">
+                  <p className="text-sm text-foreground/60">Contact Us</p>
+                  <p className="text-lg text-foreground font-semibold">+91 70207 04418</p>
+                  {/* <p className="text-lg text-foreground font-semibold">+91 70207 04420</p>
                       <p className="text-lg text-foreground font-semibold">+91 70207 04421</p> */}
-                    </div>
-                    <div className="p-4 border border-foreground/10 rounded-lg bg-foreground/5">
-                      <p className="text-sm text-foreground/60">Email</p>
-                      <p className="text-lg text-foreground font-semibold">info@madhubanvillage.in</p>
-                      <p className="text-lg text-foreground font-semibold">madhubanvillage@gmail.com</p>
-                    </div>
-                  </div>
-                  </div>
-      
-                  <div className='bg-foreground/5 border border-foreground/10 rounded-2xl shadow-xl p-5 sm:p-6 lg:p-8 backdrop-blur'>
-                    <form className='space-y-5' onSubmit={handleSubmit}>
-                      <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                        <div>
-                          <label className='block text-sm text-foreground/70 mb-2'>Full Name *</label>
-                          <input
-                            name='name'
-                            value={formData.name}
-                            onChange={handleChange}
-                            required
-                            className='w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]'
-                            placeholder='Your name'
-                          />
-                        </div>
-                        <div>
-                          <label className='block text-sm text-foreground/70 mb-2'>Mobile *</label>
-                          <input
-                            name='mobile'
-                            value={formData.mobile}
-                            onChange={handleChange}
-                            required
-                            className='w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]'
-                            placeholder='+91 98765 43210'
-                          />
-                        </div>
-                      </div>
-      
-                      <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                        <div>
-                          <label className='block text-sm text-foreground/70 mb-2'>Email</label>
-                          <input
-                            type='email'
-                            name='email'
-                            value={formData.email}
-                            onChange={handleChange}
-                            className='w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]'
-                            placeholder='you@example.com'
-                          />
-                        </div>
-                        <div>
-                          <label className='block text-sm text-foreground/70 mb-2'>City</label>
-                          <input
-                            name='city'
-                            value={formData.city}
-                            onChange={handleChange}
-                            className='w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]'
-                            placeholder='Enter your city'
-                          />
-                        </div>
-                      </div>
-      
-                      <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                        <div>
-                          <label className='block text-sm text-foreground/70 mb-2'>Preferred Plot Size</label>
-                          <select
-                            name='plotSize'
-                            value={formData.plotSize}
-                            onChange={handleChange}
-                            className='w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]'
-                          >
-                            <option value=''>Select size</option>
-                            <option value='5000'>5,000 sq. ft.</option>
-                            <option value='7500'>7,500 sq. ft.</option>
-                            <option value='10000'>10,000 sq. ft.</option>
-                            <option value='15000'>15,000 sq. ft.</option>
-                            <option value='20000+'>20,000+ sq. ft.</option>
-                          </select>
-                        </div>
-                        <div>
-                          <label className='block text-sm text-foreground/70 mb-2'>Buying Timeline</label>
-                          <select
-                            name='timeline'
-                            value={formData.timeline}
-                            onChange={handleChange}
-                            className='w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]'
-                          >
-                            <option value=''>Select timeline</option>
-                            <option value='30d'>Within 30 days</option>
-                            <option value='60-90d'>60-90 days</option>
-                            <option value='6m'>3-6 months</option>
-                            <option value='exploring'>Just exploring</option>
-                          </select>
-                        </div>
-                      </div>
-      
-                      <div>
-                        <label className='block text-sm text-foreground/70 mb-2'>Notes or requirements</label>
-                        <textarea
-                          name='notes'
-                          value={formData.notes}
-                          onChange={handleChange}
-                          rows={3}
-                          className='w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]'
-                          placeholder='E.g., facing preference, clubhouse proximity, custom farmhouse plan.'
-                        />
-                      </div>
-      
-                      <button
-                        type='submit'
-                        className='w-full rounded-lg bg-foreground text-background py-3 text-lg font-semibold tracking-wide shadow-lg hover:bg-foreground/90 transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#D4AF37] focus:ring-offset-background'
-                      >
-                        Schedule My Site Visit
-                      </button>
-                      <p className='text-xs text-foreground/60 text-center'>
-                        Our advisor will call within 30 minutes to confirm your visit.
-                      </p>
-                    </form>
-                  </div>
+                </div>
+                <div className="p-4 border border-foreground/10 rounded-lg bg-foreground/5">
+                  <p className="text-sm text-foreground/60">Email</p>
+                  <p className="text-lg text-foreground font-semibold">info@madhubanvillage.in</p>
+                  <p className="text-lg text-foreground font-semibold">madhubanvillage@gmail.com</p>
                 </div>
               </div>
-            </section>
+            </div>
+
+            <div className='bg-foreground/5 border border-foreground/10 rounded-2xl shadow-xl p-5 sm:p-6 lg:p-8 backdrop-blur'>
+              <form className='space-y-5' onSubmit={handleSubmit}>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+                  <div>
+                    <label className='block text-sm text-foreground/70 mb-2'>Full Name *</label>
+                    <input
+                      name='name'
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className='w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]'
+                      placeholder='Your name'
+                    />
+                  </div>
+                  <div>
+                    <label className='block text-sm text-foreground/70 mb-2'>Mobile *</label>
+                    <input
+                      name='mobile'
+                      value={formData.mobile}
+                      onChange={handleChange}
+                      required
+                      className='w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]'
+                      placeholder='+91 98765 43210'
+                    />
+                  </div>
+                </div>
+
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+                  <div>
+                    <label className='block text-sm text-foreground/70 mb-2'>Email</label>
+                    <input
+                      type='email'
+                      name='email'
+                      value={formData.email}
+                      onChange={handleChange}
+                      className='w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]'
+                      placeholder='you@example.com'
+                    />
+                  </div>
+                  <div>
+                    <label className='block text-sm text-foreground/70 mb-2'>City</label>
+                    <input
+                      name='city'
+                      value={formData.city}
+                      onChange={handleChange}
+                      className='w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]'
+                      placeholder='Enter your city'
+                    />
+                  </div>
+                </div>
+
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+                  <div>
+                    <label className='block text-sm text-foreground/70 mb-2'>Preferred Plot Size</label>
+                    <select
+                      name='plotSize'
+                      value={formData.plotSize}
+                      onChange={handleChange}
+                      className='w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]'
+                    >
+                      <option value=''>Select size</option>
+                      <option value='5000'>5,000 sq. ft.</option>
+                      <option value='7500'>7,500 sq. ft.</option>
+                      <option value='10000'>10,000 sq. ft.</option>
+                      <option value='15000'>15,000 sq. ft.</option>
+                      <option value='20000+'>20,000+ sq. ft.</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className='block text-sm text-foreground/70 mb-2'>Buying Timeline</label>
+                    <select
+                      name='timeline'
+                      value={formData.timeline}
+                      onChange={handleChange}
+                      className='w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]'
+                    >
+                      <option value=''>Select timeline</option>
+                      <option value='30d'>Within 30 days</option>
+                      <option value='60-90d'>60-90 days</option>
+                      <option value='6m'>3-6 months</option>
+                      <option value='exploring'>Just exploring</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label className='block text-sm text-foreground/70 mb-2'>Notes or requirements</label>
+                  <textarea
+                    name='notes'
+                    value={formData.notes}
+                    onChange={handleChange}
+                    rows={3}
+                    className='w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]'
+                    placeholder='E.g., facing preference, clubhouse proximity, custom farmhouse plan.'
+                  />
+                </div>
+
+                <button
+                  type='submit'
+                  className='w-full rounded-lg bg-foreground text-background py-3 text-lg font-semibold tracking-wide shadow-lg hover:bg-foreground/90 transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#D4AF37] focus:ring-offset-background'
+                >
+                  Schedule My Site Visit
+                </button>
+                <p className='text-xs text-foreground/60 text-center'>
+                  Our advisor will call within 30 minutes to confirm your visit.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </div>

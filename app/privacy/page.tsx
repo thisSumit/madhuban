@@ -26,7 +26,7 @@ export default function PrivacyPolicy() {
                         committed to protecting your privacy. This Privacy Policy explains
                         how we collect, use, and safeguard your information when you visit
                         our website or use our services including Wedding Resort, Wedding
-                        Venue, Swimming Pool, Madhuban Village Plots & Farm House, and
+                        Venue, Swimming Pool, Madhuban Village Villa Plots & Farm House, and
                         Club ANAND.
                     </p>
                 </section>
@@ -167,8 +167,9 @@ export default function PrivacyPolicy() {
                     </h2>
                     <p>
                         <strong>Madhuban Village</strong><br />
-                        Katol Road, Nagpur,
-                        Maharashtra, India<br />
+                          Hatla, Panjra,
+                          Katol Road,
+                          Katol, <br /> Nagpur, Maharashtra,  India- 441302 <br />
                         Phone: +91 7020704418<br />
                         Email: info@madhubanvillage.in | madhubanvillage@gmail.com
                     </p>

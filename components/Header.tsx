@@ -40,7 +40,7 @@ const Header = () => {
   const navLinks = [
     { href: '/about', label: 'Home' },
     { href: '/', label: 'Wedding' },
-    { href: '/farmland-plots', label: 'Plot Villa' },
+    { href: '/farmland-plots', label: 'Villa Plots' },
     { href: '/club-anand', label: 'Club' },
     { href: '/our-world', label: 'Our World' },
     { href: '/contact', label: 'Contact' },

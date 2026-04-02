@@ -56,7 +56,7 @@ const PhonePopup = () => {
               </h3>
               <div className="w-16 h-px bg-background/30 mx-auto mt-4 mb-6" />
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-playfair-display text-background font-light tracking-wide">
-                Contact Us to Request a Tour
+                Contact Us
               </h2>
             </div>
 

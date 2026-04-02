@@ -64,10 +64,10 @@ export default function TermsAndConditions() {
                     </ul>
                 </section>
 
-                {/* Plots & Farm House */}
+                {/* Villa Plots & Farm House */}
                 <section className="mb-10">
                     <h2 className="text-2xl font-semibold mb-4">
-                        3. Madhuban Village Plots & Farm House
+                        3. Madhuban Village Villa Plots & Farm House
                     </h2>
                     <ul className="list-disc pl-6 space-y-2">
                         <li>All plot layouts are subject to availability.</li>
@@ -133,8 +133,9 @@ export default function TermsAndConditions() {
                     </h2>
                     <p>
                         <strong>Madhuban Village</strong><br />
-                        Katol Road, Nagpur,
-                        Maharashtra, India<br />
+                        Hatla, Panjra,
+                          Katol Road,
+                          Katol, <br /> Nagpur, Maharashtra,  India- 441302 <br />
                         Phone: +91 7020704418<br />
                         Email: info@madhubanvillage.in | madhubanvillage@gmail.com
                     </p>

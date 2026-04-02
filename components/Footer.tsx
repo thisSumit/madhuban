@@ -30,9 +30,9 @@ const Footer = () => {
     {
       id: 1,
       title: 'Plots',
-      description: 'Explore premium residential plots in serene surroundings',
+      description: 'Explore premium residential Villa Plots in serene surroundings',
       href: '/plots',
-      image: '/dr2.png', // Add your plots image path
+      image: '/dr2.png', // Add your Villa Plots image path
     },
     {
       id: 2,
@@ -67,8 +67,7 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Instagram, href: 'https://www.instagram.com/madhuban.village/', label: 'Instagram' },
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
+    { icon: Facebook, href: 'https://www.facebook.com/madhuban.village', label: 'Facebook' },
   ]
 
   return (
@@ -173,9 +172,9 @@ const Footer = () => {
             <div className='mb-6'>
               <a href="/">
               <img
-                src="/madhuban-wlogo.png"
+                src="/madhuban-wlogo-copy.png"
                 alt="Madhuban Village"
-                className='h-28 lg:h-34 object-contain mb-6'
+                className='h-24 lg:h-28 object-contain mb-6'
               />
               </a>
             </div>
@@ -244,11 +243,18 @@ const Footer = () => {
                 <Mail className='w-4 h-4 text-background/60 group-hover:text-background transition-colors duration-300' />
                 <span>madhubanvillage@gmail.com</span>
               </a>
-              <div className='flex items-start gap-3 text-background/90 pt-2'>
-                <MapPin className='w-4 h-4 text-background/60 mt-1 shrink-0' />
-                <span className='text-sm leading-relaxed'>
-                  Madhuban Village, Katol Road, Nagpur, Maharashtra
-                </span>
+              <div className='pt-2'>
+                <a
+                  href='https://maps.app.goo.gl/1sHKv9F2XUbVaJV26'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='flex items-start gap-3 text-background/90 hover:text-background transition-colors duration-300 group underline'
+                >
+                  <MapPin className='w-4 h-4 text-background/60 group-hover:text-background transition-colors duration-300 mt-0.5 shrink-0' />
+                  <span className='text-sm leading-relaxed'>
+                    Madhuban Village, <br />Hatla, Panjra, Katol Road, Katol, <br /> Nagpur, Maharashtra,  India- 441302 <br />
+                  </span>
+                </a>
               </div>
             </div>
           </div>
@@ -294,10 +300,10 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className='border-t border-background/10 py-6'>
+      <div className='border-t border-background/10 py-6 pb-16'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <div className='flex flex-col md:flex-row items-center justify-between gap-4'>
-            <p className='text-background/60 text-sm'>
+            <p className='text-background/60 text-sm' suppressHydrationWarning>
               © {new Date().getFullYear()} Madhuban Village. All rights reserved.
             </p>
             <div className='flex items-center gap-6 text-sm'>

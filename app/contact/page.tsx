@@ -33,9 +33,9 @@ const ContactPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
+
     const scriptURL = "https://script.google.com/macros/s/AKfycbyqQWJnxWtFG1L8r8G6B7mVyHUs0qHlsIrFIc12Zasw-uQns88gDxz-ISmk1e_w8mvk8Q/exec"; // Integrated Google Apps Script URL
-    
+
     const payload = {
       name: formData.name.trim(),
       phone: formData.phone.trim(),
@@ -45,9 +45,9 @@ const ContactPage = () => {
       formType: "general",
       timestamp: new Date().toISOString()
     };
-    
+
     setIsSubmitting(true)
-    
+
     try {
       await fetch(scriptURL, {
         method: "POST",
@@ -76,9 +76,9 @@ const ContactPage = () => {
 
   return (
     <div className='min-h-screen bg-background'>
-        <div className='h-30 w-full bg-foreground'/>
+      <div className='h-30 w-full bg-foreground' />
       <Header />
-      
+
       <section className='pt-32 pb-20 px-4 lg:px-16'>
         <div className='max-w-5xl mx-auto'>
           {/* Header */}
@@ -151,9 +151,10 @@ const ContactPage = () => {
                       <div>
                         <p className='text-sm text-foreground/60 mb-1'>Location</p>
                         <p className='text-foreground font-medium'>
-                          Madhuban Village,<br />
-                          Katol Road, Nagpur,<br />
-                          Maharashtra, India
+                          Madhuban Village,
+                          Hatla, Panjra,
+                          Katol Road,
+                          Katol, Nagpur, Maharashtra,  India- 441302
                         </p>
                       </div>
                     </div>

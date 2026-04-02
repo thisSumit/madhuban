@@ -4,9 +4,9 @@ import React, { useState, useEffect } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Button } from '@/components/ui/Button'
-import { 
-  Check, 
-  Users, 
+import {
+  Check,
+  Users,
   Gift,
   Calendar,
   Utensils,
@@ -61,9 +61,9 @@ const ClubPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
+
     const scriptURL = "https://script.google.com/macros/s/AKfycby4x2iVUWE1D3KxTqaFDOzL2d1ira36S4FNW7cl9uv-2XH8AGDDXMrpE2dBC9PFj6JD/exec"; // Integrated Google Apps Script URL
-  
+
     const payload = {
       name: formData.name.trim(),
       mobile: formData.mobile.trim(),
@@ -73,7 +73,7 @@ const ClubPage = () => {
       formType: "club",
       timestamp: new Date().toISOString()
     };
-  
+
     try {
       await fetch(scriptURL, {
         method: "POST",
@@ -83,9 +83,9 @@ const ClubPage = () => {
         },
         body: JSON.stringify(payload),
       });
-  
+
       alert("Thank you! Our club advisor will contact you shortly.");
-  
+
       // Reset form
       setFormData({
         name: "",
@@ -94,7 +94,7 @@ const ClubPage = () => {
         notes: "",
         city: "",
       });
-  
+
     } catch (error) {
       console.error("Error:", error);
       alert("Something went wrong! Please try again.");
@@ -123,7 +123,7 @@ const ClubPage = () => {
     { icon: Utensils, text: 'Restaurant & Café' },
     { icon: Music, text: 'Event & Entertainment Areas' },
     { icon: TreePine, text: 'Landscaped Open Spaces' },
-    { icon: Crown, text: 'Access to Select Resort Amenities at Madhuban Village' },
+    { icon: Crown, text: 'Access to Selected Resort Amenities at Madhuban Village' },
   ]
 
   return (
@@ -140,12 +140,9 @@ const ClubPage = () => {
           />
           <div className='absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60' />
         </div>
-        
-        <div className='relative z-10 h-full flex items-center justify-center px-4 lg:px-16'>
+
+        {/* <div className='relative z-10 h-full flex items-center justify-center px-4 lg:px-16'>
           <div className={`text-center max-w-5xl transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              {/* <span className='inline-block px-6 py-2 bg-[#D4AF37]/20 border border-[#D4AF37] rounded-full text-[#D4AF37] text-sm uppercase tracking-widest mb-2 animate-pulse'>
-                Membership Open
-              </span> */}
             <h1 className='text-4xl lg:text-7xl font-[playfair-display] text-background mb-4 leading-tight'>
               <span className='block'><TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>Affordable Luxury,</TextAnimate></span>
               <span className='block italic'><TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>Unforgettable Moments!</TextAnimate></span>
@@ -160,7 +157,7 @@ const ClubPage = () => {
               <Button
                 variant='primary'
                 size='lg'
-                onClick={() => window.location.href="https://www.madhubanvillage.in/member/"}
+                onClick={() => window.location.href = "/club-anand#membership-form"}
                 className='group'
               >
                 <span className='flex items-center'>
@@ -174,6 +171,19 @@ const ClubPage = () => {
               </a>
             </div>
           </div>
+        </div> */}
+
+        <div className='relative z-10 h-full w-full flex flex-col items-center justify-center'>
+          <div className='flex flex-col items-center justify-center h-full'>
+            <p className='text-white font-playfair-display md:text-2xl text-xl leading-tighter tracking-tight font-bold'>Club Anand</p>
+            <div className='h-px w-20 my-2 bg-background/40' />
+            <h1 className='text-white font-playfair-display text-4xl lg:text-8xl text-center leading-tighter tracking-tight px-4'>
+              <span className='italic block mt-2'> <TextAnimate animation="slideLeft" by="character" duration={0.5} delay={0.2} once>Private Members</TextAnimate>Club</span>
+            </h1>
+            <p className='text-white font-playfair-display md:text-2xl text-lg py-2'>Leisure | Events | Experiences | Lifestyle</p>
+          </div>
+
+          <Button onClick={() => document.getElementById('membership-form')?.scrollIntoView({ behavior: 'smooth' })} className='absolute md:bottom-8 bottom-34' variant="primary" size="lg">Book Now</Button>
         </div>
 
         {/* Floating Elements Animation */}
@@ -201,7 +211,7 @@ const ClubPage = () => {
               <div key={i} className='flex items-center gap-4 shrink-0'>
                 <Crown className='w-6 h-6 text-[#D4AF37]' />
                 <span className='text-xl lg:text-2xl font-[playfair-display] uppercase tracking-wider'>
-                  Membership Open
+                  Pre Launch membership open
                 </span>
                 <Crown className='w-6 h-6 text-[#D4AF37]' />
               </div>
@@ -212,7 +222,7 @@ const ClubPage = () => {
               <div key={`duplicate-${i}`} className='flex items-center gap-4 shrink-0'>
                 <Crown className='w-6 h-6 text-[#D4AF37]' />
                 <span className='text-xl lg:text-2xl font-[playfair-display] uppercase tracking-wider'>
-                  Membership Open
+                  Pre Launch membership open
                 </span>
                 <Crown className='w-6 h-6 text-[#D4AF37]' />
               </div>
@@ -227,11 +237,11 @@ const ClubPage = () => {
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
             <div>
               <h2 className='text-4xl lg:text-5xl font-[playfair-display] text-foreground mb-8'>
-              <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-                Why Join 
+                <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
+                  Why Join
                 </TextAnimate>
                 <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
-                Club ANAND?
+                  Club ANAND?
                 </TextAnimate>
               </h2>
               <div className='space-y-6'>
@@ -292,22 +302,22 @@ const ClubPage = () => {
       </section>
 
       {/* Membership Benefits Section */}
-      
+
 
       {/* Amenities Section */}
       <section className='py-20 lg:py-32 border-b bg-foreground text-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <div className='text-center mb-16'>
             <h2 className='text-4xl lg:text-6xl font-[playfair-display] mb-4'>
-            <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-              Amenities at
+              <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
+                Amenities at
               </TextAnimate>
-                <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
-              Club ANAND
+              <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
+                Club ANAND
               </TextAnimate>
             </h2>
             <p className='text-lg text-background/80 max-w-2xl mx-auto'>
-              Experience luxury at every corner of Club ANAND
+              Experience refined living at Club ANAND<br />crafted for comfort, leisure, and luxury.
             </p>
           </div>
 
@@ -337,22 +347,22 @@ const ClubPage = () => {
 
           <div className='mt-12 text-center'>
             <p className='text-xl font-[playfair-display] text-background/80'>
-              Club ANAND members also enjoy access to select amenities across Madhuban Village Resort, enhancing the overall lifestyle experience.
+              At Club ANAND, every amenity is thoughtfully designed to offer a perfect blend of relaxation, recreation, and premium lifestyle <br /> Making your Villa Plot investment truly rewarding.
             </p>
           </div>
         </div>
       </section>
 
 
-<section className='py-20 lg:py-32 bg-background'>
+      <section className='py-20 lg:py-32 bg-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <div className='text-center mb-16'>
             <h2 className='text-4xl lg:text-6xl font-[playfair-display] text-foreground mb-4'>
-            <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-              Exclusive 
+              <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
+                Exclusive
               </TextAnimate>
-                <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
-              Membership Benefits
+              <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
+                Membership Benefits
               </TextAnimate>
             </h2>
             <p className='text-lg text-foreground/70 max-w-2xl mx-auto'>
@@ -366,11 +376,10 @@ const ClubPage = () => {
               return (
                 <div
                   key={index}
-                  className={`group relative p-6 rounded-lg border-2 transition-all duration-500 hover:shadow-2xl ${
-                    benefit.highlight
+                  className={`group relative p-6 rounded-lg border-2 transition-all duration-500 hover:shadow-2xl ${benefit.highlight
                       ? 'bg-foreground text-background border-[#D4AF37] hover:scale-105'
                       : 'bg-background border-foreground/20 text-foreground hover:border-foreground'
-                  }`}
+                    }`}
                   style={{
                     animationDelay: `${index * 0.1}s`,
                   }}
@@ -405,15 +414,15 @@ const ClubPage = () => {
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <div className='max-w-4xl mx-auto text-center'>
             <h2 className='text-4xl lg:text-6xl font-[playfair-display] mb-6'>
-            <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-              Ready to Begin 
+              <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
+                Ready to Begin
               </TextAnimate>
-                <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
-              Your Journey?
+              <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
+                Your Journey?
               </TextAnimate>
             </h2>
             <p className='text-xl lg:text-2xl text-background/90 mb-10 leading-relaxed'>
-              Join Club ANAND today and unlock a decade of affordable luxury, unforgettable 
+              Join Club ANAND today and unlock a decade of affordable luxury, unforgettable
               moments, and exclusive privileges.
             </p>
             <div className='flex flex-col sm:flex-row items-center justify-center gap-4'>
@@ -444,7 +453,7 @@ const ClubPage = () => {
       {/* Membership Form */}
       <section id='membership-form' className='py-16 sm:py-20 bg-background'>
         <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-12'>
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center'>
             <div className='space-y-5'>
               <h2 className='text-3xl sm:text-4xl lg:text-5xl font-[playfair-display] text-foreground leading-tight'>
                 Plan Your Club ANAND Experience
@@ -455,18 +464,18 @@ const ClubPage = () => {
                 experiences.
               </p>
               <div className="grid grid-cols-1 gap-4">
-              <div className="p-4 border border-foreground/10 rounded-lg bg-foreground/5">
-                <p className="text-sm text-foreground/60">Contact Us</p>
-                <p className="text-lg text-foreground font-semibold">+91 70207 04418</p>
-                {/* <p className="text-lg text-foreground font-semibold">+91 70207 04420</p>
+                <div className="p-4 border border-foreground/10 rounded-lg bg-foreground/5">
+                  <p className="text-sm text-foreground/60">Contact Us</p>
+                  <p className="text-lg text-foreground font-semibold">+91 70207 04418</p>
+                  {/* <p className="text-lg text-foreground font-semibold">+91 70207 04420</p>
                 <p className="text-lg text-foreground font-semibold">+91 70207 04421</p> */}
+                </div>
+                <div className="p-4 border border-foreground/10 rounded-lg bg-foreground/5">
+                  <p className="text-sm text-foreground/60">Email</p>
+                  <p className="text-lg text-foreground font-semibold">info@madhubanvillage.in</p>
+                  <p className="text-lg text-foreground font-semibold">madhubanvillage@gmail.com</p>
+                </div>
               </div>
-              <div className="p-4 border border-foreground/10 rounded-lg bg-foreground/5">
-                <p className="text-sm text-foreground/60">Email</p>
-                <p className="text-lg text-foreground font-semibold">info@madhubanvillage.in</p>
-                <p className="text-lg text-foreground font-semibold">madhubanvillage@gmail.com</p>
-              </div>
-            </div>
             </div>
 
             <div className='bg-foreground/5 border border-foreground/10 rounded-2xl shadow-xl p-5 sm:p-6 lg:p-8 backdrop-blur'>
@@ -521,18 +530,6 @@ const ClubPage = () => {
                     />
                   </div>
                 </div>
-                <div>
-                  <label className='block text-sm text-foreground/70 mb-2'>Notes or special requests</label>
-                  <textarea
-                    name='notes'
-                    value={formData.notes}
-                    onChange={handleChange}
-                    rows={3}
-                    className='w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]'
-                    placeholder='Eg. DJ + lights, themed decor, stay packages, AV setup.'
-                  />
-                </div>
-
                 <button
                   type='submit'
                   className='w-full rounded-lg bg-foreground text-background py-3 text-lg font-semibold tracking-wide shadow-lg hover:bg-foreground/90 transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#D4AF37] focus:ring-offset-background'

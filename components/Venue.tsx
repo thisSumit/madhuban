@@ -224,14 +224,9 @@ const Venue = () => {
                 <p className='text-lg text-foreground/70 leading-relaxed mb-8'>
                   {selectedVenue.description}
                 </p>
-                <div className='flex flex-col sm:flex-row gap-4'>
-                  <Button onClick={() => window.location.href = "https://wa.me/+917020704420"} variant="secondary" size="lg" className='flex-1'>
-                    Learn More
-                  </Button>
                   <Button onClick={() => window.location.href = "/contact"} variant="primary" size="lg" className='flex-1'>
                     Book Now
                   </Button>
-                </div>
               </div>
             </div>
           </div>

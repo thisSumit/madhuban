@@ -235,7 +235,7 @@ const PlotPage = () => {
             </h1>
             <div className='mb-10'>
               <p className='text-2xl lg:text-4xl font-playfair-display text-background mb-2'>
-                Plots starting from<span className='text-[#D4AF37]'> ₹700 per sq. ft.</span>
+                Villa Plots starting from<span className='text-[#D4AF37]'> ₹700 per sq. ft.</span>
               </p>
             </div>
             <div className='flex flex-col items-center justify-center gap-4'>
@@ -306,7 +306,7 @@ const PlotPage = () => {
                 Madhuban Village offers premium farmhouse land parcels designed for those who value space, privacy, and long-term growth. Whether it’s a peaceful getaway, a place to host meaningful celebrations, or a smart land investment, Madhuban Village combines thoughtful planning, natural surroundings, and future appreciation in one well-defined destination.
               </p>
               <p>
-                With plots starting from 4,500 sq. ft. and pricing from ₹700 per sq. ft.
+                With Villa Plots starting from 4,500 sq. ft. and pricing from ₹700 per sq. ft.
               </p>
             </div>
           </div>
@@ -632,7 +632,7 @@ const PlotPage = () => {
                 <ul className='space-y-4'>
                   <li className='flex items-center gap-3'>
                     <Check className='w-5 h-5 text-foreground' />
-                    <p className='text-lg text-foreground/70'>Farmhouse plots starting from 4,500 sq. ft.</p>
+                    <p className='text-lg text-foreground/70'>Farmhouse Villa Plots starting from 4,500 sq. ft.</p>
                   </li>
                   <li className='flex items-center gap-3'>
                     <Check className='w-5 h-5 text-foreground' />
@@ -667,7 +667,7 @@ const PlotPage = () => {
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <div className='max-w-4xl mx-auto text-center'>
             <h2 className='text-4xl lg:text-5xl font-playfair-display mb-8'>
-              Only Limited Plots Available
+              Only Limited Villa Plots Available
             </h2>
             <p className='text-xl lg:text-2xl text-background/90 mb-12 leading-relaxed'>
               This is not a mass project. Madhuban Village Farmhouse is a limited-edition luxury land offering inside 
@@ -732,7 +732,10 @@ const PlotPage = () => {
               <div className="flex items-start gap-3 text-foreground/70">
                 <MapPin className="w-5 h-5 text-[#D4AF37] mt-1" />
                 <p>
-                  Madhuban Village, Hatla, Panjra, Katol Road, Katol, Nagpur- 441302
+                  Madhuban Village,
+                          Hatla, Panjra,
+                          Katol Road,
+                          Katol, Nagpur, Maharashtra,  India- 441302
                 </p>
               </div>
             </div>
@@ -794,7 +797,7 @@ const PlotPage = () => {
         </div>
       </section>
 
-      {/* 11. CONTACT FORM - PLOTS */}
+      {/* 11. CONTACT FORM - Villa Plots */}
       <section id='contact-form' className='py-16 sm:py-20 bg-background'>
         <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-12'>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start'>
