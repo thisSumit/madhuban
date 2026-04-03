@@ -62,13 +62,17 @@ const ClubPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const scriptURL = "https://script.google.com/macros/s/AKfycby4x2iVUWE1D3KxTqaFDOzL2d1ira36S4FNW7cl9uv-2XH8AGDDXMrpE2dBC9PFj6JD/exec"; // Integrated Google Apps Script URL
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxlrpSWzvpwfJaGD2OV5lotajNVxruEKhfXOgPD3nfA64bC3y9S_xlaCFyVkuiXOEaO/exec"; // Integrated Google Apps Script URL
+
+    const cityValue = formData.city.trim()
+    const notesValue = formData.notes.trim()
 
     const payload = {
       name: formData.name.trim(),
       mobile: formData.mobile.trim(),
       email: formData.email.trim(),
-      notes: formData.notes.trim(),
+      city: cityValue,
+      notes: notesValue ? `${cityValue} | ${notesValue}` : `${cityValue}`,
       source: "Club Form", // Important: This identifies the form type
       formType: "club",
       timestamp: new Date().toISOString()
@@ -524,7 +528,7 @@ const ClubPage = () => {
                       name='city'
                       value={formData.city}
                       onChange={handleChange}
-                      min={1}
+                      required
                       className='w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]'
                       placeholder='Nagpur'
                     />
