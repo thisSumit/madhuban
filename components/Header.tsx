@@ -63,9 +63,9 @@ const Header = () => {
           <div className='flex items-center z-50'>
             <a href='/' className='transition-transform duration-300'>
               <img 
-                src={isScrolled && !isMenuOpen ? "/madhuban-logo.png" : "/madhuban-wlogo.png"}
+                src={isScrolled && !isMenuOpen ? "/madhuban-logo-copy.png" : "/madhuban-wlogo-copy.png"}
                 alt="Madhuban Village" 
-                className='h-28 lg:h-34 object-fill transition-all duration-300'
+                className='h-14 lg:h-18 m-2 object-fill transition-all duration-300'
               />
             </a>
           </div>

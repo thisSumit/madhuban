@@ -910,7 +910,7 @@ const PlotPage = () => {
                 </div>
 
                 <div>
-                  <label className='block text-sm text-foreground/70 mb-2'>Notes or requirements</label>
+                  <label className='block text-sm text-foreground/70 mb-2'>Notes or requirements (Optional)</label>
                   <textarea
                     name='notes'
                     value={formData.notes}

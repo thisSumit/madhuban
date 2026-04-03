@@ -29,26 +29,18 @@ const galleryItems: GalleryItem[] = [
     id: 8,
     type: 'image',
     src: '/garden.png',
-    title: 'Garden Lawns',
-    description: 'Lush green spaces for outdoor ceremonies',
+    title: 'Garden',
+    description: 'Lush green spaces for outdoor sittings',
     category: 'Outdoor'
   },
   {
     id: 2,
     type: 'video',
-    src: 'https://res.cloudinary.com/dsqqoh9m8/video/upload/v1771766233/exp-1_qrdkvq.mp4',
+    src: '/exp-1.mp4',
     thumbnail: '/exp-1.png',
     title: 'Celebration Highlights',
     description: 'Experience the joy and grandeur of our events',
     category: 'Celebrations'
-  },
-  {
-    id: 15,
-    type: 'image',
-    src: '/mangalam.jpg',
-    title: 'Mangalam Lawn',
-    description: 'Perfect for sangeet and ceremonies',
-    category: 'Outdoor'
   },
   {
     id: 4,
@@ -61,7 +53,7 @@ const galleryItems: GalleryItem[] = [
   {
     id: 11,
     type: 'video',
-    src: 'https://res.cloudinary.com/dsqqoh9m8/video/upload/v1771766240/exp-3_ibul1h.mp4',
+    src: '/exp-3.mp4',
     thumbnail: '/exp-3.png',
     title: 'Premium Experience',
     description: 'Experience the finest amenities and services',
@@ -86,7 +78,7 @@ const galleryItems: GalleryItem[] = [
   {
     id: 3,
     type: 'video',
-    src: 'https://res.cloudinary.com/dsqqoh9m8/video/upload/v1771766239/exp-2_dzbzv8.mp4',
+    src: '/exp-2.mp4',
     thumbnail: '/exp-2.png',
     title: 'Luxury Experience',
     description: 'Immerse yourself in our premium offerings',
@@ -111,7 +103,7 @@ const galleryItems: GalleryItem[] = [
   {
     id: 5,
     type: 'video',
-    src: 'https://res.cloudinary.com/dsqqoh9m8/video/upload/v1771766233/exp-4_iqtsgv.mp4',
+    src: '/exp-4.mp4',
     thumbnail: '/exp-4.png',
     title: 'Madhuban Moments',
     description: 'Capturing unforgettable memories at Madhuban Village',
@@ -144,7 +136,7 @@ const galleryItems: GalleryItem[] = [
   {
     id: 6,
     type: 'video',
-    src: 'https://res.cloudinary.com/dsqqoh9m8/video/upload/v1771766225/exp-5_k7v4yr.mp4',
+    src: '/exp-5.mp4',
     thumbnail: '/exp-5.png',
     title: 'Unforgettable Experience',
     description: 'Creating unforgettable moments for our guests',
@@ -167,21 +159,301 @@ const galleryItems: GalleryItem[] = [
     category: 'Exterior'
   },
   {
-    id: 20,
-    type: 'video',
-    src: 'https://res.cloudinary.com/dsqqoh9m8/video/upload/v1771769161/C6017_lw5wde.mov',
-    thumbnail: '/indraprastha3.png',
-    title: 'Madhuban Experience',
-    description: 'A journey through luxury and tradition',
-    category: 'Celebrations'
-  },
-  {
     id: 17,
     type: 'image',
     src: '/ex.png',
-    title: 'Village Views',
+    title: 'Resort Grounds',
     description: 'Serene and peaceful surroundings',
     category: 'Exterior'
+  },
+  {
+    id: 21,
+    type: 'image',
+    src: '/amphi1.jpg',
+    title: 'Amphitheatre View',
+    description: 'Open-air venue ambiance for grand events',
+    category: 'Venues'
+  },
+  {
+    id: 22,
+    type: 'image',
+    src: '/amphi2.png',
+    title: 'Amphitheatre Stage',
+    description: 'Designed for performances and celebrations',
+    category: 'Venues'
+  },
+  {
+    id: 23,
+    type: 'image',
+    src: '/annakut.jpg',
+    title: 'Annakut Dining',
+    description: 'Traditional dining experience with elegance',
+    category: 'Dining'
+  },
+  {
+    id: 30,
+    type: 'image',
+    src: '/cottages.png',
+    title: 'Cottage',
+    description: 'Comfortable stays for families and guests',
+    category: 'Accommodation'
+  },
+  {
+    id: 31,
+    type: 'image',
+    src: '/couple-3.jpg',
+    title: 'Couple Memories',
+    description: 'Romantic frames from unforgettable celebrations',
+    category: 'Celebrations'
+  },
+  {
+    id: 32,
+    type: 'image',
+    src: '/couple-4.jpg',
+    title: 'Couple Portrait',
+    description: 'Beautiful moments captured with elegance',
+    category: 'Celebrations'
+  },
+  {
+    id: 33,
+    type: 'image',
+    src: '/couple-5.jpg',
+    title: 'Wedding Portrait',
+    description: 'Timeless celebration portraits',
+    category: 'Celebrations'
+  },
+  {
+    id: 34,
+    type: 'image',
+    src: '/d-1.png',
+    title: 'Dining Setup',
+    description: 'Curated vegetarian dining setup',
+    category: 'Dining'
+  },
+  {
+    id: 35,
+    type: 'image',
+    src: '/dining.jpg',
+    title: 'Fine Dining',
+    description: 'Thoughtful cuisine service for every gathering',
+    category: 'Dining'
+  },
+  {
+    id: 39,
+    type: 'image',
+    src: '/gokul-cottage.jpg',
+    title: 'Gokul Cottage',
+    description: 'Private and cozy stay option for guests',
+    category: 'Accommodation'
+  },
+  {
+    id: 40,
+    type: 'image',
+    src: '/gulmohar-1.jpg',
+    title: 'Gulmohar Greens',
+    description: 'Refreshing outdoor lawns for ceremonies',
+    category: 'Outdoor'
+  },
+  {
+    id: 41,
+    type: 'image',
+    src: '/haldi.jpg',
+    title: 'Haldi Celebrations',
+    description: 'Vibrant pre-wedding moments and traditions',
+    category: 'Celebrations'
+  },
+  {
+    id: 42,
+    type: 'image',
+    src: '/hut.png',
+    title: 'Cottage',
+    description: 'Rustic stay with modern comfort',
+    category: 'Accommodation'
+  },
+  {
+    id: 43,
+    type: 'image',
+    src: '/hut1.png',
+    title: 'Cottage',
+    description: 'Peaceful accommodation amid nature',
+    category: 'Accommodation'
+  },
+  {
+    id: 46,
+    type: 'image',
+    src: '/indraprasth.png',
+    title: 'Indraprastha Exterior',
+    description: 'A majestic venue for landmark occasions',
+    category: 'Venues'
+  },
+  {
+    id: 47,
+    type: 'image',
+    src: '/indraprastha-in.jpg',
+    title: 'Indraprastha Interior',
+    description: 'Intricate interiors with premium detailing',
+    category: 'Venues'
+  },
+  {
+    id: 48,
+    type: 'image',
+    src: '/indraprasta-in.png',
+    title: 'Indraprastha Interior',
+    description: 'Opulent decor designed for celebrations',
+    category: 'Venues'
+  },
+  {
+    id: 49,
+    type: 'image',
+    src: '/indraprasta-in1.png',
+    title: 'Indraprastha Interior',
+    description: 'Spacious indoor venue setup',
+    category: 'Venues'
+  },
+  {
+    id: 50,
+    type: 'image',
+    src: '/indraprasta-in2.png',
+    title: 'Indraprastha Interior',
+    description: 'Sophisticated banquet ambiance',
+    category: 'Venues'
+  },
+  {
+    id: 51,
+    type: 'image',
+    src: '/indraprasta-in3.png',
+    title: 'Indraprastha Interior',
+    description: 'Designed for memorable family events',
+    category: 'Venues'
+  },
+  {
+    id: 52,
+    type: 'image',
+    src: '/indraprasta-in4.png',
+    title: 'Indraprastha Interior',
+    description: 'Elegant indoor setup with grand scale',
+    category: 'Venues'
+  },
+  {
+    id: 53,
+    type: 'image',
+    src: '/indraprasta-in5.png',
+    title: 'Indraprastha Interior',
+    description: 'Premium decor and celebration-ready layout',
+    category: 'Venues'
+  },
+  {
+    id: 54,
+    type: 'image',
+    src: '/in.png',
+    title: 'Room Interior',
+    description: 'Cozy accommodation with modern amenities',
+    category: 'Accommodation'
+  },
+  {
+    id: 55,
+    type: 'image',
+    src: '/in1.png',
+    title: 'Room Interior',
+    description: 'Comfortable accommodation with elegant design',
+    category: 'Accommodation'
+  },
+  {
+    id: 56,
+    type: 'image',
+    src: '/in3.png',
+    title: 'Room Interior',
+    description: 'Luxurious indoor accommodation with premium amenities',
+    category: 'Accommodation'
+  },
+  {
+    id: 58,
+    type: 'image',
+    src: '/landscape-lawn.png',
+    title: 'Landscape Lawn',
+    description: 'Open green venue for outdoor events',
+    category: 'Outdoor'
+  },
+  {
+    id: 59,
+    type: 'image',
+    src: '/lavender.jpg',
+    title: 'Lavender Room',
+    description: 'Serene accommodation with garden views',
+    category: 'Accommodation'
+  },
+  {
+    id: 60,
+    type: 'image',
+    src: '/lotus.jpg',
+    title: 'Lotus Room',
+    description: 'Elegant accommodation with tranquil views',
+    category: 'Accommodation'
+  },
+  {
+    id: 61,
+    type: 'image',
+    src: '/mangalam.png',
+    title: 'Mangalam Lawn',
+    description: 'Beautifully designed outdoor celebration zone',
+    category: 'Outdoor'
+  },
+  {
+    id: 62,
+    type: 'image',
+    src: '/mangalam1.jpg',
+    title: 'Mangalam Greens',
+    description: 'Versatile lawn for grand gatherings',
+    category: 'Outdoor'
+  },
+  {
+    id: 63,
+    type: 'image',
+    src: '/multiday.jpg',
+    title: 'Multi-Day Celebrations',
+    description: 'Ideal destination for extended wedding events',
+    category: 'Celebrations'
+  },
+  {
+    id: 64,
+    type: 'image',
+    src: '/reception.png',
+    title: 'Reception Lounge',
+    description: 'Stylish welcome area for guests',
+    category: 'Venues'
+  },
+  {
+    id: 69,
+    type: 'image',
+    src: '/vihar.jpg',
+    title: 'Vihar Cottage',
+    description: 'Spacious stay option for family comfort',
+    category: 'Accommodation'
+  },
+  {
+    id: 70,
+    type: 'image',
+    src: '/vrindavan-cottage.jpg',
+    title: 'Vrindavan Cottage',
+    description: 'Intimate cottage stay with scenic views',
+    category: 'Accommodation'
+  },
+  {
+    id: 71,
+    type: 'image',
+    src: '/wada.jpg',
+    title: 'Wada Courtyard',
+    description: 'Traditional venue charm with modern comfort',
+    category: 'Venues'
+  },
+  {
+    id: 75,
+    type: 'video',
+    src: '/hero.mp4',
+    thumbnail: '/people-enjoy.webp',
+    title: 'Madhuban Village Overview',
+    description: 'A cinematic view of celebrations and experiences',
+    category: 'Celebrations'
   },
 ]
 
@@ -258,9 +530,9 @@ const OurWorld = () => {
         >
           <div className="absolute inset-0 bg-foreground" />
           <img
-            src="/indraprastha3.png"
+            src="/people-enjoy.webp"
             alt="Madhuban Village"
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-50"
           />
           <div className="absolute inset-0 bg-linear-to-b from-foreground/70 via-foreground/50 to-foreground" />
         </div>

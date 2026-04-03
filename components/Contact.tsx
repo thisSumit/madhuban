@@ -200,7 +200,7 @@ const Contact: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-sm text-foreground/70 mb-2">Notes or special requests</label>
+                <label className="block text-sm text-foreground/70 mb-2">Notes or special requests (Optional)</label>
                 <textarea
                   name="notes"
                   value={formData.notes}

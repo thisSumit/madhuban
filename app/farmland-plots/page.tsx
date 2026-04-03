@@ -144,7 +144,7 @@ const farmhouseFocusPoints = [
 
 const amenitiesList = [
   {
-    image: '/garden.png',
+    image: '/landscape-lawn.png',
     title: 'Beautifully Landscaped Lawns',
     description: 'Thoughtfully designed green areas that enhance everyday living.',
   },
@@ -169,12 +169,12 @@ const amenitiesList = [
     description: 'Controlled access and round-the-clock security for complete peace of mind.',
   },
   {
-    image: '/temple.png',
+    image: '/mandir.png',
     title: 'Mandir Within the Community',
     description: 'A serene spiritual space for daily prayers and special occasions.',
   },
   {
-    image: '/ample-garden.jpg',
+    image: '/ample-green.png',
     title: 'Ample Green Open Spaces',
     description: 'Open, breathable surroundings that promote wellness and calm living.',
   },
@@ -184,7 +184,7 @@ const amenitiesList = [
     description: 'Option to generate returns by renting your farmhouse or villa.',
   },
   {
-    image: '/farm5.jpeg',
+    image: '/unique-house.png',
     title: 'Custom Construction Options',
     description: 'Freedom to design and build as per your lifestyle and vision.',
   },
@@ -445,9 +445,8 @@ const PlotPage = () => {
     <h1 className='text-white font-playfair-display text-4xl lg:text-8xl text-center leading-tighter tracking-tight px-4'>
       <span className='italic block mt-2'>
         <TextAnimate animation="slideLeft" by="character" duration={0.5} delay={0.2} once>
-          Premium Farm
-        </TextAnimate>
-        Plots
+          Farmhouse Lifestyle
+        </TextAnimate>Villa Plots
       </span>
     </h1>
 
@@ -500,7 +499,7 @@ const PlotPage = () => {
           </div>
           <div className='text-foreground/70 text-lg leading-relaxed space-y-4'>
             <p>
-              Madhuban Village offers premium farmhouse land designed for those who value space, privacy, and long-term growth. Whether it’s a peaceful getaway, a place to host meaningful celebrations, or a smart land investment.
+              Madhuban Village offers Villa plots with farmhouse lifestyle designed for those who value space, privacy, and long-term growth. Whether it’s a peaceful getaway, a place to host meaningful celebrations, or a smart investment.
             </p>
             <p>
               With Villa Plots starting from 4,500 sq. ft. and pricing from ₹700 per sq. ft.
@@ -520,7 +519,7 @@ const PlotPage = () => {
         <div className='absolute inset-0 flex flex-col items-center justify-end pb-14 text-center px-4'>
           <div className='w-16 h-px bg-[#D4AF37] mb-5' />
           <span className='text-[#D4AF37] text-xs tracking-[0.35em] uppercase font-medium mb-3'>
-            Premium Farmhouse Land
+            Villa Plots with Farmhouse Lifestyle
           </span>
           <p className='text-white/80 text-lg lg:text-2xl font-playfair-display italic max-w-xl'>
             A peaceful space where nature surrounds you and your dream farmhouse takes shape.
@@ -571,7 +570,7 @@ const PlotPage = () => {
           <div className='absolute inset-0 max-w-7xl mx-auto px-4 lg:px-16 flex items-center justify-between'>
             <div className='max-w-lg text-background'>
               <h3 className='text-4xl lg:text-6xl font-playfair-display leading-tight'>
-                Experience India&apos;s 1st Villa-Themed Plot Community,
+                Premium Villa Plots for A Farmhouse Lifestyle
               </h3>
               <p className='mt-6 text-2xl font-playfair-display'>Blending luxury living, club amenities, and serene natural surroundings.</p>
             </div>
@@ -648,7 +647,7 @@ const PlotPage = () => {
             </div>
             <div className='relative overflow-hidden rounded-2xl h-48 lg:h-[254px] group cursor-pointer'>
               <img
-                src='/farm2.jpeg'
+                src='/gulmohar-1.png'
                 alt='Landscape view'
                 className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-700'
               />
@@ -664,7 +663,7 @@ const PlotPage = () => {
             </div>
             <div className='col-span-2 relative overflow-hidden rounded-2xl h-48 lg:h-[254px] group cursor-pointer'>
               <img
-                src='/farm4.jpeg'
+                src='/ample-green.png'
                 alt='Community'
                 className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-700'
               />
@@ -1071,7 +1070,7 @@ const PlotPage = () => {
                 </div>
 
                 <div>
-                  <label className='block text-sm text-foreground/70 mb-2'>Notes or requirements</label>
+                  <label className='block text-sm text-foreground/70 mb-2'>Notes or requirements (Optional)</label>
                   <textarea
                     name='notes'
                     value={formData.notes}

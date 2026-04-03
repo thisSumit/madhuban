@@ -19,14 +19,14 @@ const venuesData: Venue[] = [
     number: '01',
     name: 'Indraprastha Palace',
     description: 'An opulent palace setting ideal for grand royal weddings and lavish receptions.',
-    image: 'indraprasta2.png'
+    image: 'indraprastha3.png'
   },
   {
     id: 2,
     number: '02',
     name: 'Mangalam Lawn',
     description: 'A coveted celebration space with Mangalam Kuti-perfect for sangeet, cocktail evenings, receptions, and wedding ceremonies.',
-    image: '/mangalam.jpg'
+    image: '/mangalam.png'
   },
   {
     id: 3,
@@ -40,21 +40,21 @@ const venuesData: Venue[] = [
     number: '04',
     name: 'Amphitheatre',
     description: 'An open-air amphitheatre best suited for intimate sangeet and haldi functions for up to 200 guests.',
-    image: '/amphi2.jpg'
+    image: '/amphi2.png'
   },
   {
     id: 5,
     number: '05',
     name: 'Gulmohar Lawn',
     description: 'A warm and elegant lawn, ideal for myra, mehendi, and other small celebratory functions.',
-    image: '/gulmohar-1.jpg'
+    image: '/gulmohar-1.png'
   },
   {
     id: 6,
     number: '06',
-    name: 'Lavender',
-    description: 'A best rooms for comfortable stay, after wedding rituals and party.',
-    image: '/lavender.jpg'
+    name: 'Lavender Lawn',
+    description: 'A charming lawn adorned with lavender blooms, perfect for intimate ceremonies and pre-wedding festivities.',
+    image: '/lavender.png'
   },
   {
     id: 7,
@@ -68,7 +68,7 @@ const venuesData: Venue[] = [
     number: '08',
     name: 'Mangalam Kuti',
     description: 'An open-air traditional space ideal for myra rituals and royal shahi bhoj arrangements.',
-    image: 'hut.png'
+    image: 'cottages.png'
   },
 ]
 
@@ -104,7 +104,7 @@ const Venue = () => {
               ) : (
                 <div className='w-full h-full bg-gradient-to-br from-[#1b3d2c] to-[#2d5a47] flex items-center justify-center'>
                   <div className='w-full h-full object-cover '>
-                  <img src="/indraprastha3.png" className='w-full h-full object-cover' alt="" />
+                  <img src="/madhuban-layout.png" className='w-full h-full object-cover' alt="" />
                   </div>
                 </div>
               )}

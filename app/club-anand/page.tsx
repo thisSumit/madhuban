@@ -183,7 +183,7 @@ const ClubPage = () => {
             <p className='text-white font-playfair-display md:text-2xl text-lg py-2'>Leisure | Events | Experiences | Lifestyle</p>
           </div>
 
-          <Button onClick={() => document.getElementById('membership-form')?.scrollIntoView({ behavior: 'smooth' })} className='absolute md:bottom-8 bottom-34' variant="primary" size="lg">Book Now</Button>
+          <Button onClick={() => document.getElementById('membership-form')?.scrollIntoView({ behavior: 'smooth' })} className='absolute md:bottom-8 bottom-34' variant="primary" size="lg">Comming Soon</Button>
         </div>
 
         {/* Floating Elements Animation */}

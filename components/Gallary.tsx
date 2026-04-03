@@ -21,19 +21,19 @@ const galleryData: GalleryItem[] = [
     id: 2,
     title: 'A Versatile Wedding Ambience',
     description: 'From royal elegance to nature-inspired celebrations, choose from a variety of wedding themes designed to reflect your unique love story.',
-    image: '/indraprasta2.png'
+    image: '/indraprastha3.png'
   },
   {
     id: 3,
     title: 'Resort-Style Luxury Experience',
     description: 'A serene, expansive resort setting that blends natural beauty with refined comfort-perfect for a relaxed yet grand destination wedding.',
-    image: '/ex2.png'
+    image: '/pool.png'
   },
   {
     id: 4,
     title: 'Exceptional Dining Experience',
     description: 'Curated pure-vegetarian menus crafted by expert chefs, offering regional, national, and international cuisines with impeccable presentation.',
-    image: '/indraprasta-in5.png'
+    image: '/dining.png'
   },
   {
     id: 5,
@@ -45,7 +45,7 @@ const galleryData: GalleryItem[] = [
     id: 6,
     title: 'Spacious Cottages for Family & Friends',
     description: 'Comfortable, well-appointed cottages that provide privacy, warmth, and a home-like stay for close family and guests.',
-    image: 'gokul-cottage.jpg'
+    image: 'cottages.png'
   },
   {
     id: 7,
@@ -264,7 +264,7 @@ const Gallary = () => {
           {tripleData.map((item, index) => (
             <div
               key={`${item.id}-${index}`}
-              className='flex-shrink-0 w-[85vw] sm:w-[500px] lg:w-[600px] h-[450px] sm:h-[500px] lg:h-[600px] rounded-lg overflow-hidden shadow-xl group relative'
+              className='shrink-0 w-[85vw] sm:w-[500px] lg:w-[600px] h-[420px] sm:h-[460px] lg:h-[520px] rounded-lg overflow-hidden shadow-xl group relative'
             >
               {/* Image or Placeholder */}
               <div className='absolute inset-0'>
@@ -276,7 +276,7 @@ const Gallary = () => {
                     draggable={false}
                   />
                 ) : (
-                  <div className='w-full h-full bg-gradient-to-br from-[#1b3d2c] to-[#2d5a47] flex items-center justify-center'>
+                  <div className='w-full h-full bg-linear-to-br from-[#1b3d2c] to-[#2d5a47] flex items-center justify-center'>
                     <div className='text-background/40 text-center p-8'>
                       <p className='text-lg italic font-light'>
                         Add gallery image here
@@ -285,15 +285,15 @@ const Gallary = () => {
                   </div>
                 )}
                 {/* Overlay Gradient */}
-                <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent' />
+                <div className='absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent' />
               </div>
 
               {/* Content Overlay */}
               <div className='absolute inset-0 flex flex-col justify-end p-6 sm:p-8 lg:p-12 text-background'>
-                <h3 className='text-xl sm:text-2xl lg:text-3xl font-playfair-display mb-2 sm:mb-3 group-hover:translate-y-[-4px] transition-transform duration-300'>
+                <h3 className='text-xl sm:text-2xl lg:text-3xl font-playfair-display mb-2 sm:mb-3 group-hover:-translate-y-1 transition-transform duration-300'>
                   {item.title}
                 </h3>
-                <p className='text-sm sm:text-base lg:text-lg text-background/90 leading-relaxed group-hover:translate-y-[-4px] transition-transform duration-300 delay-75'>
+                <p className='text-sm sm:text-base lg:text-lg text-background/90 leading-relaxed group-hover:-translate-y-1 transition-transform duration-300 delay-75'>
                   {item.description}
                 </p>
               </div>
