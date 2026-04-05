@@ -21,13 +21,13 @@ const Info = () => {
         
         <h2 className='text-4xl lg:text-6xl font-playfair-display text-foreground leading-tight'>
         <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
-          Madhuban Village
+          Madhuban Vivaha
           </TextAnimate>
         </h2>
 
         {/* Ring Image */}
         <div className='flex justify-center mx-4'>
-          <img src="madhuban-logo.png" className='w-64' alt="" />
+          <img src="madhuban-logo.png" className='w-52' alt="" />
         </div>
 
         {/* Description */}
@@ -48,7 +48,7 @@ const Info = () => {
         {/* Button */}
         <div className='flex justify-center'>
           <a href='/about' className='nav-link'>
-            Learn More
+            About Us
           </a>
         </div>
 

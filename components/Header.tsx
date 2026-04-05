@@ -41,7 +41,7 @@ const Header = () => {
     { href: '/about', label: 'Home' },
     { href: '/', label: 'Wedding' },
     { href: '/farmland-plots', label: 'Villa Plots' },
-    { href: '/club-anand', label: 'Club' },
+    { href: '/club-anand', label: 'Club Anand' },
     { href: '/our-world', label: 'Our World' },
     { href: '/contact', label: 'Contact' },
     { href: 'https://www.madhubanvillage.in/member/home/membership_login', label: 'Members Login' },

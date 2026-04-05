@@ -54,7 +54,7 @@ const venuesData: Venue[] = [
     number: '06',
     name: 'Lavender Lawn',
     description: 'A charming lawn adorned with lavender blooms, perfect for intimate ceremonies and pre-wedding festivities.',
-    image: '/lavender.png'
+    image: '/lavender-lawn.jpg'
   },
   {
     id: 7,
@@ -224,7 +224,7 @@ const Venue = () => {
                 <p className='text-lg text-foreground/70 leading-relaxed mb-8'>
                   {selectedVenue.description}
                 </p>
-                  <Button onClick={() => window.location.href = "/contact"} variant="primary" size="lg" className='flex-1'>
+                  <Button onClick={() => window.location.href = "/contact"} variant="primary" size="lg" className='w-full sm:w-auto'>
                     Book Now
                   </Button>
               </div>

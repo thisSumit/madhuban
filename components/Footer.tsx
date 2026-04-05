@@ -29,22 +29,22 @@ const Footer = () => {
     // },
     {
       id: 1,
-      title: 'Plots',
-      description: 'Explore premium residential Villa Plots in serene surroundings',
+      title: 'Madhuban Aaranya',
+      description: 'Premium Farm Plots',
       href: '/plots',
       image: '/dr2.png', // Add your Villa Plots image path
     },
     {
       id: 2,
-      title: 'Clubs',
-      description: 'Exclusive club memberships with world-class amenities',
+      title: 'Club Anand',
+      description: 'Private Members Club',
       href: '/club-anand',
       image: '/ex.png', // Add your clubs image path
     },
     {
       id: 3,
-      title: 'Wedding',
-      description: 'Luxurious wedding venues for your special celebrations',
+      title: 'Madhuban Vivaha',
+      description: 'Luxury Destination Weddings',
       href: '/',
       image: '/indraprasta1.png', // Add your wedding image path
     },
@@ -54,8 +54,8 @@ const Footer = () => {
     about: [
       { label: 'About Us', href: '/about' },
       { label: 'Wedding', href: '/' },
-      { label: 'Plots', href: '/plots' },
-      { label: 'Club', href: '/club-anand' },
+      { label: 'Villa Plots', href: '/plots' },
+      { label: 'Club Anand', href: '/club-anand' },
       { label: 'Gallery', href: '/our-world' },
     ],
     services: [
@@ -166,19 +166,19 @@ const Footer = () => {
 
       {/* Main Footer Content */}
       <div className='max-w-7xl mx-auto px-4 lg:px-16 py-16 lg:py-20'>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-10'>
           {/* Logo and Description */}
-          <div className='lg:col-span-1'>
+          <div className='lg:col-span-5 lg:pr-8'>
             <div className='mb-6'>
               <a href="/">
               <img
                 src="/madhuban-wlogo-copy.png"
                 alt="Madhuban Village"
-                className='h-24 lg:h-28 object-contain mb-6'
+                className='h-24 lg:h-32 object-contain mb-6'
               />
               </a>
             </div>
-            <p className='text-background/70 text-sm leading-relaxed mb-6'>
+            <p className='text-background/70 text-sm leading-relaxed mb-6 max-w-md'>
               Central India's premier destination for luxury weddings, farmhouse living, and exclusive club experience
             </p>
             
@@ -203,7 +203,7 @@ const Footer = () => {
           </div>
 
           {/* Get In Touch */}
-          <div>
+          <div className='lg:col-span-3'>
             <h5 className='text-sm uppercase tracking-widest text-background/80 mb-6 font-light'>
               Get In Touch
             </h5>
@@ -260,7 +260,7 @@ const Footer = () => {
           </div>
 
           {/* About Navigation */}
-          <div>
+          <div className='lg:col-span-2'>
             <h5 className='text-sm uppercase tracking-widest text-background/80 mb-6 font-light'>
               Site Link
             </h5>
@@ -279,7 +279,7 @@ const Footer = () => {
           </div>
 
           {/* Services Navigation */}
-          <div>
+          <div className='lg:col-span-2'>
             <h5 className='text-sm uppercase tracking-widest text-background/80 mb-6 font-light'>
               Our Services
             </h5>
