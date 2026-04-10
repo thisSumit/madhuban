@@ -296,10 +296,10 @@ const AboutPage = () => {
       </section>
 
       {/* Our World Section - Full Width Image */}
-      <section className='relative h-[400px] lg:h-[600px] w-full overflow-hidden'>
+      <section className='relative h-[450px] w-full overflow-hidden'>
         <div className='absolute inset-0 z-0'>
           <img
-            src="/madhuban-main.png" // You can change this to your preferred image
+            src="/madhuban-world.png" // You can change this to your preferred image
             alt="Our World"
             className='h-full w-full object-cover'
           />

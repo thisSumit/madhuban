@@ -403,7 +403,7 @@ const PlotPage = () => {
             alt='Madhuban Village Farmhouse'
             className='h-full w-full object-cover'
           />
-          <div className='absolute inset-0 bg-black/20' />
+          <div className='absolute inset-0 bg-black/30' />
         </div>
 
         <div className='relative z-10 h-full max-w-7xl mx-auto px-4 lg:px-16 grid grid-cols-1 lg:grid-cols-2 items-center gap-10'>
