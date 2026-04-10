@@ -208,14 +208,14 @@ const Gallary = () => {
   }
 
   return (
-    <section className='relative w-full py-12 sm:py-20 lg:py-32 bg-background overflow-hidden'>
+    <section className='relative w-full py-10 sm:py-16 lg:py-20 bg-background overflow-hidden'>
       <div className='max-w-7xl mx-auto px-4 lg:px-16'>
-        <div className='flex flex-col lg:flex-row items-start lg:items-center justify-between mb-8 sm:mb-12'>
-          <div className='mb-6 lg:mb-0 lg:flex-1'>
-            <h2 className='text-3xl sm:text-4xl lg:text-5xl font-playfair-display text-foreground mb-4'>
+        <div className='flex flex-col lg:flex-row items-start lg:items-center justify-between mb-6 sm:mb-8'>
+          <div className='mb-4 lg:mb-0 lg:flex-1'>
+            <h2 className='text-3xl sm:text-4xl lg:text-4xl font-playfair-display text-foreground mb-3'>
               Explore Our World
             </h2>
-            <p className='text-base sm:text-lg text-foreground/70 leading-relaxed max-w-2xl'>
+            <p className='text-base sm:text-lg text-foreground/70 leading-relaxed max-w-xl'>
               Guests enjoy full convenience with rooms, lawns, banquet hall, and event spaces inside one property.
             </p>
           </div>
@@ -253,7 +253,7 @@ const Gallary = () => {
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
-          className='flex gap-6 overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing'
+          className='flex gap-4 lg:gap-5 overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing'
           style={{
             WebkitOverflowScrolling: 'touch',
             scrollbarWidth: 'none',
@@ -264,7 +264,7 @@ const Gallary = () => {
           {tripleData.map((item, index) => (
             <div
               key={`${item.id}-${index}`}
-              className='shrink-0 w-[85vw] sm:w-[500px] lg:w-[600px] h-[420px] sm:h-[460px] lg:h-[520px] rounded-lg overflow-hidden shadow-xl group relative'
+              className='shrink-0 w-[85vw] sm:w-[460px] lg:w-[520px] h-[380px] sm:h-[420px] lg:h-[460px] rounded-lg overflow-hidden shadow-xl group relative'
             >
               {/* Image or Placeholder */}
               <div className='absolute inset-0'>
@@ -289,11 +289,11 @@ const Gallary = () => {
               </div>
 
               {/* Content Overlay */}
-              <div className='absolute inset-0 flex flex-col justify-end p-6 sm:p-8 lg:p-12 text-background'>
-                <h3 className='text-xl sm:text-2xl lg:text-3xl font-playfair-display mb-2 sm:mb-3 group-hover:-translate-y-1 transition-transform duration-300'>
+              <div className='absolute inset-0 flex flex-col justify-end p-5 sm:p-6 lg:p-8 text-background'>
+                <h3 className='text-lg sm:text-xl lg:text-2xl font-playfair-display mb-2 group-hover:-translate-y-1 transition-transform duration-300'>
                   {item.title}
                 </h3>
-                <p className='text-sm sm:text-base lg:text-lg text-background/90 leading-relaxed group-hover:-translate-y-1 transition-transform duration-300 delay-75'>
+                <p className='text-sm sm:text-base text-background/90 leading-relaxed group-hover:-translate-y-1 transition-transform duration-300 delay-75'>
                   {item.description}
                 </p>
               </div>

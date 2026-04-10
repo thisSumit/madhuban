@@ -78,7 +78,7 @@ const Testimonials = () => {
   const currentTestimonial = testimonialsData[currentIndex]
 
   return (
-    <section className='relative h-full w-full overflow-hidden'>
+    <section className='relative w-full overflow-hidden py-12 lg:py-16'>
       {/* Background Image */}
       <div className='absolute inset-0 z-0'>
         <img
@@ -89,31 +89,31 @@ const Testimonials = () => {
       </div>
 
       {/* Content Container */}
-      <div className='relative z-10 h-full w-full flex items-center justify-center px-4 lg:px-16 py-20'>
-        <div className='max-w-6xl w-full'>
+      <div className='relative z-10 w-full flex items-center justify-center px-4 lg:px-12'>
+        <div className='max-w-5xl w-full'>
           {/* Testimonials Card */}
           <div className='bg-[#1b3d2c] rounded-lg shadow-2xl overflow-hidden'>
-            <div className='flex flex-col lg:flex-row min-h-[500px]'>
+            <div className='flex flex-col lg:flex-row min-h-80 lg:min-h-[360px]'>
               {/* Left Half - Optional Image or Text */}
-              <div className='lg:w-1/2 relative overflow-hidden'>
+              <div className='lg:w-5/12 relative overflow-hidden'>
                 {currentTestimonial.image ? (
                   <img
                     src={currentTestimonial.image}
                     alt={currentTestimonial.author}
-                    className='h-full w-full object-cover transition-opacity duration-700'
+                    className='h-full w-full object-cover object-center transition-opacity duration-700'
                   />
                 ) : (
-                  <div className='h-full w-full bg-gradient-to-br from-[#1b3d2c] to-[#2d5a47] flex items-center justify-center p-8'>
-                    <img src="centre1.png" width={200} alt="" />
+                  <div className='h-full w-full bg-linear-to-br from-[#1b3d2c] to-[#2d5a47] flex items-center justify-center p-4 lg:p-6'>
+                    <img src="centre1.png" width={130} alt="" />
                   </div>
                 )}
               </div>
 
               {/* Right Half - Testimonial Content */}
-              <div className='lg:w-1/2 flex flex-col justify-between p-8 lg:p-12 text-background'>
+              <div className='lg:w-7/12 flex flex-col justify-between p-5 lg:p-6 text-background'>
                 {/* Header */}
-                <div className='mb-8'>
-                  <h2 className='text-sm uppercase tracking-widest text-background/80 font-light mb-6'>
+                <div className='mb-4'>
+                  <h2 className='text-xs uppercase tracking-[0.25em] text-background/80 font-light mb-4'>
                   <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
                     Testimonials
                     </TextAnimate>
@@ -121,8 +121,8 @@ const Testimonials = () => {
                 </div>
 
                 {/* Testimonial Content */}
-                <div className='flex-1 flex flex-col justify-center relative min-h-[300px]'>
-                  <div className='relative overflow-hidden' style={{ minHeight: '300px' }}>
+                <div className='flex-1 flex flex-col justify-center relative min-h-[180px]'>
+                  <div className='relative overflow-hidden' style={{ minHeight: '180px' }}>
                     {testimonialsData.map((testimonial, index) => (
                       <div
                         key={`testimonial-${testimonial.id}-${index}`}
@@ -135,7 +135,7 @@ const Testimonials = () => {
                         }`}
                       >
                         <div className='h-full flex flex-col justify-center'>
-                          <p className='text-xl lg:text-2xl font-playfair-display leading-relaxed text-background mb-8'>
+                          <p className='text-base lg:text-lg font-playfair-display leading-relaxed text-background mb-4 lg:mb-5'>
                             {testimonial.text}
                           </p>
                           <div className='text-right'>
@@ -150,14 +150,14 @@ const Testimonials = () => {
                 </div>
 
                 {/* Navigation Dots */}
-                <div className='flex items-center justify-center gap-3 mt-8'>
+                <div className='flex items-center justify-center gap-3 mt-4'>
                   {testimonialsData.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => goToSlide(index)}
                       className={`transition-all duration-300 rounded-full ${
                         index === currentIndex
-                          ? 'w-2 h-2 bg-[#fff] shadow-lg shadow-[#D4AF37]/50'
+                          ? 'w-2 h-2 bg-white shadow-lg shadow-[#D4AF37]/50'
                           : 'w-2 h-2 bg-background/40 hover:bg-background/60'
                       }`}
                       aria-label={`Go to testimonial ${index + 1}`}
@@ -166,7 +166,7 @@ const Testimonials = () => {
                 </div>
 
                 {/* Navigation Arrows */}
-                <div className='flex items-center justify-between mt-6'>
+                <div className='flex items-center justify-between mt-3'>
                   <button
                     onClick={goToPrevious}
                     className='p-2 text-background/60 hover:text-background transition-colors duration-300 hover:bg-background/10 rounded-full'

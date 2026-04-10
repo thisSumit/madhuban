@@ -93,28 +93,30 @@ const Venue = () => {
       <div className='max-w-7xl mx-auto px-4 lg:px-16'>
         <div className='flex flex-col lg:flex-row gap-8 lg:gap-12'>
           {/* Left Section - Image */}
-          <div className='lg:w-1/2 relative'>
-            <div className='sticky top-24 h-[600px] lg:h-[700px] rounded-lg overflow-hidden shadow-2xl'>
+          <div className='lg:w-5/12 relative'>
+            <div className='sticky top-24 h-[500px] lg:h-[560px] rounded-lg overflow-hidden shadow-2xl'>
               {selectedVenue?.image ? (
                 <img
                   src={selectedVenue.image}
                   alt={selectedVenue.name}
-                  className='w-full h-full object-cover transition-opacity duration-500'
+                  className='block w-full h-full object-cover object-center transition-opacity duration-500'
                 />
               ) : (
-                <div className='w-full h-full bg-gradient-to-br from-[#1b3d2c] to-[#2d5a47] flex items-center justify-center'>
-                  <div className='w-full h-full object-cover '>
-                  <img src="/madhuban-layout.png" className='w-full h-full object-cover' alt="" />
-                  </div>
+                <div className='relative w-full h-full overflow-hidden bg-linear-to-br from-[#1b3d2c] to-[#2d5a47]'>
+                  <img
+                    src="/madhuban-layout.png"
+                    className='block w-full h-full object-cover object-center'
+                    alt="Madhuban layout"
+                  />
                 </div>
               )}
               {/* Overlay gradient for better text readability if needed */}
-              <div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none' />
+              <div className='absolute inset-0 bg-linear-to-t from-black/20 to-transparent pointer-events-none' />
             </div>
           </div>
 
           {/* Right Section - Venue List */}
-          <div className='lg:w-1/2 flex flex-col justify-center'>
+          <div className='lg:w-7/12 flex flex-col justify-center'>
             <div className='mb-12'>
               <h2 className='text-4xl lg:text-5xl font-playfair-display text-foreground mb-4'>
               <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
@@ -141,7 +143,7 @@ const Venue = () => {
                     className='w-full py-6 flex items-center justify-between hover:bg-foreground/5 transition-all duration-300 group-hover:pl-4 px-2 rounded-lg'
                   >
                     <div className='flex items-center gap-6 flex-1 text-left'>
-                      <span className='text-foreground/40 text-sm font-light tracking-widest min-w-[40px]'>
+                      <span className='text-foreground/40 text-sm font-light tracking-widest min-w-10'>
                         {venue.number}
                       </span>
                       <span className='text-xl lg:text-2xl font-playfair-display text-foreground group-hover:text-foreground/80 transition-colors duration-300'>
@@ -195,12 +197,12 @@ const Venue = () => {
 
             <div className='flex flex-col lg:flex-row'>
               {/* Image Section */}
-              <div className='lg:w-1/2 h-64 lg:h-auto min-h-[300px] bg-gradient-to-br from-[#1b3d2c] to-[#2d5a47]'>
+              <div className='lg:w-1/2 h-64 lg:h-auto min-h-[300px] overflow-hidden bg-linear-to-br from-[#1b3d2c] to-[#2d5a47]'>
                 {selectedVenue.image ? (
                   <img
                     src={selectedVenue.image}
                     alt={selectedVenue.name}
-                    className='w-full h-full object-cover'
+                    className='block w-full h-full object-cover object-center'
                   />
                 ) : (
                   <div className='w-full h-full flex items-center justify-center text-background/40'>
@@ -224,7 +226,7 @@ const Venue = () => {
                 <p className='text-lg text-foreground/70 leading-relaxed mb-8'>
                   {selectedVenue.description}
                 </p>
-                  <Button onClick={() => window.location.href = "/contact"} variant="primary" size="lg" className='w-full sm:w-auto'>
+                  <Button onClick={() => window.location.href = "tel:+917020704418"} variant="primary" size="lg" className='w-full sm:w-auto'>
                     Book Now
                   </Button>
               </div>
