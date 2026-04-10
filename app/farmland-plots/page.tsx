@@ -10,11 +10,9 @@ import {
   MapPin,
   TrendingUp,
   Home,
-  Users,
   Shield,
   Droplet,
   TreePine,
-  Phone,
   ChevronRight,
   ChevronLeft,
 } from 'lucide-react'
@@ -111,24 +109,19 @@ function PlotsCarousel() {
 
 const farmhouseFocusPoints = [
   {
-    icon: Home,
-    title: 'Build your farmhouse',
-    description: 'Design your own private farmhouse for family gatherings, celebrations, and peaceful living.',
-  },
-  {
-    icon: TreePine,
+    icon: TrendingUp,
     title: 'Earn from Sagwan, Teak & Sandalwood plantation',
-    description: 'Create long-term value through premium tree plantation on your own land parcel.',
+    description: 'Create long-term value through premium plantation on your own land parcel.',
   },
   {
     icon: Droplet,
     title: 'Grow your own vegetables and small farmland',
-    description: 'Enjoy healthy farm-to-table living by cultivating fresh produce for your family.',
+    description: 'Enjoy farm-to-table living by cultivating fresh produce for your family.',
   },
   {
     icon: TreePine,
     title: 'Create a jungle and give back to nature',
-    description: 'Develop a lush green ecosystem that supports biodiversity and natural balance.',
+    description: 'Develop a lush ecosystem that supports biodiversity and natural balance.',
   },
   {
     icon: Shield,
@@ -136,9 +129,14 @@ const farmhouseFocusPoints = [
     description: 'Build an eco-responsible asset aligned with future-ready sustainability opportunities.',
   },
   {
-    icon: TrendingUp,
-    title: 'Rental income and weekend leisure',
-    description: 'Generate rental returns or simply build a leisure farmhouse for your weekend retreat.',
+    icon: Home,
+    title: 'Rental income from your farmhouse',
+    description: 'Generate steady returns by offering your farmhouse as a weekend rental stay.',
+  },
+  {
+    icon: Home,
+    title: 'Build a farmhouse for your own weekend leisure',
+    description: 'Create a private retreat where your family can unwind, celebrate, and reconnect.',
   },
 ]
 
@@ -405,7 +403,7 @@ const PlotPage = () => {
             alt='Madhuban Village Farmhouse'
             className='h-full w-full object-cover'
           />
-          <div className='absolute inset-0 bg-black/40' />
+          <div className='absolute inset-0 bg-black/20' />
         </div>
 
         <div className='relative z-10 h-full max-w-7xl mx-auto px-4 lg:px-16 grid grid-cols-1 lg:grid-cols-2 items-center gap-10'>
@@ -442,7 +440,7 @@ const PlotPage = () => {
 
     <div className='h-px w-20 my-2 bg-background/40' />
 
-    <h1 className='text-white font-playfair-display text-4xl lg:text-8xl text-center leading-tighter tracking-tight px-4'>
+    <h1 className='text-white font-playfair-display text-4xl lg:text-6xl text-center leading-tighter tracking-tight px-4'>
       <span className='italic block mt-2'>
         <TextAnimate animation="slideLeft" by="character" duration={0.5} delay={0.2} once>
           Farmhouse Lifestyle
@@ -473,7 +471,7 @@ const PlotPage = () => {
               <h3 className='text-2xl font-playfair-display text-foreground mb-6'>Project Highlights</h3>
               <div className='space-y-4 text-foreground/80'>
                 <p><span className='font-semibold text-foreground'>Location:</span> Near Katol, Nagpur</p>
-                <p><span className='font-semibold text-foreground'>Plot Size:</span> 4,500 sq. ft. onwards</p>
+                <p><span className='font-semibold text-foreground'>Plot Size:</span> 4,000 sq. ft. onwards</p>
                 <p><span className='font-semibold text-foreground'>Pricing:</span> ₹700/sq. ft. onwards</p>
               </div>
             </div>
@@ -502,11 +500,50 @@ const PlotPage = () => {
               Madhuban Village offers Villa plots with farmhouse lifestyle designed for those who value space, privacy, and long-term growth. Whether it’s a peaceful getaway, a place to host meaningful celebrations, or a smart investment.
             </p>
             <p>
-              With Villa Plots starting from 4,500 sq. ft. and pricing from ₹700 per sq. ft.
+              With Villa Plots starting from 4,000 sq. ft. and pricing from ₹700 per sq. ft.
             </p>
           </div>
         </div>
       </section>
+
+      <div className='w-full bg-background py-5'>
+        <div className='max-w-7xl mx-auto px-4 lg:px-16'>
+          <div className='h-px w-full bg-linear-to-r from-transparent via-[#D4AF37]/50 to-transparent' />
+        </div>
+      </div>
+
+      {/* TOP HIGHLIGHTS SECTION */}
+      <section className='relative overflow-hidden bg-linear-to-b from-background via-foreground/5 to-background py-14 lg:py-18 text-foreground'>
+        <div className='relative max-w-7xl mx-auto px-4 lg:px-16'>
+          <div className='text-center max-w-3xl mx-auto mb-10'>
+            <p className='text-[#D4AF37] text-xs tracking-[0.3em] uppercase font-semibold'>Top Investment Highlights</p>
+            <h2 className='mt-3 text-3xl lg:text-5xl font-playfair-display leading-tight'>
+              Turn Your Plot Into a
+              <span className='italic text-[#D4AF37]'> Lifestyle + Income Asset</span>
+            </h2>
+          </div>
+
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5'>
+            {farmhouseFocusPoints.map(({ icon: Icon, title, description }, idx) => (
+              <article
+                key={idx}
+                className='rounded-2xl border border-foreground/10 bg-background/85 backdrop-blur-sm p-5 lg:p-6 shadow-[0_12px_28px_rgba(0,0,0,0.08)] hover:-translate-y-1 hover:bg-background transition-all duration-300'
+              >
+                <div className='flex items-start gap-4'>
+                  <div className='mt-0.5 rounded-xl p-2.5 border border-[#D4AF37]'>
+                    <Icon className='h-5 w-5 text-[#D4AF37]' />
+                  </div>
+                  <div>
+                    <h3 className='text-lg font-semibold leading-snug text-foreground'>{title}</h3>
+                    <p className='mt-2 text-sm leading-relaxed text-foreground/70'>{description}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
 
       {/* PANORAMIC IMAGE BREAK */}
       <section className='relative w-full h-[55vh] lg:h-[70vh] overflow-hidden'>
@@ -578,7 +615,7 @@ const PlotPage = () => {
               <h4 className='text-3xl font-playfair-display text-foreground mb-5'>Location</h4>
               <p className='text-foreground/80 mb-6'>Near Katol, Nagpur</p>
               <h4 className='text-3xl font-playfair-display text-foreground mb-4'>Plot Sizes</h4>
-              <p className='text-foreground/80 mb-6'>4500 sq. ft. to 12000 sq. ft.</p>
+              <p className='text-foreground/80 mb-6'>4,000 sq. ft. to 20,000 sq. ft.</p>
               <h4 className='text-3xl font-playfair-display text-foreground mb-4'>Prices</h4>
               <p className='text-foreground/80 mb-7'>₹700 per sq. ft. onwards</p>
               <button
@@ -612,7 +649,7 @@ const PlotPage = () => {
           <InvestmentAutoScroller />
 
           <div className='mt-10 flex flex-wrap justify-center gap-3'>
-            {['Private farmhouse', 'Family vacation home', 'Sandalwood Plantation Profits', 'Rental weekend getaway', 'Long-term land investment'].map((use, index) => (
+            {['Private farmhouse', 'Family vacation home', 'Sandalwood Plantation Profits', 'Rental weekend getaway', 'Long-term land investment', 'Teak wood Plantation Profits', 'Grow your own fresh vegetable and fruits', 'Jungle Creation on your land'].map((use, index) => (
               <div key={index} className='rounded-full border border-background/20 bg-background/10 px-4 py-2'>
                 <p className='text-sm lg:text-base text-background/90'>{use}</p>
               </div>
@@ -676,6 +713,12 @@ const PlotPage = () => {
         </div>
       </section>
 
+<div className='w-full bg-background py-5'>
+        <div className='max-w-7xl mx-auto px-4 lg:px-16'>
+          <div className='h-px w-full bg-linear-to-r from-transparent via-[#D4AF37]/50 to-transparent' />
+        </div>
+      </div>
+
       {/* 4. AMENITIES SECTION */}
       <section className='py-20 lg:py-24 bg-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
@@ -685,8 +728,9 @@ const PlotPage = () => {
                 Lifestyle Benefits
               </TextAnimate>
               <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
-                That Come with Your Land
+                That Come with
               </TextAnimate>
+              <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once className=' italic'>Your Land</TextAnimate>
             </h2>
             <p className='mt-4 text-base lg:text-lg text-foreground/70 leading-relaxed'>
               Every plot at Madhuban Village comes backed by a curated set of lifestyle amenities designed to elevate everyday living.
@@ -696,6 +740,12 @@ const PlotPage = () => {
           <AmenitiesAutoScroller />
         </div>
       </section>
+
+      <div className='w-full bg-background py-5'>
+        <div className='max-w-7xl mx-auto px-4 lg:px-16'>
+          <div className='h-px w-full bg-linear-to-r from-transparent via-[#D4AF37]/50 to-transparent' />
+        </div>
+      </div>
 
       {/* 5. LOCATION ADVANTAGE */}
       <section className='py-20 lg:py-32 bg-background'>
@@ -789,7 +839,7 @@ const PlotPage = () => {
                 <ul className='space-y-4'>
                   <li className='flex items-center gap-3'>
                     <Check className='w-5 h-5 text-foreground' />
-                    <p className='text-lg text-foreground/70'>Farmhouse Villa Plots starting from 4,500 sq. ft.</p>
+                    <p className='text-lg text-foreground/70'>Farmhouse Villa Plots starting from 4,000 sq. ft.</p>
                   </li>
                   <li className='flex items-center gap-3'>
                     <Check className='w-5 h-5 text-foreground' />
@@ -870,6 +920,12 @@ const PlotPage = () => {
         </div>
       </section> */}
 
+      <div className='w-full bg-background py-5'>
+        <div className='max-w-7xl mx-auto px-4 lg:px-16'>
+          <div className='h-px w-full bg-linear-to-r from-transparent via-[#D4AF37]/50 to-transparent' />
+        </div>
+      </div>
+
       {/* 12. GOOGLE MAP LOCATION */}
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 lg:px-16">
@@ -883,11 +939,11 @@ const PlotPage = () => {
                   Madhuban Village
                 </TextAnimate>
                 <TextAnimate animation="blurInUp" className='italic' by="character" duration={0.5} delay={0.1} once>
-                  Villa Plots
+                  Luxury Destination Estate
                 </TextAnimate>
               </h2>
               <p className="text-lg text-foreground/70 leading-relaxed">
-                Farmhouse | Club | Resort | Banquets
+                Weddings | Club | Plots
               </p>
               <div className="flex items-start gap-3 text-foreground/70">
                 <MapPin className="w-5 h-5 text-[#D4AF37] mt-1" />
@@ -925,27 +981,32 @@ const PlotPage = () => {
       <section className='py-20 lg:py-32 bg-foreground text-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <div className='max-w-4xl mx-auto text-center'>
-            <h2 className='text-4xl lg:text-5xl font-playfair-display mb-8'>
+            <h2 className='text-4xl lg:text-5xl font-playfair-display leading-tight mb-8'>
               <TextAnimate animation="blurInUp" by="character" duration={0.5} delay={0.1} once>
                 Book Your Private
               </TextAnimate>
-              <TextAnimate animation="blurInUp" by="character" className='italic' duration={0.5} delay={0.1} once>
+              <TextAnimate animation="blurInUp" by="character" className='italic block' duration={0.5} delay={0.1} once>
                 Site Visit Now
               </TextAnimate>
             </h2>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mb-12'>
+
+            <div className='max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12'>
               {[
                 'See the land',
                 'Experience the amenities',
                 'Understand your investment',
                 'Lock your preferred plot',
               ].map((item, index) => (
-                <div key={index} className='flex items-center gap-3 justify-center'>
+                <div
+                  key={index}
+                  className='flex items-center gap-3 justify-start rounded-xl border border-background/20 bg-background/10 px-4 py-3 text-left'
+                >
                   <Check className='w-6 h-6 text-[#D4AF37]' />
                   <p className='text-lg text-background/90'>{item}</p>
                 </div>
               ))}
             </div>
+
             <Button
               variant='secondary'
               size='lg'
@@ -1045,11 +1106,10 @@ const PlotPage = () => {
                       className='w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]'
                     >
                       <option value=''>Select size</option>
-                      <option value='5000'>5,000 sq. ft.</option>
-                      <option value='7500'>7,500 sq. ft.</option>
-                      <option value='10000'>10,000 sq. ft.</option>
-                      <option value='15000'>15,000 sq. ft.</option>
-                      <option value='20000+'>20,000+ sq. ft.</option>
+                      <option value='4000-8000'>4,000 to 8,000 sq. ft.</option>
+                      <option value='8000-12000'>8,000 to 12,000 sq. ft.</option>
+                      <option value='12000-15000'>12,000 to 15,000 sq. ft.</option>
+                      <option value='15000-20000'>15,000 to 20,000 sq. ft.</option>
                     </select>
                   </div>
                   <div>
@@ -1067,18 +1127,6 @@ const PlotPage = () => {
                       <option value='exploring'>Just exploring</option>
                     </select>
                   </div>
-                </div>
-
-                <div>
-                  <label className='block text-sm text-foreground/70 mb-2'>Notes or requirements (Optional)</label>
-                  <textarea
-                    name='notes'
-                    value={formData.notes}
-                    onChange={handleChange}
-                    rows={3}
-                    className='w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]'
-                    placeholder='E.g., facing preference, clubhouse proximity, custom farmhouse plan.'
-                  />
                 </div>
 
                 <button

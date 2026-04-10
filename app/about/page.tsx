@@ -179,7 +179,7 @@ const AboutPage = () => {
                     variant='secondary'
                     size='default'
                     className='group/btn'
-                    onClick={() => router.push('/plots')}
+                    onClick={() => router.push('/farmland-plots')}
                   >
                     <span className='flex items-center'>
                       Learn More

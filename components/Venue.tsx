@@ -68,7 +68,7 @@ const venuesData: Venue[] = [
     number: '08',
     name: 'Mangalam Kuti',
     description: 'An open-air traditional space ideal for myra rituals and royal shahi bhoj arrangements.',
-    image: 'cottages.png'
+    image: '/mangalam-kuti.png'
   },
 ]
 

@@ -199,18 +199,6 @@ const Contact: React.FC = () => {
                   />
               </div>
 
-              <div>
-                <label className="block text-sm text-foreground/70 mb-2">Notes or special requests (Optional)</label>
-                <textarea
-                  name="notes"
-                  value={formData.notes}
-                  onChange={handleChange}
-                  rows={3}
-                  className="w-full rounded-lg border border-foreground/10 bg-background/70 px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
-                  placeholder="Tell us about rituals, decor style, cuisine, or logistics."
-                />
-              </div>
-
               <button
                 type="submit"
                 className="w-full rounded-lg bg-foreground text-background py-3 text-lg font-semibold tracking-wide shadow-lg hover:bg-foreground/90 transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#D4AF37] focus:ring-offset-background"

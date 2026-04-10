@@ -31,7 +31,7 @@ const Footer = () => {
       id: 1,
       title: 'Madhuban Aaranya',
       description: 'Premium Farm Plots',
-      href: '/plots',
+      href: '/farmland-plots',
       image: '/dr2.png', // Add your Villa Plots image path
     },
     {
@@ -39,7 +39,7 @@ const Footer = () => {
       title: 'Club Anand',
       description: 'Private Members Club',
       href: '/club-anand',
-      image: '/ex.png', // Add your clubs image path
+      image: '/pool.png', // Add your clubs image path
     },
     {
       id: 3,
@@ -54,13 +54,13 @@ const Footer = () => {
     about: [
       { label: 'About Us', href: '/about' },
       { label: 'Wedding', href: '/' },
-      { label: 'Villa Plots', href: '/plots' },
+      { label: 'Villa Plots', href: '/farmland-plots' },
       { label: 'Club Anand', href: '/club-anand' },
       { label: 'Gallery', href: '/our-world' },
     ],
     services: [
       { label: 'Destination Weddings', href: '/' },
-      { label: 'Farmhouse & Farmland Investment', href: '/plots' },
+      { label: 'Farmhouse & Farmland Investment', href: '/farmland-plots' },
       { label: 'Club Anand Membership', href: '/club-anand' },
     ],
   }

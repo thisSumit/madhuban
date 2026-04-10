@@ -65,7 +65,7 @@ const Header = () => {
               <img 
                 src={isScrolled && !isMenuOpen ? "/madhuban-logo-copy.png" : "/madhuban-wlogo-copy.png"}
                 alt="Madhuban Village" 
-                className='h-14 lg:h-18 m-2 object-fill transition-all duration-300'
+                className='h-14 lg:h-18 my-6 md:m-2 object-fill transition-all duration-300'
               />
             </a>
           </div>
@@ -86,16 +86,18 @@ const Header = () => {
                 }`}></span>
               </a>
             ))}
-            <Button onClick={() => window.location.href = "tel:+917020704420"} variant="secondary" size="default">Call Now</Button>
+            <Button onClick={() => window.location.href = "tel:+917020704418"} variant="secondary" size="default">Call Now</Button>
           </nav>
 
           {/* Mobile Hamburger Menu Button */}
           <button
             onClick={toggleMenu}
-            className={`lg:hidden p-2 hover:opacity-60 transition-all duration-300 z-50 relative ${
+            className={`lg:hidden p-2 h-11 w-11 inline-flex items-center justify-center rounded-full hover:opacity-60 transition-all duration-300 z-50 relative focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${
               isMenuOpen || !isScrolled ? 'text-background' : 'text-foreground'
             }`}
-            aria-label="Toggle menu"
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMenuOpen}
+            aria-controls='mobile-menu-nav'
           >
             <div className='relative w-6 h-6'>
               <Menu 
@@ -139,13 +141,13 @@ const Header = () => {
           onClick={(e) => e.stopPropagation()}
         >
           {/* Navigation Links */}
-          <nav className='flex flex-col items-center gap-1'>
+          <nav id='mobile-menu-nav' className='flex w-full max-w-sm flex-col items-start gap-2 px-6'>
             {navLinks.map((link, index) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={closeMenu}
-                className='nav-link-mobile text-background text-xl font-light tracking-wider uppercase relative group transition-all duration-300'
+                className='nav-link-mobile w-full rounded-md px-2 py-3 text-left text-background text-xl font-light tracking-wider uppercase relative group transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37]'
                 style={{
                   animationDelay: `${index * 0.1}s`,
                   animationName: isMenuOpen ? 'fadeInUp' : 'none',
@@ -155,11 +157,11 @@ const Header = () => {
                 }}
               >
                 <span className='relative z-10'>{link.label}</span>
-                <span className='absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 bg-background transition-all duration-500 group-hover:w-full'></span>
+                <span className='absolute bottom-1 left-2 w-0 bg-background transition-all duration-500 group-hover:w-[calc(100%-1rem)]'></span>
               </a>
             ))}
             <div 
-              className='mt-2'
+              className='mt-3 w-full'
               style={{
                 animationDelay: `${navLinks.length * 0.1}s`,
                 animationName: isMenuOpen ? 'fadeInUp' : 'none',
@@ -168,7 +170,7 @@ const Header = () => {
                 animationFillMode: 'forwards',
               }}
             >
-              <Button variant="secondary" size="lg" onClick={() => window.location.href = "tel:+917020704420"}>
+              <Button variant="secondary" size="lg" className='w-full' onClick={() => window.location.href = "tel:+917020704418"}>
                 Call Now
               </Button>
             </div>

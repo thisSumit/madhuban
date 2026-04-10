@@ -246,7 +246,7 @@ const PlotPage = () => {
               >
                 Book Site Visit Now
               </Button>
-              <a className='flex items-center justify-center text-background gap-1' href='tel:917020704420'>
+              <a className='flex items-center justify-center text-background gap-1' href='tel:917020704418'>
                 <Phone className='w-5 h-5 mr-2' />
                 Call Now
               </a>
@@ -306,7 +306,7 @@ const PlotPage = () => {
                 Madhuban Village offers premium farmhouse land parcels designed for those who value space, privacy, and long-term growth. Whether it’s a peaceful getaway, a place to host meaningful celebrations, or a smart land investment, Madhuban Village combines thoughtful planning, natural surroundings, and future appreciation in one well-defined destination.
               </p>
               <p>
-                With Villa Plots starting from 4,500 sq. ft. and pricing from ₹700 per sq. ft.
+                With Villa Plots starting from 4,000 sq. ft. and pricing from ₹700 per sq. ft.
               </p>
             </div>
           </div>
@@ -632,7 +632,7 @@ const PlotPage = () => {
                 <ul className='space-y-4'>
                   <li className='flex items-center gap-3'>
                     <Check className='w-5 h-5 text-foreground' />
-                    <p className='text-lg text-foreground/70'>Farmhouse Villa Plots starting from 4,500 sq. ft.</p>
+                    <p className='text-lg text-foreground/70'>Farmhouse Villa Plots starting from 4,000 sq. ft.</p>
                   </li>
                   <li className='flex items-center gap-3'>
                     <Check className='w-5 h-5 text-foreground' />

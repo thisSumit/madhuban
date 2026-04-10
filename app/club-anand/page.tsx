@@ -25,6 +25,7 @@ import {
   Ticket,
   UsersRound
 } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 import { TextAnimate } from '@/components/ui/text-animate'
 
 const ClubPage = () => {
@@ -116,7 +117,7 @@ const ClubPage = () => {
     { icon: Calendar, text: 'Free Food Vouchers during your Birthday Month', highlight: true },
   ]
 
-  const amenities = [
+  const amenities: Array<{ icon: LucideIcon; text: string; highlight?: boolean }> = [
     { icon: Building2, text: 'Exclusive Clubhouse & Lounge Areas' },
     { icon: Droplet, text: 'Swimming Pool & Relaxation Zones' },
     { icon: Home, text: 'Banquet & Celebration Spaces' },
@@ -127,7 +128,6 @@ const ClubPage = () => {
     { icon: Utensils, text: 'Restaurant & Café' },
     { icon: Music, text: 'Event & Entertainment Areas' },
     { icon: TreePine, text: 'Landscaped Open Spaces' },
-    { icon: Crown, text: 'Access to Selected Resort Amenities at Madhuban Village' },
   ]
 
   return (
@@ -142,7 +142,7 @@ const ClubPage = () => {
             alt="Club ANAND"
             className='h-full w-full object-cover'
           />
-          <div className='absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60' />
+          <div className='absolute inset-0 bg-linear-to-b from-black/60 via-black/40 to-black/60' />
         </div>
 
         {/* <div className='relative z-10 h-full flex items-center justify-center px-4 lg:px-16'>
@@ -290,7 +290,7 @@ const ClubPage = () => {
                 alt="Club ANAND"
                 className='w-full h-full object-cover'
               />
-              <div className='absolute inset-0 bg-gradient-to-t from-foreground/80 to-transparent flex items-end p-8'>
+              <div className='absolute inset-0 bg-linear-to-t from-foreground/80 to-transparent flex items-end p-8'>
                 <div>
                   <p className='text-2xl font-[playfair-display] text-background mb-2'>
                     Your Gateway to Joy
@@ -325,24 +325,54 @@ const ClubPage = () => {
             </p>
           </div>
 
+          <div className='mb-10 rounded-[28px] border border-[#D4AF37]/40 bg-linear-to-r from-[#1d1d1b] via-foreground to-[#2a2418] p-5 sm:p-6 lg:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.25)]'>
+            <div className='flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5'>
+              <div className='flex items-start gap-4'>
+                <div className='rounded-2xl bg-[#D4AF37]/15 border border-[#D4AF37]/30 p-3 shrink-0'>
+                  <Crown className='w-6 h-6 text-[#D4AF37]' />
+                </div>
+                <div>
+                  <h3 className='text-2xl lg:text-3xl font-[playfair-display] text-background leading-tight'>
+                    Access to Selected Resort Amenities at Madhuban Village
+                  </h3>
+                </div>
+              </div>
+              <div className='flex flex-wrap gap-2'>
+                {['Pool access', 'Event spaces', 'Lifestyle upgrades'].map(tag => (
+                  <span key={tag} className='rounded-full border border-background/20 bg-background/10 px-3 py-1 text-sm text-background/90'>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
           <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6'>
             {amenities.map((amenity, index) => {
               const Icon = amenity.icon
               return (
                 <div
                   key={index}
-                  className='group relative p-6 bg-background/10 rounded-lg hover:bg-background/20 transition-all duration-500 hover:scale-110 cursor-pointer'
+                  className={`group relative p-6 rounded-lg transition-all duration-500 hover:scale-110 cursor-pointer ${amenity.highlight
+                      ? 'bg-[#D4AF37] text-foreground shadow-2xl border border-[#D4AF37]/70'
+                      : 'bg-background/10 hover:bg-background/20'
+                    }`}
                   style={{
                     animationDelay: `${index * 0.05}s`,
                   }}
                 >
                   <div className='flex flex-col items-center text-center'>
-                    <div className='mb-4 p-4 rounded-full bg-background/20 group-hover:bg-background/30 transition-colors duration-300'>
-                      <Icon className='w-8 h-8 text-background group-hover:scale-110 transition-transform duration-300' />
+                    <div className={`mb-4 p-4 rounded-full transition-colors duration-300 ${amenity.highlight ? 'bg-background/15' : 'bg-background/20 group-hover:bg-background/30'}`}>
+                      <Icon className={`w-8 h-8 transition-transform duration-300 group-hover:scale-110 ${amenity.highlight ? 'text-foreground' : 'text-background'}`} />
                     </div>
-                    <p className='text-sm lg:text-base text-background/90 font-medium'>
+                    <p className={`text-sm lg:text-base font-medium ${amenity.highlight ? 'text-foreground' : 'text-background/90'}`}>
                       {amenity.text}
                     </p>
+                    {amenity.highlight && (
+                      <span className='mt-3 inline-flex items-center rounded-full border border-foreground/15 bg-background/40 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-foreground'>
+                        Highlight
+                      </span>
+                    )}
                   </div>
                 </div>
               )
@@ -351,7 +381,7 @@ const ClubPage = () => {
 
           <div className='mt-12 text-center'>
             <p className='text-xl font-[playfair-display] text-background/80'>
-              At Club ANAND, every amenity is thoughtfully designed to offer a perfect blend of relaxation, recreation, and premium lifestyle <br /> Making your Villa Plot investment truly rewarding.
+              At Club ANAND, every amenity is thoughtfully designed to offer a perfect blend of relaxation, recreation, and premium lifestyle.
             </p>
           </div>
         </div>
