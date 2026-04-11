@@ -630,7 +630,7 @@ const PlotPage = () => {
       </section>
 
       {/* 6. INVESTMENT & USE CASE */}
-      <section className='py-20 lg:py-32 bg-foreground text-background'>
+      <section className='py-15 lg:py-20 bg-foreground text-background'>
         <div className='max-w-7xl mx-auto px-4 lg:px-16'>
           <div className='max-w-4xl mx-auto text-center mb-12'>
             <h2 className='text-4xl lg:text-5xl font-playfair-display mb-5'>
@@ -649,7 +649,7 @@ const PlotPage = () => {
           <InvestmentAutoScroller />
 
           <div className='mt-10 flex flex-wrap justify-center gap-3'>
-            {['Private farmhouse', 'Family vacation home', 'Sandalwood Plantation Profits', 'Rental weekend getaway', 'Long-term land investment', 'Teak wood Plantation Profits', 'Grow your own fresh vegetable and fruits', 'Jungle Creation on your land'].map((use, index) => (
+            {['Private Farmhouse Plots', 'Perfect Family Vacation Home', 'High-Profit Sandalwood Plantation', 'Profitable Teak Wood Plantation', 'Earn Rental Income from Your Getaway', 'Secure Long-Term Land Investment', 'Grow Your Own Fresh Vegetables & Fruits', 'Create Your Own Private Jungle'].map((use, index) => (
               <div key={index} className='rounded-full border border-background/20 bg-background/10 px-4 py-2'>
                 <p className='text-sm lg:text-base text-background/90'>{use}</p>
               </div>
