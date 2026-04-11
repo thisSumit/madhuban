@@ -65,7 +65,7 @@ const Header = () => {
               <img 
                 src={isScrolled && !isMenuOpen ? "/madhuban-logo-copy.png" : "/madhuban-wlogo-copy.png"}
                 alt="Madhuban Village" 
-                className='h-10 lg:h-14 my-6 md:m-2 object-fill transition-all duration-300'
+                className='h-14 lg:h-14 my-4 md:m-2 object-fill transition-all duration-300'
               />
             </a>
           </div>
@@ -176,7 +176,7 @@ const Header = () => {
             </div>
           </nav>
 
-          {/* Logo at Bottom Center */}
+          {/* Logo at Bottom Center
           <div
             className='absolute bottom-12 left-1/2 transform -translate-x-1/2 transition-all duration-700 ease-out'
             style={{
@@ -192,7 +192,7 @@ const Header = () => {
               alt="Madhuban Village"
               className='h-26 object-contain opacity-90'
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </>
