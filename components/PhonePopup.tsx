@@ -63,7 +63,7 @@ const PhonePopup = () => {
             <div className="flex flex-col items-center justify-center gap-6 lg:gap-8 mb-10">
               <a
                 href="tel:+917020704418"
-                className="text-3xl sm:text-4xl lg:text-5xl font-playfair-display text-background hover:text-background/70 transition-all duration-300 tracking-wide hover:scale-105 transform"
+                className="text-3xl sm:text-4xl lg:text-5xl text-nowrap font-open-sans font-medium text-background hover:text-background/70 transition-all duration-300 tracking-wide hover:scale-105 transform"
               >
                 +91 70207 04418
               </a>

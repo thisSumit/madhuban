@@ -179,12 +179,12 @@ const ClubPage = () => {
 
         <div className='relative z-10 h-full w-full flex flex-col items-center justify-center'>
           <div className='flex flex-col items-center justify-center h-full'>
-            <p className='text-white font-playfair-display md:text-2xl text-xl leading-tighter tracking-tight font-bold'>Club Anand</p>
+            <p className='text-white font-playfair-display md:text-4xl text-xl leading-tighter tracking-tight font-bold'>Club Anand</p>
             <div className='h-px w-20 my-2 bg-background/40' />
             <h1 className='text-white font-playfair-display text-4xl lg:text-8xl text-center leading-tighter tracking-tight px-4'>
               <span className='italic block mt-2'> <TextAnimate animation="slideLeft" by="character" duration={0.5} delay={0.2} once>Private Members</TextAnimate>Club</span>
             </h1>
-            <p className='text-white font-playfair-display md:text-2xl text-lg py-2'>Leisure | Events | Experiences | Lifestyle</p>
+            <p className='text-white font-playfair-display text-lg py-2'>Leisure | Events | Experiences | Lifestyle</p>
           </div>
 
           <Button onClick={() => document.getElementById('membership-form')?.scrollIntoView({ behavior: 'smooth' })} className='absolute md:bottom-8 bottom-34' variant="primary" size="lg">Comming Soon</Button>
@@ -474,7 +474,7 @@ const ClubPage = () => {
               <Button
                 variant='secondary'
                 size='lg'
-                onClick={() => window.open('tel:+917020704420')}
+                onClick={() => window.open('tel:+917020704418')}
               >
                 <Phone className='w-5 h-5 mr-2' />
                 Call Us

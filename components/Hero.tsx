@@ -42,12 +42,12 @@ const Hero = () => {
       </div> */}
       <div className='relative z-10 h-full w-full flex flex-col items-center justify-center'>
         <div className='flex flex-col items-center justify-center h-full'>
-          <p className='text-white font-playfair-display md:text-2xl text-xl leading-tighter tracking-tight font-bold'>Madhuban Vivaha</p>
+          <p className='text-white font-playfair-display md:text-4xl text-xl leading-tighter tracking-tight font-bold'>Madhuban Vivaha</p>
           <div className='h-px w-20 my-2 bg-background/40' />
           <h1 className='text-white font-playfair-display text-4xl lg:text-8xl text-center leading-tighter tracking-tight px-4'>
             <span className='italic block mt-2'> <TextAnimate animation="slideLeft" by="character" duration={0.5} delay={0.2} once>Luxury Destination</TextAnimate>Wedding</span>
           </h1>
-          <p className='text-white font-playfair-display md:text-2xl text-lg py-2'>Curated Celebrations | Grand Experiences</p>
+          <p className='text-white font-playfair-display text-lg py-2'>Curated Celebrations | Grand Experiences</p>
         </div>
         
         <Button onClick={() => document.getElementById('membership-form')?.scrollIntoView({ behavior: 'smooth' })} className='absolute md:bottom-8 bottom-34' variant="primary" size="lg">Book Now</Button>

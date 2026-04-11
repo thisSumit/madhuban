@@ -285,7 +285,7 @@ function AmenitiesAutoScroller() {
                   draggable={false}
                   className='h-full w-full object-cover'
                 />
-                <div className='absolute inset-0 bg-linear-to-t from-black/0 via-black/10 to-transparent' />
+                <div className='absolute inset-0 bg-linear-to-t from-black/100 via-black/0 via-black/0 to-transparent' />
                 <p className='absolute left-4 bottom-4 right-4 text-white text-lg font-semibold leading-snug drop-shadow'>
                   {title}
                 </p>
@@ -434,7 +434,7 @@ const PlotPage = () => {
           <div className='relative z-10 h-full w-full flex flex-col items-center justify-center'>
   <div className='flex flex-col items-center justify-center h-full'>
     
-    <p className='text-white font-playfair-display md:text-2xl text-xl leading-tighter tracking-tight font-bold'>
+    <p className='text-white font-playfair-display md:text-4xl text-xl leading-tighter tracking-tight font-bold'>
       Madhuban Aaranya
     </p>
 
@@ -448,7 +448,7 @@ const PlotPage = () => {
       </span>
     </h1>
 
-    <p className='text-white font-playfair-display md:text-2xl text-lg py-2'>
+    <p className='text-white font-playfair-display text-lg py-2'>
       Investment | Weekend Homes | Managed Living
     </p>
 
