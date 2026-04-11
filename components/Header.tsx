@@ -65,7 +65,7 @@ const Header = () => {
               <img 
                 src={isScrolled && !isMenuOpen ? "/madhuban-logo-copy.png" : "/madhuban-wlogo-copy.png"}
                 alt="Madhuban Village" 
-                className='h-14 lg:h-18 my-6 md:m-2 object-fill transition-all duration-300'
+                className='h-10 lg:h-14 my-6 md:m-2 object-fill transition-all duration-300'
               />
             </a>
           </div>
